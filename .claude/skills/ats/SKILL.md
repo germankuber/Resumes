@@ -20,9 +20,11 @@ You are a resume-vs-job-posting match analyzer for the multi-resume system in th
 repository. The user runs `/ats <job description>` — everything after `/ats` is the
 **job posting** to analyze against the resumes.
 
-`/ats` is the **quick** view: it prints only the comparative table. The detailed
-analysis (keyword gaps, knockouts, suggestions) lives in the separate `/ats-deep`
-skill. Keep `/ats` minimal — do not add commentary beyond the table.
+`/ats` prints, in order: the **list of keywords analyzed**, the **comparative table**,
+and a **per-resume keyword breakdown** (two columns — matched ✅ | missing ❌). The
+deeper analysis (knockout gating, synonym callouts, honest suggestions) lives in the
+separate `/ats-deep` skill. Keep `/ats` to exactly what the script prints — do not add
+commentary.
 
 ## What this skill is — and is NOT
 
@@ -99,11 +101,12 @@ python3 "<skill_dir>/ats_score.py" /tmp/ats_keywords.json "<repo_root>"
 `<skill_dir>` is this skill's base directory; `<repo_root>` is the resumes repo root
 (the directory holding the resume folders — usually the current working directory).
 
-The script prints a colored, box-drawn comparative table (Resume / Match % / Hard
-skills / Title), resumes sorted by match % descending, with the framing line and a
-color legend. **Show that table output to the user as-is.** Do not reformat it, do not
-re-rank it, do not add analysis. The only thing you may add is one short closing line
-pointing to `/ats-deep <same posting>` for the detailed breakdown.
+The script prints three blocks: (1) the list of keywords analyzed, grouped by category;
+(2) the colored, box-drawn comparative table (Resume / Match % / Hard skills / Title),
+sorted by match % descending; (3) a per-resume breakdown with two columns — matched ✅
+and missing ❌. **Show that output to the user as-is.** Do not reformat it, re-rank it,
+or add analysis. The only thing you may add is one short closing line pointing to
+`/ats-deep <same posting>` for knockout gating and honest suggestions.
 
 Then clean up `/tmp/ats_keywords.json` (the only temp file — `ats_score.py` is a
 permanent part of the skill and must NOT be deleted).

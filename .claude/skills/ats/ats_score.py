@@ -168,6 +168,50 @@ def render_table(results: list, job_title: str) -> str:
     return "\n".join(out)
 
 
+def render_keyword_list(scored_kws: list) -> str:
+    """The set of keywords being analyzed, grouped by category."""
+    by_cat: dict = {}
+    for kw in scored_kws:
+        by_cat.setdefault(kw["category"], []).append(kw["term"])
+    order = ["title", "hard_skill", "tool", "other_keyword", "soft_skill"]
+    labels = {"title": "Title", "hard_skill": "Hard skills", "tool": "Tools",
+              "other_keyword": "Other keywords", "soft_skill": "Soft skills"}
+    out = [BOLD + "Keywords analyzed ({})".format(len(scored_kws)) + RESET]
+    for cat in order:
+        if cat in by_cat:
+            terms = ", ".join(by_cat[cat])
+            out.append("  " + DIM + labels[cat] + ":" + RESET + " " + terms)
+    return "\n".join(out)
+
+
+def render_detail(results: list) -> str:
+    """Per-resume two-column breakdown: matched (✅) | missing (❌)."""
+    out = [BOLD + "Per-resume keyword breakdown" + RESET]
+    for r in results:
+        matched = [m["term"] + ("  ≈" if m["match"].startswith("synonym") else "")
+                   for m in r["matched"]]
+        missing = [m["term"] for m in r["missing"]]
+        n = max(len(matched), len(missing))
+        left_w = max([len(x) for x in matched] + [14])
+        oc = color_for_pct(r["overall"])
+        out.append("")
+        out.append(oc + BOLD + "▸ " + r["resume"]
+                   + "  ({}%)".format(r["overall"]) + RESET)
+        out.append("  " + GREEN + "✅ matched ({})".format(len(matched)) + RESET
+                   + " " * (left_w - 12) + "  "
+                   + RED + "❌ missing ({})".format(len(missing)) + RESET)
+        for i in range(n):
+            lt = matched[i] if i < len(matched) else ""
+            rt = missing[i] if i < len(missing) else ""
+            lcell = GREEN + lt + RESET if lt else ""
+            pad = " " * (left_w - len(lt))
+            rcell = RED + rt + RESET if rt else ""
+            out.append("  " + lcell + pad + "  " + rcell)
+    out.append("")
+    out.append(DIM + "≈ = matched via a synonym/variant, not the exact phrase" + RESET)
+    return "\n".join(out)
+
+
 def main(argv):
     args = [a for a in argv[1:] if not a.startswith("--")]
     flags = {a for a in argv[1:] if a.startswith("--")}
@@ -184,7 +228,11 @@ def main(argv):
     if "--json" in flags:
         print(json.dumps(results, ensure_ascii=False, indent=2))
     else:
+        print(render_keyword_list(scored_kws))
+        print()
         print(render_table(results, spec.get("job_title", "")))
+        print()
+        print(render_detail(results))
 
 
 if __name__ == "__main__":
