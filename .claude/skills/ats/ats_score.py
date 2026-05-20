@@ -212,6 +212,50 @@ def render_detail(results: list) -> str:
     return "\n".join(out)
 
 
+def render_missing_table(results: list) -> str:
+    """Compact summary table: Resume | keywords that did NOT match."""
+    rows = []
+    for r in results:
+        missing = ", ".join(m["term"] for m in r["missing"]) or "—"
+        rows.append([r["resume"], missing])
+    name_w = max([len(r[0]) for r in rows] + [len("Resume")])
+    # wrap the missing column to keep the table readable
+    miss_w = 64
+
+    def wrap(text, width):
+        words = text.split(", ")
+        lines, cur = [], ""
+        for w in words:
+            piece = w if not cur else cur + ", " + w
+            if len(piece) > width and cur:
+                lines.append(cur)
+                cur = w
+            else:
+                cur = piece
+        if cur:
+            lines.append(cur)
+        return lines or [""]
+
+    def hline(left, mid, right):
+        return left + "─" * (name_w + 2) + mid + "─" * (miss_w + 2) + right
+
+    out = [BOLD + "Missing keywords by resume" + RESET, ""]
+    out.append(hline("┌", "┬", "┐"))
+    out.append("│ " + BOLD + "Resume".ljust(name_w) + RESET
+               + " │ " + BOLD + "Missing keywords".ljust(miss_w) + RESET + " │")
+    out.append(hline("├", "┼", "┤"))
+    for idx, (name, missing) in enumerate(rows):
+        wrapped = wrap(missing, miss_w)
+        for j, line in enumerate(wrapped):
+            left = name if j == 0 else ""
+            out.append("│ " + left.ljust(name_w) + " │ "
+                       + RED + line + RESET + " " * (miss_w - len(line)) + " │")
+        if idx < len(rows) - 1:
+            out.append(hline("├", "┼", "┤"))
+    out.append(hline("└", "┴", "┘"))
+    return "\n".join(out)
+
+
 def main(argv):
     args = [a for a in argv[1:] if not a.startswith("--")]
     flags = {a for a in argv[1:] if a.startswith("--")}
@@ -233,6 +277,8 @@ def main(argv):
         print(render_table(results, spec.get("job_title", "")))
         print()
         print(render_detail(results))
+        print()
+        print(render_missing_table(results))
 
 
 if __name__ == "__main__":

@@ -101,12 +101,19 @@ python3 "<skill_dir>/ats_score.py" /tmp/ats_keywords.json "<repo_root>"
 `<skill_dir>` is this skill's base directory; `<repo_root>` is the resumes repo root
 (the directory holding the resume folders — usually the current working directory).
 
-The script prints three blocks: (1) the list of keywords analyzed, grouped by category;
+The script prints four blocks: (1) the list of keywords analyzed, grouped by category;
 (2) the colored, box-drawn comparative table (Resume / Match % / Hard skills / Title),
 sorted by match % descending; (3) a per-resume breakdown with two columns — matched ✅
-and missing ❌. **Show that output to the user as-is.** Do not reformat it, re-rank it,
-or add analysis. The only thing you may add is one short closing line pointing to
+and missing ❌; (4) a compact summary table — Resume | the keywords that did NOT match.
+
+**Show the ENTIRE output to the user verbatim — all four blocks, every resume.** This
+is critical: do NOT truncate it, do NOT summarize the per-resume breakdown into prose,
+do NOT drop resumes to save space. The detail is long (roughly 20 lines × 9 resumes for
+block 3) — reproduce all of it anyway, exactly as the script printed it. Do not
+reformat or re-rank. The only thing you may add is one short closing line pointing to
 `/ats-deep <same posting>` for knockout gating and honest suggestions.
+
+If the script output is long, that is expected and correct — relay it in full.
 
 Then clean up `/tmp/ats_keywords.json` (the only temp file — `ats_score.py` is a
 permanent part of the skill and must NOT be deleted).
