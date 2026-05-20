@@ -6,9 +6,10 @@ description: |
   job posting (or a path/URL to it). The skill uses the model's judgment to extract and
   categorize the posting's keywords, then runs the fixed `ats_score.py` script.
 
-  `/ats` prints exactly one thing — a two-column table of Resume | the keywords that
-  did NOT match, resumes sorted by overall match. For the full breakdown (match %,
-  matched keywords, knockout gating, honest suggestions) use `/ats-deep`.
+  `/ats` prints two tables: a comparative table (Match % / Hard skills / Title) and a
+  missing-keywords table (Resume | the keywords that did NOT match), both sorted by
+  overall match. For the full breakdown (matched keywords, knockout gating, honest
+  suggestions) use `/ats-deep`.
 
   Use this skill whenever the user runs `/ats`, or asks to "check a job posting against
   my resumes", "which resume fits this job", "ATS match", "keyword match for this
@@ -21,11 +22,11 @@ You are a resume-vs-job-posting match analyzer for the multi-resume system in th
 repository. The user runs `/ats <job description>` — everything after `/ats` is the
 **job posting** to analyze against the resumes.
 
-`/ats` prints exactly one thing: a **two-column table** — Resume | the keywords that
-did NOT match — resumes sorted by overall match descending. Nothing else. The deeper
-analysis (match %, knockout gating, matched keywords, honest suggestions) lives in the
-separate `/ats-deep` skill. Keep `/ats` to exactly what the script prints — do not add
-commentary.
+`/ats` prints two tables: (1) a comparative table — Resume / Match % / Hard skills /
+Title; (2) a missing-keywords table — Resume | the keywords that did NOT match. Both
+sorted by overall match descending. The deeper analysis (knockout gating, matched
+keywords, synonym callouts, honest suggestions) lives in the separate `/ats-deep`
+skill. Keep `/ats` to exactly what the script prints — do not add commentary.
 
 ## What this skill is — and is NOT
 
@@ -102,13 +103,15 @@ python3 "<skill_dir>/ats_score.py" /tmp/ats_keywords.json "<repo_root>"
 `<skill_dir>` is this skill's base directory; `<repo_root>` is the resumes repo root
 (the directory holding the resume folders — usually the current working directory).
 
-The script prints a single box-drawn two-column table — `Resume` | `Missing keywords`
-(the keywords that did NOT match) — resumes sorted by overall match descending.
+The script prints two box-drawn tables: (1) the comparative table — `Resume` /
+`Match %` / `Hard skills` / `Title`, colored by threshold; (2) the missing-keywords
+table — `Resume` | `Missing keywords` (the keywords that did NOT match). Both sorted by
+overall match descending.
 
-**Show that table to the user verbatim, every resume row.** Do not truncate it, do not
-add a match %, do not add the matched keywords, do not add prose analysis. The only
-thing you may add is one short closing line pointing to `/ats-deep <same posting>` for
-the full breakdown (match %, matched keywords, knockout gating, honest suggestions).
+**Show both tables to the user verbatim, every resume row.** Do not truncate them, do
+not add the matched keywords, do not add prose analysis. The only thing you may add is
+one short closing line pointing to `/ats-deep <same posting>` for the full breakdown
+(matched keywords, knockout gating, honest suggestions).
 
 Then clean up `/tmp/ats_keywords.json` (the only temp file — `ats_score.py` is a
 permanent part of the skill and must NOT be deleted).

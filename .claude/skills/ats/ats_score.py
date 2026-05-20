@@ -43,7 +43,20 @@ RESUME_FILENAME = "Germán Küber.html"
 # ANSI colors
 RESET = "\033[0m"
 BOLD = "\033[1m"
+DIM = "\033[2m"
+GREEN = "\033[32m"
+YELLOW = "\033[33m"
 RED = "\033[31m"
+CYAN = "\033[36m"
+
+
+def color_for_pct(pct: int) -> str:
+    """Green >=75, yellow 50-74, red <50 — Jobscan-style thresholds."""
+    if pct >= 75:
+        return GREEN
+    if pct >= 50:
+        return YELLOW
+    return RED
 
 
 def strip_html(html: str) -> str:
@@ -102,6 +115,57 @@ def score_resume(name: str, html_path: str, scored_kws: list) -> dict:
     subs = {c: round(cat_got[c] / cat_tot[c] * 100) for c in cat_tot if cat_tot[c]}
     return {"resume": name, "overall": overall, "subscores": subs,
             "matched": matched, "missing": missing}
+
+
+def render_table(results: list, job_title: str) -> str:
+    """Box-drawn, colored comparative table: Resume / Match% / Hard skills / Title."""
+    headers = ["Resume", "Match %", "Hard skills", "Title"]
+    rows = []
+    for r in results:
+        subs = r["subscores"]
+        rows.append([
+            r["resume"],
+            "{}%".format(r["overall"]),
+            "{}%".format(subs.get("hard_skill", 0)) if "hard_skill" in subs else "—",
+            "{}%".format(subs.get("title", 0)) if "title" in subs else "—",
+        ])
+    widths = [len(h) for h in headers]
+    for row in rows:
+        for i, cell in enumerate(row):
+            widths[i] = max(widths[i], len(cell))
+
+    def hline(left, mid, right):
+        return left + mid.join("─" * (w + 2) for w in widths) + right
+
+    def fmt_row(cells, colors=None):
+        parts = []
+        for i, cell in enumerate(cells):
+            pad = " " * (widths[i] - len(cell))
+            c = colors[i] if colors else ""
+            reset = RESET if c else ""
+            parts.append(" " + c + cell + reset + pad + " ")
+        return "│" + "│".join(parts) + "│"
+
+    out = []
+    title = job_title or "job posting"
+    out.append(BOLD + CYAN + "ATS keyword-match — " + title + RESET)
+    out.append(DIM + "Scanner-style estimate, not a real ATS score." + RESET)
+    out.append("")
+    out.append(hline("┌", "┬", "┐"))
+    out.append(fmt_row(headers, [BOLD] * len(headers)))
+    out.append(hline("├", "┼", "┤"))
+    for idx, (r, row) in enumerate(zip(results, rows)):
+        oc = color_for_pct(r["overall"])
+        hc = color_for_pct(r["subscores"].get("hard_skill", 0))
+        tc = color_for_pct(r["subscores"].get("title", 0))
+        out.append(fmt_row(row, ["", oc + BOLD, hc, tc]))
+        if idx < len(rows) - 1:
+            out.append(hline("├", "┼", "┤"))
+    out.append(hline("└", "┴", "┘"))
+    out.append("")
+    out.append(DIM + "green ≥75%  ·  yellow 50–74%  ·  red <50%   "
+               "(threshold for a strong match: 75%)" + RESET)
+    return "\n".join(out)
 
 
 def render_missing_table(results: list) -> str:
@@ -164,6 +228,8 @@ def main(argv):
     if "--json" in flags:
         print(json.dumps(results, ensure_ascii=False, indent=2))
     else:
+        print(render_table(results, spec.get("job_title", "")))
+        print()
         print(render_missing_table(results))
 
 
