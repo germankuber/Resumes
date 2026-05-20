@@ -1,3 +1,4 @@
 .DS_Store
 _p*.png
 _page_*.png
+.claude/settings.local.json
