@@ -4,14 +4,11 @@ description: |
   Simulate an ATS / resume-scanner keyword match between a job posting and Germán
   Küber's resumes. The user invokes `/ats <job description>` — pasting the text of a
   job posting (or a path/URL to it). The skill uses the model's judgment to extract and
-  categorize the posting's keywords, then runs the fixed `ats_score.py` script, which
-  prints a colored comparative table ranked by match %. The skill just shows that
-  table — nothing more. For the detailed breakdown (missing keywords, knockout flags,
-  honest suggestions), use `/ats-deep`.
+  categorize the posting's keywords, then runs the fixed `ats_score.py` script.
 
   `/ats` prints exactly one thing — a two-column table of Resume | the keywords that
-  did NOT match. For the full breakdown (match %, matched keywords, knockout gating,
-  honest suggestions) use `/ats-deep`.
+  did NOT match, resumes sorted by overall match. For the full breakdown (match %,
+  matched keywords, knockout gating, honest suggestions) use `/ats-deep`.
 
   Use this skill whenever the user runs `/ats`, or asks to "check a job posting against
   my resumes", "which resume fits this job", "ATS match", "keyword match for this
