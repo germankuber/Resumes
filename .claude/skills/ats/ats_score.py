@@ -10,12 +10,13 @@ Usage:
   <keywords.json>  path to the keyword spec produced by the skill (see SHAPE below)
   [repo_root]      repo root with one folder per resume, each holding a
                    "Germán Küber.html". Defaults to the current working directory.
-  --json           emit the full JSON report instead of the colored table.
+  --json           emit the full JSON report instead of the missing-keywords table.
                    /ats uses the default (table); /ats-deep uses --json for detail.
 
-Default output: a colored, box-drawn comparative table (Match % / Hard skills /
-Title), resumes sorted by overall match descending. With --json: the full per-resume
-report (overall %, sub-scores, matched list with exact/synonym tags, missing list).
+Default output: a box-drawn two-column table — Resume | the keywords that did NOT
+match — resumes sorted by overall match descending. With --json: the full per-resume
+report (overall %, sub-scores, matched list with exact/synonym tags, missing list)
+that /ats-deep consumes.
 
 keywords.json SHAPE:
 {
@@ -42,20 +43,7 @@ RESUME_FILENAME = "Germán Küber.html"
 # ANSI colors
 RESET = "\033[0m"
 BOLD = "\033[1m"
-DIM = "\033[2m"
-GREEN = "\033[32m"
-YELLOW = "\033[33m"
 RED = "\033[31m"
-CYAN = "\033[36m"
-
-
-def color_for_pct(pct: int) -> str:
-    """Green >=75, yellow 50-74, red <50 — Jobscan-style thresholds."""
-    if pct >= 75:
-        return GREEN
-    if pct >= 50:
-        return YELLOW
-    return RED
 
 
 def strip_html(html: str) -> str:
@@ -114,102 +102,6 @@ def score_resume(name: str, html_path: str, scored_kws: list) -> dict:
     subs = {c: round(cat_got[c] / cat_tot[c] * 100) for c in cat_tot if cat_tot[c]}
     return {"resume": name, "overall": overall, "subscores": subs,
             "matched": matched, "missing": missing}
-
-
-def render_table(results: list, job_title: str) -> str:
-    """Box-drawn, colored comparative table: Resume / Match% / Hard skills / Title."""
-    headers = ["Resume", "Match %", "Hard skills", "Title"]
-    rows = []
-    for r in results:
-        subs = r["subscores"]
-        rows.append([
-            r["resume"],
-            "{}%".format(r["overall"]),
-            "{}%".format(subs.get("hard_skill", 0)) if "hard_skill" in subs else "—",
-            "{}%".format(subs.get("title", 0)) if "title" in subs else "—",
-        ])
-    # column widths from plain (uncolored) text
-    widths = [len(h) for h in headers]
-    for row in rows:
-        for i, cell in enumerate(row):
-            widths[i] = max(widths[i], len(cell))
-
-    def hline(left, mid, right):
-        return left + mid.join("─" * (w + 2) for w in widths) + right
-
-    def fmt_row(cells, colors=None):
-        parts = []
-        for i, cell in enumerate(cells):
-            pad = " " * (widths[i] - len(cell))
-            c = colors[i] if colors else ""
-            reset = RESET if c else ""
-            parts.append(" " + c + cell + reset + pad + " ")
-        return "│" + "│".join(parts) + "│"
-
-    out = []
-    title = job_title or "job posting"
-    out.append(BOLD + CYAN + "ATS keyword-match — " + title + RESET)
-    out.append(DIM + "Scanner-style estimate, not a real ATS score." + RESET)
-    out.append("")
-    out.append(hline("┌", "┬", "┐"))
-    out.append(fmt_row(headers, [BOLD] * len(headers)))
-    out.append(hline("├", "┼", "┤"))
-    for idx, (r, row) in enumerate(zip(results, rows)):
-        oc = color_for_pct(r["overall"])
-        hc = color_for_pct(r["subscores"].get("hard_skill", 0))
-        tc = color_for_pct(r["subscores"].get("title", 0))
-        out.append(fmt_row(row, ["", oc + BOLD, hc, tc]))
-        if idx < len(rows) - 1:
-            out.append(hline("├", "┼", "┤"))
-    out.append(hline("└", "┴", "┘"))
-    out.append("")
-    out.append(DIM + "green ≥75%  ·  yellow 50–74%  ·  red <50%   "
-               "(threshold for a strong match: 75%)" + RESET)
-    return "\n".join(out)
-
-
-def render_keyword_list(scored_kws: list) -> str:
-    """The set of keywords being analyzed, grouped by category."""
-    by_cat: dict = {}
-    for kw in scored_kws:
-        by_cat.setdefault(kw["category"], []).append(kw["term"])
-    order = ["title", "hard_skill", "tool", "other_keyword", "soft_skill"]
-    labels = {"title": "Title", "hard_skill": "Hard skills", "tool": "Tools",
-              "other_keyword": "Other keywords", "soft_skill": "Soft skills"}
-    out = [BOLD + "Keywords analyzed ({})".format(len(scored_kws)) + RESET]
-    for cat in order:
-        if cat in by_cat:
-            terms = ", ".join(by_cat[cat])
-            out.append("  " + DIM + labels[cat] + ":" + RESET + " " + terms)
-    return "\n".join(out)
-
-
-def render_detail(results: list) -> str:
-    """Per-resume two-column breakdown: matched (✅) | missing (❌)."""
-    out = [BOLD + "Per-resume keyword breakdown" + RESET]
-    for r in results:
-        matched = [m["term"] + ("  ≈" if m["match"].startswith("synonym") else "")
-                   for m in r["matched"]]
-        missing = [m["term"] for m in r["missing"]]
-        n = max(len(matched), len(missing))
-        left_w = max([len(x) for x in matched] + [14])
-        oc = color_for_pct(r["overall"])
-        out.append("")
-        out.append(oc + BOLD + "▸ " + r["resume"]
-                   + "  ({}%)".format(r["overall"]) + RESET)
-        out.append("  " + GREEN + "✅ matched ({})".format(len(matched)) + RESET
-                   + " " * (left_w - 12) + "  "
-                   + RED + "❌ missing ({})".format(len(missing)) + RESET)
-        for i in range(n):
-            lt = matched[i] if i < len(matched) else ""
-            rt = missing[i] if i < len(missing) else ""
-            lcell = GREEN + lt + RESET if lt else ""
-            pad = " " * (left_w - len(lt))
-            rcell = RED + rt + RESET if rt else ""
-            out.append("  " + lcell + pad + "  " + rcell)
-    out.append("")
-    out.append(DIM + "≈ = matched via a synonym/variant, not the exact phrase" + RESET)
-    return "\n".join(out)
 
 
 def render_missing_table(results: list) -> str:
@@ -272,12 +164,6 @@ def main(argv):
     if "--json" in flags:
         print(json.dumps(results, ensure_ascii=False, indent=2))
     else:
-        print(render_keyword_list(scored_kws))
-        print()
-        print(render_table(results, spec.get("job_title", "")))
-        print()
-        print(render_detail(results))
-        print()
         print(render_missing_table(results))
 
 

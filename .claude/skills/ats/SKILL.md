@@ -9,6 +9,10 @@ description: |
   table — nothing more. For the detailed breakdown (missing keywords, knockout flags,
   honest suggestions), use `/ats-deep`.
 
+  `/ats` prints exactly one thing — a two-column table of Resume | the keywords that
+  did NOT match. For the full breakdown (match %, matched keywords, knockout gating,
+  honest suggestions) use `/ats-deep`.
+
   Use this skill whenever the user runs `/ats`, or asks to "check a job posting against
   my resumes", "which resume fits this job", "ATS match", "keyword match for this
   search", or similar.
@@ -20,9 +24,9 @@ You are a resume-vs-job-posting match analyzer for the multi-resume system in th
 repository. The user runs `/ats <job description>` — everything after `/ats` is the
 **job posting** to analyze against the resumes.
 
-`/ats` prints, in order: the **list of keywords analyzed**, the **comparative table**,
-and a **per-resume keyword breakdown** (two columns — matched ✅ | missing ❌). The
-deeper analysis (knockout gating, synonym callouts, honest suggestions) lives in the
+`/ats` prints exactly one thing: a **two-column table** — Resume | the keywords that
+did NOT match — resumes sorted by overall match descending. Nothing else. The deeper
+analysis (match %, knockout gating, matched keywords, honest suggestions) lives in the
 separate `/ats-deep` skill. Keep `/ats` to exactly what the script prints — do not add
 commentary.
 
@@ -101,19 +105,13 @@ python3 "<skill_dir>/ats_score.py" /tmp/ats_keywords.json "<repo_root>"
 `<skill_dir>` is this skill's base directory; `<repo_root>` is the resumes repo root
 (the directory holding the resume folders — usually the current working directory).
 
-The script prints four blocks: (1) the list of keywords analyzed, grouped by category;
-(2) the colored, box-drawn comparative table (Resume / Match % / Hard skills / Title),
-sorted by match % descending; (3) a per-resume breakdown with two columns — matched ✅
-and missing ❌; (4) a compact summary table — Resume | the keywords that did NOT match.
+The script prints a single box-drawn two-column table — `Resume` | `Missing keywords`
+(the keywords that did NOT match) — resumes sorted by overall match descending.
 
-**Show the ENTIRE output to the user verbatim — all four blocks, every resume.** This
-is critical: do NOT truncate it, do NOT summarize the per-resume breakdown into prose,
-do NOT drop resumes to save space. The detail is long (roughly 20 lines × 9 resumes for
-block 3) — reproduce all of it anyway, exactly as the script printed it. Do not
-reformat or re-rank. The only thing you may add is one short closing line pointing to
-`/ats-deep <same posting>` for knockout gating and honest suggestions.
-
-If the script output is long, that is expected and correct — relay it in full.
+**Show that table to the user verbatim, every resume row.** Do not truncate it, do not
+add a match %, do not add the matched keywords, do not add prose analysis. The only
+thing you may add is one short closing line pointing to `/ats-deep <same posting>` for
+the full breakdown (match %, matched keywords, knockout gating, honest suggestions).
 
 Then clean up `/tmp/ats_keywords.json` (the only temp file — `ats_score.py` is a
 permanent part of the skill and must NOT be deleted).
