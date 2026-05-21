@@ -2,3 +2,5 @@
 _p*.png
 _page_*.png
 .claude/settings.local.json
+__pycache__/
+*.pyc
