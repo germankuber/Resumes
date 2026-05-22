@@ -47,7 +47,10 @@ Surface gaps honestly; the user applies real changes via `/update-resume`.
   it, it does not have its own copy. **Never regenerate the script.** If its behavior
   must change, edit that one file and update both skill docs.
 
-The match numbers must be reproducible — never eyeball matches or redo the arithmetic.
+`ats_score.py` is deterministic for a given keywords JSON, but the keyword extraction
+is the model's and varies slightly run-to-run — treat each match % as a ±5-point band
+and rely on the resume *ranking* as the stable output. Never eyeball matches or redo
+the arithmetic.
 
 ## Step 1 — Get the job posting
 
@@ -56,14 +59,16 @@ read it; if a URL, fetch it; if empty or clearly not a posting, ask for the text
 
 ## Step 2 — Extract and categorize keywords (model judgment)
 
-Pull every concrete requirement; ignore filler. Capture technologies, languages,
-frameworks, libraries; named tools/products; the job title and variants; methodologies,
-certifications, industry terms; explicit qualifications (degree, minimum years, work
-authorization, clearance, location); soft skills explicitly named.
+Keyword extraction is governed by the **canonical Step 2 rules in
+`.claude/skills/ats/SKILL.md`** — the atomic-keyword definition, the three forbidden
+anti-patterns (umbrella / prose / bare-generic), the company-vs-role heuristic, the
+weight-3-for-core-stack rule, `frequency` as centrality, synonym handling, and the
+mandatory ANTI-OMISSION RULE. Read that section and apply it exactly; do not maintain
+a second copy of the rules here.
 
-Categorize each: `hard_skill`, `tool`, `title`, `qualification`, `soft_skill`,
-`other_keyword`. Record each keyword's frequency. For each keyword list known
-synonyms / variants (`JS`↔`JavaScript`, `.NET`↔`dotnet`, `K8s`↔`Kubernetes`, etc.).
+`/ats-deep` adds nothing to extraction itself — it only reports the result in more
+detail. Capture the same keyword set you would for `/ats`, including every
+`qualification` item, which Step 5 will gate.
 
 ## Step 3 — Build the keywords JSON
 
@@ -130,11 +135,19 @@ Output, in this order:
    - **Matched keywords**, grouped by category.
    - **Missing keywords**, grouped by category — the concrete gaps.
    - **Knockout flags** with PASS / FAIL / UNCLEAR and a one-line reason each.
-   - **Honest suggestions** — for each missing keyword, judge against what Germán's
-     *other* resumes already show about his real experience: is it plausibly true and
-     legitimately addable, or would it be a false claim? Recommend adding only what is
-     genuinely true; explicitly say "do not add" for anything unsupported. Point the
-     user to `/update-resume` to apply real changes.
+   - **Honest suggestions** — for each missing keyword, give ONE of three verdicts:
+     1. **Add it** — it is plausibly true of Germán's real experience (his *other*
+        resumes already show it) and is a concrete, scannable term. Recommend the
+        exact phrasing.
+     2. **Do not add** — it would be a false claim; nothing in his history supports
+        it. Say so explicitly; a stuffed keyword collapses in the interview.
+     3. **Not a scannable skill** — the keyword is an umbrella or prose term
+        (e.g. "AI tools", "computer science fundamentals"); it cannot be matched as
+        a literal string. Do not chase the phrase itself — cover it with the concrete
+        technologies underneath it. If Germán does not have those concrete
+        technologies, THAT is the real gap: report it as such, do not paper over it.
+     Recommend adding only what is genuinely true; point the user to `/update-resume`
+     to apply real changes.
 
 4. **Synonym-only matches** — keywords that matched only via a synonym, per the
    script's tags. An exact-match ATS (e.g. Taleo) would miss these — recommend adding
