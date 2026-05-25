@@ -67,12 +67,27 @@ body), `line-height` (~1.22), page margins (`@page margin: 1cm 1.3cm`), and `mar
 on `<h2>`. Fine trims, not a redesign.
 
 ## Page-break guardrail (required)
-Each experience role must be wrapped in `<div class="role">` and the CSS must include
-`.role { break-inside: avoid; }`. Without this, the paginator can split a role across
-pages — leaving the role title/meta orphaned at the bottom of one page with its
-bullets starting on the next. The wrapper keeps title + meta + bullets together: if a
-role does not fit, the whole role moves to the next page. This is the standard for all
-resume HTML files in this repo.
+The CSS in every resume must enforce three rules to prevent orphaned headings and
+split sections:
+
+1. **Experience roles** — each role wrapped in `<div class="role">` and the CSS
+   includes `.role { break-inside: avoid; }`. Without this the paginator can split a
+   role across pages — title/meta orphaned at the bottom of one page, bullets
+   starting on the next. The wrapper keeps title + meta + bullets together; if a
+   role does not fit, the whole role moves to the next page.
+2. **Section headings** — `h2 { break-after: avoid; }`. Without this an `<h2>`
+   (Education, Key Achievements, Open Source, Spoken Languages, etc.) can stay at
+   the bottom of one page while its content starts on the next — or worse, a few
+   items appear on one page and the rest on the next. `break-after: avoid` pulls the
+   heading down with its first item.
+3. **Short compact lines** — `.edu-line, .ach-line, .expertise-line { break-inside: avoid; }`.
+   These are the single-line items in Education, Key Achievements, Open Source and
+   Core Expertise. Keeping them atomic prevents a line from splitting mid-wrap if it
+   lands on a page boundary.
+
+All three are mandatory and live in the `<style>` block of every resume HTML in this
+repo. If you add a new section with its own short-line class, give it
+`break-inside: avoid` too.
 
 ## Resume formatting (decided)
 - Single column, no tables, no charts, no multi-column → ATS-friendly (Greenhouse and

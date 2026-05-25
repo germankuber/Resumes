@@ -46,6 +46,9 @@
   }
   p { margin-bottom: 3px; text-align: justify; }
   .role { break-inside: avoid; }
+  .section { break-inside: avoid; }
+  h2 { break-after: avoid; }
+  .edu-line, .ach-line, .expertise-line { break-inside: avoid; }
   .role-title { font-weight: 700; font-size: 9pt; color: #111; }
   .role-meta { font-size: 8pt; color: #555; font-style: italic; margin-bottom: 1.5px; }
   ul { margin: 1.5px 0 4px 0; padding-left: 14px; }
@@ -89,13 +92,15 @@
 
 <div class="role">
 <div class="role-title">Lead AI Architect &amp; Co-Founder</div>
-<div class="role-meta">KliverAI (Own Venture, closed Apr 2026) — Apr 2025 – Apr 2026 (full-time) — Remote, Spain</div>
+<div class="role-meta">KliverAI (Own Venture, closed Feb 2026) — Mar 2025 – Feb 2026 (full-time) — Remote, Spain</div>
 <ul>
-  <li>Shipped multi-provider LLM orchestration integrating OpenAI, Anthropic Claude, and Google Gemini through both direct APIs and managed cloud services (AWS Bedrock, Azure OpenAI Service, Google Vertex AI), with dynamic model routing for cost and performance optimization.</li>
+  <li>Shipped multi-provider LLM orchestration integrating OpenAI, Anthropic Claude, and Google Gemini through both direct APIs and managed cloud services (AWS Bedrock, Azure OpenAI Service, Google Vertex AI), with dynamic model routing to pick the best model per task and cut inference spend.</li>
+  <li>Rewrote the real-time layer from app-embedded SignalR to Azure SignalR Service with Redis-backed state, scaling concurrent users by 500% while holding sub-200ms TTFT on voice pipelines (OpenAI Realtime API).</li>
+  <li>Benchmarked TTS / STT services (ElevenLabs, Deepgram, AssemblyAI, OpenAI Whisper, Play.ht) on latency, cost, and quality — getting latency to 90ms and word accuracy to nearly 95%.</li>
   <li>Built an adaptive simulation engine with multi-agent architecture on LangGraph, including state machines, conditional routing, ReAct-style reasoning, multi-step branching logic, and RAG-powered personalization for training scenarios.</li>
   <li>Implemented function calling and structured outputs (JSON schema validation) for reliable agent-tool integration across production workflows.</li>
   <li>Shipped production RAG pipelines across Pinecone, Chroma, pgvector, and Redis (RediSearch), with semantic search, hybrid retrieval, reranking via cross-encoders, and chunking strategies tuned per use case.</li>
-  <li>Architected real-time voice AI pipelines integrating OpenAI Realtime API, Deepgram (STT), ElevenLabs (TTS), and SignalR, achieving sub-200ms TTFT (Time To First Token) across concurrent user sessions.</li>
+  <li>Architected real-time voice AI pipelines integrating OpenAI Realtime API, Deepgram (STT), ElevenLabs (TTS), and SignalR, achieving sub-200ms TTFT across concurrent user sessions.</li>
   <li>Implemented MCP (Model Context Protocol) servers and clients to standardize tool access and context integration across LLM-powered workflows.</li>
   <li>Designed a Zero-Knowledge proof system using Noir, Barretenberg, and Garaga on StarkNet for verifiable expert credentials in a decentralized evaluation marketplace.</li>
   <li>Designed and ran systematic eval safety and red-teaming frameworks, significantly reducing hallucination rate through structured evals across critical paths.</li>
@@ -106,45 +111,52 @@
 
 <div class="role">
 <div class="role-title">Fractional CTO (Part-time, hands-on)</div>
-<div class="role-meta">Rocking Product — Apr 2025 – Nov 2025 (part-time, parallel to KliverAI) — Remote</div>
+<div class="role-meta">Rocking Product — Apr 2025 – Dec 2025 (part-time, parallel to KliverAI) — Remote</div>
 <ul>
-  <li>Joined as Fractional CTO of an early-stage startup; led technical roadmap and platform direction, partnering directly with founders to translate business priorities into delivery.</li>
-  <li>Shipped AI-powered features to production using Node.js / TypeScript and Python (FastAPI, LangChain), instrumenting the team's first LLM evaluation and monitoring practices with LangSmith and Langfuse including faithfulness and correctness scoring.</li>
+  <li>Came in as Fractional CTO to an 8-engineer team and restructured it in the first quarter without stepping away from the code; ran technical interviews and hiring decisions.</li>
+  <li>Built an image embeddings service (Azure AI Vision and CLIP) to improve product matching across brand comparisons, raising accuracy and lifting the client's revenue by 40%.</li>
+  <li>Cut production bugs by 70% through team training and automated processes (testing, CI / CD, code review).</li>
   <li>Benchmarked LLM usage and optimized cloud infrastructure through semantic caching, prompt compression, and dynamic model selection across providers, cutting combined API and cloud spend by 45%.</li>
-  <li>Introduced AI-driven development workflows with autonomous agents automating code review, testing, and deployment, reducing manual operational load.</li>
-  <li>Inherited an 8-person engineering team and established structured feedback practices, code review standards, and CI / CD pipelines while remaining hands-on in the codebase.</li>
+  <li>Designed a reusable base architecture on LangChain and LangGraph with monitoring via Langfuse and LangSmith and prompt versioning; migrated the real-time LLM service from OpenAI to Azure AI Foundry for compliance and data retention, cutting latency and improving scalability.</li>
+  <li>Introduced Spec-Driven Development (SDD) and AI-driven development workflows with autonomous agents automating code review, testing, and deployment.</li>
+  <li>Shipped AI-powered features in Node.js / TypeScript and Python (FastAPI, LangChain), instrumented the team's first LLM evaluation and monitoring with LangSmith and Langfuse, and ran weekly public-speaking workshops to sharpen team communication.</li>
 </ul>
 </div>
 
 <div class="role">
 <div class="role-title">Lead Software Engineer (Distributed Systems / Blockchain)</div>
-<div class="role-meta">Borderless Capital / CTF Capital — Aug 2021 – Apr 2025 — Remote</div>
+<div class="role-meta">Borderless Capital / CTF Capital — Sep 2021 – Mar 2025 — Remote</div>
 <ul>
-  <li>Lead engineer for low-latency distributed systems in Rust (tokio, async) and Python / Cython, processing $50M+ in daily transactional flow with execution under 10ms.</li>
-  <li>Owned 24/7 production reliability and incident response for trading-critical pipelines, including on-call rotation, post-mortems, and observability ownership with Prometheus and custom Rust telemetry tracking 50+ real-time metrics.</li>
-  <li>Built high-throughput data pipelines and real-time signal processing across multi-chain ecosystems (EVM, Solana), with custom transaction delivery infrastructure achieving sub-slot inclusion (~400ms).</li>
-  <li>Pipelines processed 10K+ opportunities per day from $50M+ in daily on-chain flow and contributed $100K+ in attributable annual P&amp;L with ultra-low-latency execution under 10ms p99.</li>
-  <li>Acted as technical lead: code review, mentoring, technical interviewing, and architectural decisions across blockchain and distributed systems hires.</li>
+  <li>Lead engineer for low-latency distributed systems in Rust (tokio, async) and Python / Cython; pipelines processed 10K+ opportunities per day from $50M+ in daily on-chain flow and contributed $100K+ in attributable annual P&amp;L with execution under 10ms.</li>
+  <li>Migrated the system from Python / Cython to Rust and took it to 20x more transactions per second.</li>
+  <li>Built high-throughput data pipelines and real-time signal processing across multi-chain ecosystems (EVM, Solana), with custom transaction delivery infrastructure achieving sub-slot inclusion on Solana (~400ms); reverse-engineered Geth and Reth to improve transaction simulation and gas estimation, contributing to the REVM community.</li>
+  <li>Owned 24/7 production reliability and incident response, including on-call rotation, post-mortems, and observability ownership with Prometheus and custom Rust telemetry tracking 50+ real-time metrics.</li>
+  <li>Ran technical due diligence on 5+ projects that ended up getting funded — architecture, risk, and feasibility — acting as the CTO's technical reference on the low-level side.</li>
+  <li>Acted as technical lead across the blockchain team, which grew from 4 to 10 engineers: code review, mentoring, technical interviewing, and architectural decisions.</li>
 </ul>
 </div>
 
 <div class="role">
-<div class="role-title">Senior Software Architect (Full-Stack)</div>
-<div class="role-meta">Paramo Technology — Aug 2020 – Aug 2021 — Remote</div>
+<div class="role-title">Senior Software Architect</div>
+<div class="role-meta">Paramo Technology — Oct 2020 – Sep 2021 — Remote</div>
 <ul>
-  <li>Held company-wide architecture authority for a large-scale online casino platform — part of and accountable for every cross-team technical decision across 9+ engineering teams (200+ professionals, each with its own coordinator), working directly with the CTO and defining organization-wide engineering standards.</li>
-  <li>Designed and rolled out event-driven microservices using .NET with object-oriented design and design patterns, handling real-time game state, wallet operations, and regulatory reporting with strict consistency requirements.</li>
-  <li>Led technical interviewing and hiring across the engineering organization, calibrating screening processes to scalability needs.</li>
-  <li>Created and delivered internal training programs on architecture patterns, design patterns, testing discipline, and operational best practices.</li>
+  <li>Owned the end-to-end architecture of a high-traffic online casino (iGaming) platform handling real-time money operations and regulatory reporting, working directly with the CTO.</li>
+  <li>Spotted the issues slowing teams down and designed action plans that raised productivity by 40%, measured by features shipped and fewer errors.</li>
+  <li>Designed and rolled out event-driven microservices in .NET (C#, ASP.NET Core) for real-time game state, wallet operations, and regulatory reporting; migrated relational databases to MongoDB where it made sense.</li>
+  <li>Implemented distributed tracing across all services (OpenTelemetry, Application Insights, Datadog) to catch bugs early and resolve production issues faster.</li>
+  <li>Brought in Kubernetes to scale; built automated deploy pipelines; helped migrate services to newer .NET versions.</li>
+  <li>Led part of the hiring and designed the technical entry exam; created and delivered internal training programs on architecture patterns, design patterns, testing discipline, and operational best practices.</li>
 </ul>
 </div>
 
 <div class="role">
-<div class="role-title">Software Architect (Full-Stack)</div>
-<div class="role-meta">CloudX (Software Consultancy) — Aug 2017 – Aug 2020 — Remote / Buenos Aires</div>
+<div class="role-title">Software Architect</div>
+<div class="role-meta">CloudX (Software Consultancy) — Sep 2017 – Oct 2020 — Remote / Buenos Aires (first employee)</div>
 <ul>
-  <li>Led architecture decisions across multiple enterprise product lines, designing Angular/React frontends with reusable component libraries and Node.js / TypeScript and .NET microservices backends using Domain-Driven Design.</li>
-  <li>Delivered technical training and conference talks to partners and internal teams, and collaborated directly with clients on-site for requirements gathering and technical adoption.</li>
+  <li>Was the company's first employee; led architecture decisions across several enterprise product lines, often working on-site with clients, and helped build part of the team as it grew.</li>
+  <li>Designed Angular and React frontends with reusable component libraries and Node.js / TypeScript and .NET microservices backends using Domain-Driven Design.</li>
+  <li>Built a distributed system over geospatial data with PostGIS for a UK client.</li>
+  <li>Delivered technical training and conference talks to partners and internal teams.</li>
 </ul>
 </div>
 
@@ -152,19 +164,20 @@
 <div class="role-title">Software Architect (Angular / .NET)</div>
 <div class="role-meta">Majestic Hotel Group — Jan 2014 – Aug 2017 — Argentina</div>
 <ul>
-  <li>Designed and shipped full-stack features in Angular and .NET for internal hotel management platforms; led the migration from AngularJS to Angular 4.</li>
-  <li>Redesigned the data model and refactored backend workflows toward an event-oriented architecture, reducing coupling across integrations.</li>
+  <li>Designed and shipped full-stack features in Angular and .NET for internal hotel management platforms, first as Team Lead and later as architect; led the migration from AngularJS to Angular 2.</li>
+  <li>Redesigned the data model toward an event-oriented architecture, reducing coupling across integrations.</li>
 </ul>
 </div>
 
 <div class="role">
 <div class="role-title">.NET Web Developer</div>
-<div class="role-meta">Plus54 — Aug 2009 – Mar 2014 — Buenos Aires</div>
+<div class="role-meta">Plus54 — 2011 – 2014 — Buenos Aires (earlier: Acsys 2009–2011, IBM 2008–2009)</div>
 <ul>
   <li>Early career: built .NET web applications, internal tooling, and mobile components end-to-end; integrated external APIs with unit testing and reliable data exchange patterns.</li>
 </ul>
 </div>
 
+<div class="section">
 <h2>Key Achievements</h2>
 <p class="ach-line"><b>Real-Time AI Platform at KliverAI</b> — Multi-provider LLM orchestration across OpenAI, Anthropic, Gemini, AWS Bedrock, Azure OpenAI, and Vertex AI, with sub-200ms voice latency and full evaluation/observability stack.</p>
 <p class="ach-line"><b>45% LLM Cost Reduction at Rocking Product</b> — Cut combined API and cloud spend through semantic caching, prompt compression, and dynamic model routing in production.</p>
@@ -173,19 +186,24 @@
 <p class="ach-line"><b>Net-Baires Founder</b> — Founded and grew Argentina's largest .NET developer community to 100K+ members across 10+ years.</p>
 <p class="ach-line"><b>Polkadot Builder Program Graduate</b> — Completed Polkadot Blockchain Academy in Lisbon, Portugal (2026).</p>
 <p class="ach-line"><b>Microsoft Student Partner</b> — 5 years (2016–2021).</p>
+</div>
 
+<div class="section">
 <h2>Education &amp; Certifications</h2>
 <p class="edu-line">Microsoft Certified: Azure Solutions Architect Expert (AZ-305) — Microsoft</p>
 <p class="edu-line">Microsoft Certified: Azure Associate (AZ-104 / AZ-204 level) — Microsoft</p>
 <p class="edu-line">Microsoft MVP, Developer Technologies — Feb 2017 – Present (8 consecutive years)</p>
 <p class="edu-line">Polkadot Builder Program — Polkadot Blockchain Academy, Lisbon, Portugal (2026)</p>
 <p class="edu-line">Systems Engineer — Universidad Abierta Interamericana (UAI), Buenos Aires, Argentina (2017–2021)</p>
+</div>
 
+<div class="section">
 <h2>Open Source &amp; Community Leadership</h2>
 <p class="ach-line"><b>Net-Baires (.NET Community)</b> — Founder (2015–present). Argentina's largest .NET developer community, 100K+ members, 10+ years of monthly meetups and conferences.</p>
 <p class="ach-line"><b>Crypto Para Mortales</b> — Founder (2023–present). Spanish-language blockchain and crypto education conference.</p>
 <p class="ach-line"><b>Patrones Para Mortales</b> — Founder (2020–present). Educational content brand on software design patterns and architecture.</p>
 <p class="ach-line"><b>YouTube channel (youtube.com/@germankuber)</b> — technical deep-dives on Rust, blockchain, AI, and software architecture.</p>
+</div>
 
 <h2>Spoken Languages</h2>
 <p>Spanish: Native — English: Full Professional Proficiency — daily use in international remote teams</p>

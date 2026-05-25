@@ -10,8 +10,8 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 8.6pt;
-    line-height: 1.22;
+    font-size: 8.4pt;
+    line-height: 1.20;
     color: #1a1a1a;
   }
   .name {
@@ -41,11 +41,14 @@
     color: #2a4d7a;
     border-bottom: 1.3px solid #2a4d7a;
     padding-bottom: 1.5px;
-    margin-top: 6.5px;
-    margin-bottom: 3.5px;
+    margin-top: 5px;
+    margin-bottom: 3px;
   }
-  p { margin-bottom: 3px; text-align: justify; }
+  p { margin-bottom: 2.5px; text-align: justify; }
   .role { break-inside: avoid; }
+  .section { break-inside: avoid; }
+  h2 { break-after: avoid; }
+  .edu-line, .ach-line, .expertise-line { break-inside: avoid; }
   .role-title { font-weight: 700; font-size: 9pt; color: #111; }
   .role-meta { font-size: 8pt; color: #555; font-style: italic; margin-bottom: 1.5px; }
   ul { margin: 1.5px 0 4px 0; padding-left: 14px; }
@@ -89,13 +92,14 @@
 
 <div class="role">
 <div class="role-title">Lead Architect &amp; Co-Founder</div>
-<div class="role-meta">KliverAI (Own Venture, closed Apr 2026) — Apr 2025 – Apr 2026 (full-time) — Remote, Spain</div>
+<div class="role-meta">KliverAI (Own Venture, closed Feb 2026) — Mar 2025 – Feb 2026 (full-time) — Remote, Spain</div>
 <ul>
   <li>Architected an end-to-end polyglot platform (Node.js / TypeScript, Python, .NET, Kubernetes, AWS); owned ADRs, service boundaries, technology selection, and deployment patterns as the senior-most engineer.</li>
-  <li>Designed event-driven microservices architecture with multi-provider integration across OpenAI, Anthropic, Google Gemini, AWS Bedrock, Azure OpenAI Service, and Google Vertex AI, applying dynamic routing for cost and performance optimization.</li>
+  <li>Rewrote the real-time layer from app-embedded SignalR to Azure SignalR Service with Redis-backed state, scaling concurrent users by 500% while holding sub-200ms latency on audio pipelines through careful design of async boundaries and message flow.</li>
+  <li>Benchmarked TTS / STT services (ElevenLabs, Deepgram, AssemblyAI, OpenAI Whisper, Play.ht) on latency, cost, and quality — getting latency to 90ms and word accuracy to nearly 95%.</li>
+  <li>Designed event-driven microservices architecture with multi-provider integration across OpenAI, Anthropic, Google Gemini, AWS Bedrock, Azure OpenAI Service, and Google Vertex AI, applying dynamic routing to pick the best model per task and cut inference spend.</li>
   <li>Integrated Azure OpenAI Service for production LLM workloads and designed RAG pipelines combining vector retrieval with Azure AI Search semantic ranking for enterprise-grade context retrieval.</li>
   <li>Implemented polyglot persistence across Pinecone, Chroma, pgvector, and Redis based on access patterns, query requirements, and consistency needs.</li>
-  <li>Architected real-time audio pipelines with SignalR, achieving sub-200ms streaming latency through careful design of async boundaries and message flow.</li>
   <li>Implemented MCP (Model Context Protocol) servers and clients to standardize tool access and context integration across distributed LLM workflows.</li>
   <li>Designed a Zero-Knowledge proof system using Noir, Barretenberg, and Garaga on StarkNet for verifiable expert credentials in a decentralized evaluation marketplace.</li>
   <li>Established observability stack with OpenTelemetry GenAI semantic conventions, LangSmith, and Application Insights for distributed tracing across services.</li>
@@ -105,12 +109,14 @@
 
 <div class="role">
 <div class="role-title">Fractional CTO (Part-time, hands-on)</div>
-<div class="role-meta">Rocking Product — Apr 2025 – Nov 2025 (part-time, parallel to KliverAI) — Remote</div>
+<div class="role-meta">Rocking Product — Apr 2025 – Dec 2025 (part-time, parallel to KliverAI) — Remote</div>
 <ul>
-  <li>Joined as Fractional CTO; led technical roadmap and architectural direction for an early-stage product, partnering directly with founders to translate business priorities into delivery.</li>
-  <li>Inherited an 8-person engineering team; established code review standards, structured feedback practices, CI / CD pipelines, and engineering rituals adopted across the team.</li>
+  <li>Came in as Fractional CTO to an 8-engineer team and restructured it in the first quarter without stepping away from the code; ran technical interviews and hiring decisions.</li>
+  <li>Built an image embeddings service (Azure AI Vision and CLIP) to improve product matching across brand comparisons, raising accuracy and lifting the client's revenue by 40%.</li>
+  <li>Cut production bugs by 70% through team training and automated processes (testing, CI / CD, code review).</li>
   <li>Proposed and led a full-stack migration from a fragmented JavaScript codebase to .NET (ASP.NET Core, Entity Framework Core, SQL Server), redesigning the architecture around Clean Architecture and microservices boundaries for long-term scalability.</li>
   <li>Designed and rolled out .NET architectural standards across the team — solution structure, layering, dependency injection patterns, error handling, validation pipelines (FluentValidation, MediatR) and integration testing practices.</li>
+  <li>Migrated the real-time LLM service from OpenAI to Azure AI Foundry for compliance and data retention, cutting latency and improving scalability; introduced Spec-Driven Development (SDD).</li>
   <li>Architected AI-powered features combining .NET backend services with Node.js / TypeScript and Python (FastAPI, LangChain) AI orchestration, establishing the team's first LLM evaluation and observability practices.</li>
   <li>Optimized cloud infrastructure and LLM usage through semantic caching, prompt compression, and dynamic model selection, cutting combined API and cloud spend by 45%.</li>
 </ul>
@@ -118,35 +124,37 @@
 
 <div class="role">
 <div class="role-title">Lead Software Engineer (Distributed Systems)</div>
-<div class="role-meta">Borderless Capital / CTF Capital — Aug 2021 – Apr 2025 — Remote</div>
+<div class="role-meta">Borderless Capital / CTF Capital — Sep 2021 – Mar 2025 — Remote</div>
 <ul>
-  <li>Lead engineer for low-latency distributed systems in Rust (tokio, async) and Python / Cython, designing event-driven pipelines processing $50M+ in daily transactional flow and contributing $100K+ in attributable annual P&amp;L with execution under 10ms.</li>
+  <li>Lead engineer for low-latency distributed systems in Rust (tokio, async) and Python / Cython, designing event-driven pipelines processing 10K+ opportunities per day from $50M+ in daily transactional flow and contributing $100K+ in attributable annual P&amp;L with execution under 10ms.</li>
+  <li>Migrated the system from Python / Cython to Rust and took it to 20x more transactions per second.</li>
   <li>Designed and built a production trading bot in .NET (C#), integrating with Rust execution components and Python signal layers; owned the .NET architecture, deployment, and operational lifecycle in parallel with the broader distributed systems stack.</li>
+  <li>Ran technical due diligence on 5+ projects that ended up getting funded — architecture, risk, and feasibility — acting as the CTO's technical reference on the low-level side.</li>
   <li>Owned 24 / 7 production reliability and incident response, including on-call rotation, post-mortems, and observability ownership with Prometheus, OpenTelemetry, and custom telemetry tracking 50+ real-time metrics.</li>
-  <li>Designed high-throughput data pipelines and real-time signal processing across multi-chain blockchain ecosystems (EVM, Solana), with custom transaction delivery infrastructure achieving sub-slot inclusion.</li>
-  <li>Acted as technical lead: code review, mentoring, technical interviewing, and architectural decisions across distributed systems and blockchain hires.</li>
+  <li>Designed high-throughput data pipelines and real-time signal processing across multi-chain blockchain ecosystems (EVM, Solana), with custom transaction delivery infrastructure achieving sub-slot inclusion (~400ms); reverse-engineered Geth and Reth, contributing to the REVM community.</li>
+  <li>Acted as technical lead across the blockchain team, which grew from 4 to 10 engineers — code review, mentoring, technical interviewing, and architectural decisions.</li>
 </ul>
 </div>
 
 <div class="role">
 <div class="role-title">Senior Software Architect</div>
-<div class="role-meta">Paramo Technology — Aug 2020 – Aug 2021 — Remote</div>
+<div class="role-meta">Paramo Technology — Oct 2020 – Sep 2021 — Remote</div>
 <ul>
-  <li>Held company-wide architecture authority for a large-scale online casino platform — part of and accountable for every cross-team technical decision across 9+ engineering teams (200+ professionals, each with its own coordinator), working directly with the CTO and defining bounded contexts, service boundaries, and organization-wide engineering standards across the .NET stack.</li>
-  <li>Designed event-driven microservices in .NET (C#, ASP.NET Core) handling real-time game state, wallet operations, and regulatory reporting with strict consistency requirements.</li>
+  <li>Owned the end-to-end architecture of a high-traffic online casino (iGaming) platform handling real-time money operations and regulatory reporting, working directly with the CTO.</li>
+  <li>Spotted the issues slowing teams down and designed action plans that raised productivity by 40%, measured by features shipped and fewer errors.</li>
+  <li>Designed event-driven microservices in .NET (C#, ASP.NET Core) handling real-time game state, wallet operations, and regulatory reporting; migrated relational databases to MongoDB where it made sense.</li>
   <li>Applied object-oriented design, Domain-Driven Design (DDD) — aggregates, value objects, domain events — design patterns, and CQRS for read/write separation across complex gambling and wallet domains.</li>
-  <li>Implemented async messaging and event-driven workflows for inter-service communication, with eventual consistency patterns across bounded contexts.</li>
-  <li>Defined cloud deployment patterns on Azure with CI/CD pipelines and Infrastructure as Code; designed for high availability and disaster recovery in regulated environments.</li>
-  <li>Led technical interviewing and hiring across the engineering organization; created and delivered internal training programs on architecture patterns, design patterns, testing discipline, and operational best practices.</li>
-  <li>Partnered with product, operations, and infrastructure teams to align technical roadmap with business growth, regulatory constraints, and platform reliability.</li>
+  <li>Implemented async messaging and event-driven workflows for inter-service communication with eventual consistency patterns across bounded contexts.</li>
+  <li>Implemented distributed tracing across all services (OpenTelemetry, Application Insights, Datadog) to catch bugs early and resolve production issues faster; brought in Kubernetes to scale and built automated deploy pipelines.</li>
+  <li>Led part of the hiring and designed the technical entry exam; created and delivered internal training programs on architecture patterns, design patterns, testing discipline, and operational best practices.</li>
 </ul>
 </div>
 
 <div class="role">
-<div class="role-title">Software Architect (Full-Stack)</div>
-<div class="role-meta">CloudX (Software Consultancy) — Aug 2017 – Aug 2020 — Remote / Buenos Aires</div>
+<div class="role-title">Software Architect</div>
+<div class="role-meta">CloudX (Software Consultancy) — Sep 2017 – Oct 2020 — Remote / Buenos Aires (first employee)</div>
 <ul>
-  <li>Led architecture decisions across multiple enterprise product lines, designing microservices backends in .NET (C#, ASP.NET) using Domain-Driven Design with strategic and tactical patterns.</li>
+  <li>Was the company's first employee; led architecture decisions across several enterprise product lines, designing microservices backends in .NET (C#, ASP.NET) using Domain-Driven Design with strategic and tactical patterns.</li>
   <li>Applied Clean Architecture and Hexagonal patterns for service boundaries, ensuring testability, evolvability, and decoupling of business logic from infrastructure concerns.</li>
   <li>Built reusable Angular and React frontends with component libraries shared across enterprise product lines, working with TypeScript / Node.js tooling and modern UI architecture patterns.</li>
   <li>Designed integration patterns and API contracts across multiple products and external systems, including REST APIs, async messaging, and service contracts.</li>
@@ -159,21 +167,22 @@
 <div class="role-title">Software Architect (Angular / .NET)</div>
 <div class="role-meta">Majestic Hotel Group — Jan 2014 – Aug 2017 — Argentina</div>
 <ul>
-  <li>Designed and shipped full-stack features in Angular and .NET for internal hotel management platforms across booking, inventory, and operations.</li>
-  <li>Led the migration from AngularJS to Angular 4, modernizing component architecture and TypeScript adoption across the codebase.</li>
-  <li>Redesigned the data model and refactored backend workflows toward an event-oriented architecture, reducing coupling across integrations and improving system maintainability.</li>
+  <li>Designed and shipped full-stack features in Angular and .NET for internal hotel management platforms across booking, inventory, and operations, first as Team Lead and later as architect.</li>
+  <li>Led the migration from AngularJS to Angular 2, modernizing component architecture and TypeScript adoption across the codebase.</li>
+  <li>Redesigned the data model toward an event-oriented architecture, reducing coupling across integrations and improving system maintainability.</li>
   <li>Defined coding standards, code review practices, and architectural patterns for the engineering team.</li>
 </ul>
 </div>
 
 <div class="role">
 <div class="role-title">.NET Web Developer</div>
-<div class="role-meta">Plus54 — Aug 2009 – Mar 2014 — Buenos Aires</div>
+<div class="role-meta">Plus54 — 2011 – 2014 — Buenos Aires (earlier: Acsys 2009–2011, IBM 2008–2009)</div>
 <ul>
   <li>Early career: built .NET web applications, internal tooling, and mobile components end-to-end; integrated external APIs with unit testing and reliable data exchange patterns.</li>
 </ul>
 </div>
 
+<div class="section">
 <h2>Key Achievements</h2>
 <p class="ach-line"><b>Microsoft MVP, Developer Technologies</b> — 8 consecutive years (2017–present), recognized for technical content and community contributions across the .NET and Microsoft ecosystem.</p>
 <p class="ach-line"><b>Microsoft Certified: Azure Solutions Architect Expert (AZ-305)</b> — Senior-level Azure architecture credential covering identity, governance, monitoring, data, business continuity, and infrastructure design.</p>
@@ -182,19 +191,24 @@
 <p class="ach-line"><b>Distributed Systems Engineering at Borderless</b> — Designed low-latency Rust / Python distributed systems processing $50M+ in daily transactional flow and contributing $100K+ in attributable annual P&amp;L with execution under 10ms.</p>
 <p class="ach-line"><b>Polkadot Builder Program Graduate</b> — Completed Polkadot Blockchain Academy in Lisbon, Portugal (2026).</p>
 <p class="ach-line"><b>Microsoft Student Partner</b> — 5 years (2016–2021).</p>
+</div>
 
+<div class="section">
 <h2>Education &amp; Certifications</h2>
 <p class="edu-line">Microsoft Certified: Azure Solutions Architect Expert (AZ-305) — Microsoft</p>
 <p class="edu-line">Microsoft Certified: Azure Associate (AZ-104 / AZ-204 level) — Microsoft</p>
 <p class="edu-line">Microsoft MVP, Developer Technologies — Feb 2017 – Present (8 consecutive years)</p>
 <p class="edu-line">Polkadot Builder Program — Polkadot Blockchain Academy, Lisbon, Portugal (2026)</p>
 <p class="edu-line">Systems Engineer — Universidad Abierta Interamericana (UAI), Buenos Aires, Argentina (2017–2021)</p>
+</div>
 
+<div class="section">
 <h2>Open Source &amp; Community Leadership</h2>
 <p class="ach-line"><b>Net-Baires (.NET Community)</b> — Founder (2015–present). Argentina's largest .NET developer community, 100K+ members, 10+ years of monthly meetups and conferences.</p>
 <p class="ach-line"><b>Patrones Para Mortales</b> — Founder (2020–present). Educational content brand on software design patterns and architecture.</p>
 <p class="ach-line"><b>Crypto Para Mortales</b> — Founder (2023–present). Spanish-language blockchain and crypto education conference.</p>
 <p class="ach-line"><b>YouTube channel (youtube.com/@germankuber)</b> — technical deep-dives on .NET, Azure, software architecture, Rust, blockchain, and AI.</p>
+</div>
 
 <h2>Spoken Languages</h2>
 <p>Spanish: Native — English: Full Professional Proficiency — daily use in international remote teams</p>
