@@ -130,10 +130,21 @@ The technology of each resume is identified by its folder name:
   `Python/`, `Rust/`
 
 ## File naming convention (required)
-Inside every folder, the HTML and the PDF must both be named `Germán Küber` so the
-filename stays consistent everywhere:
-- `Germán Küber.html`
-- `Germán Küber.pdf`
+Inside every folder there is **one HTML** and **two PDFs**, all generated from the
+same source:
 
-The folder name is what distinguishes one resume from another — the file names are
-always identical across folders.
+- `Germán Küber.html` — the single source of truth for this resume.
+- `Germán Küber.pdf` — canonical short name, kept stable for backward compatibility
+  with other skills and tooling.
+- `Germán Küber <Folder>.pdf` — recruiter-friendly copy where `<Folder>` is the
+  literal folder name (no transformation, no shortening). Same content as the
+  canonical PDF — only the filename differs. Examples:
+  - `Blockchain/` → `Germán Küber Blockchain.pdf`
+  - `AI/` → `Germán Küber AI.pdf`
+  - `dotnet Architect/` → `Germán Küber dotnet Architect.pdf`
+  - `Engineering Manager/` → `Germán Küber Engineering Manager.pdf`
+
+Both PDFs must always be regenerated together (they share the HTML — they only
+diverge in filename). The folder name is what distinguishes one resume from
+another at the directory level; the long-name PDF surfaces that distinction in the
+file itself, which is what a recruiter sees when downloaded.
