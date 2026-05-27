@@ -89,9 +89,15 @@ All three are mandatory and live in the `<style>` block of every resume HTML in 
 repo. If you add a new section with its own short-line class, give it
 `break-inside: avoid` too.
 
-## Resume formatting (decided)
-- Single column, no tables, no charts, no multi-column → ATS-friendly (Greenhouse and
-  others). Tables/columns break parsing.
+## Resume formatting (ATS folders only)
+
+These rules apply to the 9 ATS folders. The `Human/` resume intentionally breaks
+several of them (it has a photo, web fonts, Font Awesome icons, and decorated
+section blocks) because its audience is humans, not parsers — see
+`Human/CLAUDE.md`.
+
+- Single column, no tables, no charts, no multi-column → ATS-friendly (Greenhouse
+  and others). Tables/columns break parsing.
 - 2 pages preferred, but not a hard limit — a resume may go longer if the content
   justifies it. Do not cut real content just to hit 2 pages.
 - Sans-serif font (Helvetica/Arial), headers in blue `#2a4d7a` with a bottom border.
@@ -124,14 +130,51 @@ Worked and validated for the Blockchain resume → useful reference for the othe
   on the client.
 
 ## Repo layout
-One folder per resume, each containing the HTML and its generated PDF.
-The technology of each resume is identified by its folder name:
-- `Blockchain/`, `AI/`, `Backend/`, `CTO/`, `dotnet Architect/`, `Full stack/`,
-  `Python/`, `Rust/`
 
-## File naming convention (required)
-Inside every folder there is **one HTML** and **two PDFs**, all generated from the
-same source:
+Two kinds of resume coexist in this repo. They share data and audience-of-record,
+but they have different stacks, styling, and rendering pipelines.
+
+### ATS resumes (the original 9)
+
+One folder per resume, each containing the HTML and its generated PDFs. The
+technology of each resume is identified by its folder name:
+
+- `AI/`, `Backend/`, `Blockchain/`, `CTO/`, `dotnet Architect/`,
+  `Engineering Manager/`, `Full stack/`, `Python/`, `Rust/`
+
+Stack: **Python + WeasyPrint**. No photo. Single column. ATS-safe.
+
+### Human resume (`Human/`)
+
+One folder, one HTML, one PDF — same person, but written for human readers
+(LinkedIn, the "Download PDF" button on germankuber.com, a hiring manager who's
+already interested).
+
+Stack: **Node + Puppeteer**. Has a photo. Has a Performance Arts section.
+Uses web fonts and Font Awesome. Read `Human/CLAUDE.md` before touching it.
+
+### How `/update-resume` ties them together
+
+When a change is applied to one or more ATS folders, the skill asks at the end
+whether to propagate the same change to `Human/` (adapting tone — narrative
+instead of keyword-dense). Factual changes (metrics, dates, titles) should
+generally propagate; tech-specific micro-detail typically should not. The
+skill defaults to asking; you decide per-change.
+
+### How `/publish-resume` ties Human/ to the website
+
+`Resumes/Human/Germán Küber.pdf` is the source of truth for the resume served
+behind the "Download PDF" button on germankuber.com. The `/publish-resume`
+skill copies it to `../PersonalSite/personal-site/public/Germán Küber.pdf`,
+commits and pushes — Vercel auto-deploys. Never copy that file by hand.
+
+## File naming convention (required — ATS folders only)
+
+This convention applies to the 9 ATS folders. It does NOT apply to `Human/`,
+which uses Puppeteer and emits a single `Germán Küber.pdf`.
+
+Inside every ATS folder there is **one HTML** and **two PDFs**, all generated from
+the same source:
 
 - `Germán Küber.html` — the single source of truth for this resume.
 - `Germán Küber.pdf` — canonical short name, kept stable for backward compatibility
