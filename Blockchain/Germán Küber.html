@@ -46,6 +46,9 @@
   }
   p { margin-bottom: 3px; text-align: justify; }
   .role { break-inside: avoid; }
+  .section { break-inside: avoid; }
+  h2 { break-after: avoid; }
+  .edu-line, .ach-line, .expertise-line { break-inside: avoid; }
   .role-title { font-weight: 700; font-size: 9pt; color: #111; }
   .role-meta { font-size: 8pt; color: #555; font-style: italic; margin-bottom: 1.5px; }
   ul { margin: 1.5px 0 4px 0; padding-left: 14px; }
@@ -63,17 +66,18 @@
 <div class="name">GERMÁN KÜBER</div>
 <div class="title">Senior Blockchain Engineer — Rust, Node.js / TypeScript, MEV &amp; Multi-Chain Infrastructure</div>
 <div class="contact">
-  Las Palmas, Spain (EU Citizen) — Remote — EU / Americas (UTC-5 to UTC+2) — +34 666 844 731<br>
-  german.kuber@gmail.com — linkedin.com/in/germankuber — github.com/GermanKuber — germankuber.com
+  Las Palmas, Spain · EU Citizen — authorized to work across the EU/EEA, no visa sponsorship required<br>
+  Open to relocation within the EU (self-funded) · Remote-first · german.kuber@gmail.com<br>
+  +34 666 844 731 · linkedin.com/in/germankuber · github.com/GermanKuber · germankuber.com
 </div>
 
 <h2>Professional Summary</h2>
-<p>Senior backend and blockchain engineer with 15+ years in distributed systems and 4+ years shipping production blockchain infrastructure. Polyglot across <b>Rust (tokio, async), TypeScript / Node.js, Python / Cython and .NET</b>, building and operating high-volume on-chain transaction systems across EVM (Ethereum, Arbitrum, Optimism, Base) and non-EVM chains (Solana, StarkNet, Polkadot). At Borderless, operated MEV searcher pipelines processing $50M+ in daily on-chain volume, integrating directly with DeFi protocols — AMMs (Uniswap V2/V3, Curve, Raydium, PumpSwap) and lending markets (Aave) — using <b>ethers.js, viem, web3.js and @solana/web3.js</b> alongside Rust-side execution. Deep hands-on knowledge of transaction lifecycles, consensus mechanisms, smart-contract interaction, on-chain data and cryptographic primitives. Microservices in production CI/CD (Kubernetes, AWS/Azure). Active open-source contributor through 80+ international talks and Net-Baires (100K+ members).</p>
+<p>Senior backend and blockchain engineer with 15+ years in distributed systems and 4+ years shipping production blockchain infrastructure. Polyglot across <b>Rust (tokio, async), TypeScript / Node.js, Python / Cython and .NET</b>, building and operating high-volume on-chain transaction systems across EVM (Ethereum, Arbitrum, Optimism, Base) and non-EVM chains (Solana, StarkNet, Polkadot). At Borderless, operated MEV searcher pipelines processing $50M+ in daily on-chain volume, integrating directly with DeFi protocols — AMMs (Uniswap V2/V3, Curve, Raydium, PumpSwap) and lending markets (Aave) — using <b>ethers.js, viem, web3.js and @solana/web3.js</b> alongside Rust-side execution. Deep hands-on knowledge of transaction lifecycles, consensus mechanisms, smart-contract interaction, on-chain data and cryptographic primitives. Microservices in production CI/CD (Kubernetes, AWS/Azure). Active open-source contributor through 80+ international talks and Net-Baires (100K+ members). EU citizen (Spanish nationality) with full authorization to work across the EU/EEA — no visa or sponsorship required — open to self-funded relocation anywhere in the EU.</p>
 
 <h2>Core Expertise</h2>
 <p class="expertise-line"><b>MEV Infrastructure:</b> MEV searcher pipelines, transaction delivery, validator / TPU routing, mempool analysis, sandwich attacks, arbitrage detection, liquidation detection, gas optimization, sub-slot execution. Flashbots stack: MEV-Boost, Suave, MEV-Share, PBS (Proposer-Builder Separation), relays. Jito stack: bundles, BAM (Block Assembly Marketplace), BuilderNet, Jito-Solana, Agave</p>
 <p class="expertise-line"><b>Blockchain &amp; Web3:</b> EVM (Ethereum, Arbitrum, Optimism, Base), Solana, StarkNet, Polkadot SDK / Substrate / FRAME / XCM, parachains, runtime upgrades, smart contracts, account abstraction (ERC-4337), cross-chain flow modeling, DEX integration (Uniswap V2 / V3, Curve, Raydium, PumpSwap), lending markets (Aave), Ethereum clients (Geth reverse-engineering, familiar with Reth, Lighthouse, Prysm)</p>
-<p class="expertise-line"><b>Programming Languages &amp; Smart Contracts:</b> Rust (tokio, async), TypeScript / Node.js, Solidity, Cairo, Python, Cython, Go, JavaScript, C# / .NET</p>
+<p class="expertise-line"><b>Programming Languages &amp; Smart Contracts:</b> Rust (tokio, async), TypeScript / Node.js, Solidity, Cairo, Python, Cython, Go, C++, JavaScript, C# / .NET</p>
 <p class="expertise-line"><b>Web3 Tooling &amp; Libraries:</b> ethers.js, viem, web3.js, @solana/web3.js, Foundry / Forge, Anchor (Solana), Hardhat</p>
 <p class="expertise-line"><b>Distributed Systems &amp; Networking:</b> Low-latency networking (sub-10ms execution), async runtimes (tokio), concurrency, multi-threaded systems, fault tolerance, high-throughput pipelines, P2P networking, consensus protocols (hands-on with GRANDPA / BABE, familiar with Tendermint and Raft), gRPC, Protocol Buffers, event-driven architectures</p>
 <p class="expertise-line"><b>Cryptography &amp; Zero-Knowledge:</b> ZK proofs (Noir, Barretenberg, Garaga on StarkNet, Cairo), ZK-SNARKs / STARKs, account abstraction (ERC-4337), digital signatures, hashing, Merkle trees, cryptographic primitives applied to MEV, on-chain monitoring, and verifiable computation</p>
@@ -86,62 +90,68 @@
 
 <div class="role">
 <div class="role-title">Lead Software Engineer (Blockchain / MEV)</div>
-<div class="role-meta">Borderless Capital / CTF Capital — Aug 2021 – Apr 2025 — Remote</div>
+<div class="role-meta">Borderless Capital / CTF Capital — Sep 2021 – Mar 2025 — Remote</div>
 <ul>
   <li>Shipped and operated production MEV searcher infrastructure in Rust (tokio, async) and Python / Cython across EVM (Ethereum, Arbitrum, Optimism) and Solana, owning architecture, code review, mentoring, and performance optimization while remaining hands-on in production code.</li>
+  <li>Migrated the system from Python / Cython to Rust and took it to 20x more transactions per second.</li>
   <li>Built Node.js / TypeScript services and tooling that interact with DeFi protocols on-chain — AMMs (Uniswap V2/V3, Curve, Raydium, PumpSwap) and lending markets (Aave) — using ethers.js, viem, web3.js and @solana/web3.js for protocol analysis, on-chain data reads and transaction submission.</li>
   <li>Integrated with the Flashbots stack — MEV-Boost, Suave, MEV-Share, PBS, and relays — for Ethereum MEV execution and bundle submission.</li>
   <li>Integrated with the Jito ecosystem on Solana — bundles, BAM (Block Assembly Marketplace), BuilderNet, Agave, and the Jito-Solana fork — for sub-slot transaction inclusion and validator routing.</li>
   <li>Pipelines processed 10K+ opportunities per day from $50M+ in daily on-chain flow and contributed $100K+ in attributable annual P&amp;L with ultra-low-latency execution under 10ms p99.</li>
   <li>Built custom transaction delivery infrastructure with parallel broadcasting across RPC endpoints and direct validator / TPU routes, achieving sub-slot Solana inclusion (~400ms).</li>
   <li>Designed strategy logic for liquidation detection, multi-hop arbitrage across 5+ DEXs, and cross-chain flow modeling across EVM and Solana.</li>
-  <li>Reverse-engineered Geth (Go-Ethereum) internals to inform Rust-side designs for transaction simulation and gas estimation in internal trading tools.</li>
+  <li>Reverse-engineered Geth and Reth to improve transaction simulation and gas estimation, contributing to the REVM community.</li>
+  <li>Ran technical due diligence on 5+ projects that ended up getting funded — architecture, risk, and feasibility — acting as the CTO's technical reference on the low-level side.</li>
   <li>Engineered low-latency observability with Prometheus and custom Rust telemetry, instrumenting 50+ real-time metrics across slot timing, validator rotation, and execution outcomes.</li>
-  <li>Owned 24/7 production reliability and incident response for trading-critical pipelines, including on-call rotation, post-mortems, and observability ownership.</li>
+  <li>Helped build the blockchain team, which grew from 4 to 10 engineers — code review, mentoring, technical interviewing, and 24/7 incident response with on-call rotation and post-mortems.</li>
 </ul>
 </div>
 
 <div class="role">
 <div class="role-title">Lead AI Architect &amp; Co-Founder</div>
-<div class="role-meta">KliverAI (Own Venture, closed Apr 2026) — Apr 2025 – Apr 2026 (full-time) — Remote, Spain</div>
+<div class="role-meta">KliverAI (Own Venture, closed Feb 2026) — Mar 2025 – Feb 2026 (full-time) — Remote, Spain</div>
 <ul>
   <li>Designed a Zero-Knowledge proof system using Noir, Barretenberg, and Garaga on StarkNet for verifiable expert credentials in a decentralized evaluation marketplace.</li>
   <li>Owned technical strategy, architectural decisions, and delivery as the senior-most engineer; led platform development end-to-end on a polyglot stack (Node.js / TypeScript, Python, .NET, Kubernetes, AWS).</li>
-  <li>Architected real-time audio pipelines using OpenAI Realtime API and SignalR, achieving sub-200ms streaming latency across concurrent user sessions.</li>
+  <li>Rewrote the real-time layer from app-embedded SignalR to Azure SignalR Service with Redis-backed state, scaling concurrent users by 500% while holding sub-200ms latency on audio pipelines (OpenAI Realtime API).</li>
+  <li>Benchmarked TTS / STT services (ElevenLabs, Deepgram, AssemblyAI, OpenAI Whisper, Play.ht) on latency, cost, and quality — getting latency to 90ms and word accuracy to nearly 95%.</li>
   <li>Built an adaptive simulation engine with multi-agent architecture on LangGraph, including multi-step branching logic and RAG-powered personalization.</li>
-  <li>Integrated three LLM providers (OpenAI, Anthropic, Gemini) with dynamic model routing for cost and performance optimization.</li>
+  <li>Integrated three LLM providers (OpenAI, Anthropic, Gemini) with dynamic model routing, picking the best model per task to cut inference spend.</li>
   <li>Hired and led a distributed team of up to 3 engineers, conducting technical interviews and final hiring decisions.</li>
 </ul>
 </div>
 
 <div class="role">
 <div class="role-title">Fractional CTO (Part-time, hands-on)</div>
-<div class="role-meta">Rocking Product — Apr 2025 – Nov 2025 (part-time, parallel to KliverAI) — Remote / Buenos Aires</div>
+<div class="role-meta">Rocking Product — Apr 2025 – Dec 2025 (part-time, parallel to KliverAI) — Remote</div>
 <ul>
-  <li>Led technical roadmap and platform direction for an early-stage product, inheriting an 8-person engineering team and partnering directly with founders to translate business priorities into delivery.</li>
-  <li>Shipped multiple production products on a Node.js / TypeScript and Python (FastAPI, LangChain) stack, establishing the team's first LLM evaluation and monitoring practices.</li>
+  <li>Came in as Fractional CTO to an 8-engineer team and restructured it in the first quarter without stepping away from the code; ran technical interviews and hiring decisions.</li>
+  <li>Built an image embeddings service (Azure AI Vision and CLIP) to improve product matching across brand comparisons, raising accuracy and lifting the client's revenue by 40%.</li>
+  <li>Cut production bugs by 70% through team training and automated processes (testing, CI / CD, code review).</li>
   <li>Optimized LLM usage and cloud infrastructure through model selection, prompt compression, and semantic caching, cutting combined API and cloud spend by 45%.</li>
-  <li>Proposed and led a full-stack migration from a fragmented JavaScript codebase to .NET, modernizing the architecture for long-term scalability.</li>
+  <li>Designed a reusable base architecture on LangChain and LangGraph with monitoring via Langfuse and LangSmith; introduced Spec-Driven Development (SDD); proposed and led a full-stack migration from a fragmented JavaScript codebase to .NET.</li>
 </ul>
 </div>
 
 <div class="role">
-<div class="role-title">Senior Software Architect (Full-Stack)</div>
-<div class="role-meta">Paramo Technology — Aug 2020 – Aug 2021 — Remote / Argentina</div>
+<div class="role-title">Senior Software Architect</div>
+<div class="role-meta">Paramo Technology — Oct 2020 – Sep 2021 — Remote</div>
 <ul>
-  <li>Held company-wide architecture authority for a large-scale online casino platform — part of and accountable for every cross-team technical decision across 9+ engineering teams (200+ professionals, each with its own coordinator), working directly with the CTO and defining organization-wide engineering standards.</li>
-  <li>Designed and rolled out event-driven microservices using .NET handling real-time game state, wallet operations, and regulatory reporting with strict consistency requirements.</li>
-  <li>Created and delivered internal training programs on architecture patterns, testing discipline, and operational best practices.</li>
-  <li>Partnered with product, operations, and infrastructure teams to align technical roadmap with business growth, regulatory constraints, and platform reliability.</li>
+  <li>Owned the end-to-end architecture of a high-traffic online casino (iGaming) platform handling real-time money operations and regulatory reporting, working directly with the CTO.</li>
+  <li>Spotted the issues slowing teams down and designed action plans that raised productivity by 40%, measured by features shipped and fewer errors.</li>
+  <li>Designed and rolled out event-driven microservices in .NET handling real-time game state, wallet operations, and regulatory reporting; migrated relational databases to MongoDB where it made sense.</li>
+  <li>Implemented distributed tracing (OpenTelemetry, Application Insights, Datadog) to catch bugs early and resolve production issues faster; brought in Kubernetes to scale and built automated deploy pipelines.</li>
+  <li>Led part of the hiring and designed the technical entry exam; delivered internal training on architecture patterns, testing discipline, and operational best practices.</li>
 </ul>
 </div>
 
 <div class="role">
-<div class="role-title">Software Architect (Full-Stack)</div>
-<div class="role-meta">CloudX (Software Consultancy) — Aug 2017 – Aug 2020 — Buenos Aires</div>
+<div class="role-title">Software Architect</div>
+<div class="role-meta">CloudX (Software Consultancy) — Sep 2017 – Oct 2020 — Remote / Buenos Aires (first employee)</div>
 <ul>
-  <li>Led architecture across multiple enterprise product lines as part of a software consultancy, designing Angular/React frontends and Node.js / TypeScript and .NET microservices backends using Domain-Driven Design, delivered for a range of clients.</li>
-  <li>Delivered technical training and conference talks to partners and internal teams, and collaborated directly with clients on-site for requirements gathering and technical adoption.</li>
+  <li>Was the company's first employee; led architecture decisions across several enterprise product lines, often working on-site with clients, and helped build part of the team as it grew.</li>
+  <li>Designed Angular and React frontends and Node.js / TypeScript and .NET microservices backends using Domain-Driven Design across multiple enterprise product lines.</li>
+  <li>Built a distributed system over geospatial data with PostGIS for a UK client; delivered technical training and conference talks to partners and internal teams.</li>
 </ul>
 </div>
 
@@ -149,19 +159,20 @@
 <div class="role-title">Software Architect (Angular / .NET)</div>
 <div class="role-meta">Majestic Hotel Group — Jan 2014 – Aug 2017 — Argentina</div>
 <ul>
-  <li>Designed and shipped full-stack features in Angular and .NET for internal hotel management platforms; led the migration from AngularJS to Angular 4.</li>
-  <li>Redesigned the data model and refactored backend workflows toward an event-oriented architecture, reducing coupling across integrations.</li>
+  <li>Designed and shipped full-stack features in Angular and .NET for internal hotel management platforms, first as Team Lead and later as architect; led the migration from AngularJS to Angular 2.</li>
+  <li>Redesigned the data model toward an event-oriented architecture, reducing coupling across integrations.</li>
 </ul>
 </div>
 
 <div class="role">
 <div class="role-title">.NET Web Developer</div>
-<div class="role-meta">Plus54 — Aug 2009 – Mar 2014 — Buenos Aires</div>
+<div class="role-meta">Plus54 — 2011 – 2014 — Buenos Aires (earlier: Acsys 2009–2011, IBM 2008–2009)</div>
 <ul>
   <li>Early career: built .NET web applications, internal tooling, and mobile components end-to-end; integrated external APIs with unit testing and reliable data exchange patterns.</li>
 </ul>
 </div>
 
+<div class="section">
 <h2>Key Achievements</h2>
 <p class="ach-line"><b>MEV Infrastructure at Borderless</b> — Rust and Cython pipelines processing $50M+ in daily on-chain volume and contributing $100K+ in attributable annual P&amp;L.</p>
 <p class="ach-line"><b>Polkadot Builder Program Graduate</b> — Completed Polkadot Blockchain Academy in Lisbon, Portugal (2026).</p>
@@ -169,19 +180,24 @@
 <p class="ach-line"><b>80+ International Technical Talks</b> — .NET Conf, DevFest, NetCoreConf, vOpen, Global Azure Bootcamp, and meetups across LATAM and Europe.</p>
 <p class="ach-line"><b>Net-Baires Founder</b> — Founded and grew Argentina's largest .NET developer community to 100K+ members across 10+ years.</p>
 <p class="ach-line"><b>Microsoft Student Partner</b> — 5 years (2016–2021).</p>
+</div>
 
+<div class="section">
 <h2>Education &amp; Certifications</h2>
 <p class="edu-line">Microsoft Certified: Azure Solutions Architect Expert (AZ-305) — Microsoft</p>
 <p class="edu-line">Microsoft Certified: Azure Associate (AZ-104 / AZ-204 level) — Microsoft</p>
 <p class="edu-line">Polkadot Builder Program — Polkadot Blockchain Academy, Lisbon, Portugal (2026)</p>
 <p class="edu-line">Systems Engineer — Universidad Abierta Interamericana (UAI), Buenos Aires, Argentina (2017–2021)</p>
 <p class="edu-line">Microsoft MVP, Developer Technologies — Feb 2017 – Present (8 consecutive years)</p>
+</div>
 
+<div class="section">
 <h2>Open Source &amp; Community Leadership</h2>
 <p class="ach-line"><b>Net-Baires (.NET Community)</b> — Founder (2015–present). Argentina's largest .NET developer community, 100K+ members, 10+ years of monthly meetups and conferences.</p>
 <p class="ach-line"><b>Crypto Para Mortales</b> — Founder (2023–present). Spanish-language blockchain and crypto education conference.</p>
 <p class="ach-line"><b>Patrones Para Mortales</b> — Founder (2020–present). Educational content brand on software design patterns and architecture.</p>
 <p class="ach-line"><b>YouTube channel (youtube.com/@germankuber)</b> — technical deep-dives on Rust, blockchain, AI, and software architecture.</p>
+</div>
 
 <h2>Spoken Languages</h2>
 <p>Spanish: Native — English: Full Professional Proficiency — daily use in international remote teams</p>

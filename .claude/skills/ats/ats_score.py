@@ -18,6 +18,12 @@ match — resumes sorted by overall match descending. With --json: the full per-
 report (overall %, sub-scores, matched list with exact/synonym tags, missing list)
 that /ats-deep consumes.
 
+Matching is substring-based and case-insensitive. Before comparing, both the
+keyword and the resume text are run through normalize_seps(): hyphen, slash and
+underscore (and whitespace runs) collapse to a single space, so "problem-solving",
+"problem solving" and "CI/CD" vs "CI / CD" are treated as the same token. '+', '#'
+and '.' are intentionally preserved so "C++", "C#" and ".NET" never collapse.
+
 keywords.json SHAPE:
 {
   "job_title": "Senior Backend Engineer",
@@ -31,6 +37,11 @@ keywords.json SHAPE:
 
 category is one of: hard_skill, tool, title, other_keyword, soft_skill, qualification.
 "qualification" keywords are NOT scored in the % — the skill gates them separately.
+
+frequency is NOT a literal appearance count. It is the keyword's CENTRALITY to the
+role on a 1-3 scale (3 = defining requirement, 2 = day-to-day, 1 = nice-to-have).
+The score uses w = WEIGHTS[category] * min(frequency, 3), so frequency is the lever
+that separates the core stack from supporting/niche keywords.
 """
 import json
 import os
@@ -39,6 +50,22 @@ import sys
 
 WEIGHTS = {"hard_skill": 3, "tool": 3, "title": 3, "other_keyword": 2, "soft_skill": 1}
 RESUME_FILENAME = "Germán Küber.html"
+
+# Separators collapsed to a single space before matching, on BOTH the keyword and
+# the resume text. Whitelist is deliberately conservative: only hyphen, slash and
+# underscore. '+', '#' and '.' are NEVER touched so "C++", "C#" and ".NET" survive.
+_SEP_RE = re.compile(r"[-/_]+")
+_WS_RE = re.compile(r"\s+")
+
+
+def normalize_seps(s: str) -> str:
+    """Collapse -, /, _ and runs of whitespace to a single space; lowercased.
+
+    Makes the substring match robust to spelling variants of the SAME token:
+    "problem-solving" == "problem solving", "CI/CD" == "CI / CD" == "ci-cd".
+    Does not touch +, # or . — "C++"/"C#"/".NET" must not collapse.
+    """
+    return _WS_RE.sub(" ", _SEP_RE.sub(" ", s.lower())).strip()
 
 # ANSI colors
 RESET = "\033[0m"
@@ -81,19 +108,23 @@ def list_resumes(repo_root: str):
     return out
 
 
-def classify(kw: dict, text: str):
-    """Return (match_tag, credit) for one keyword against one resume's text."""
-    term = kw["term"].lower()
-    if term in text:
+def classify(kw: dict, norm_text: str):
+    """Return (match_tag, credit) for one keyword against one resume's text.
+
+    `norm_text` is the resume text already passed through normalize_seps().
+    The keyword term and each synonym are normalized the same way before the
+    substring test, so separator variants of one token match deterministically.
+    """
+    if normalize_seps(kw["term"]) in norm_text:
         return "exact", 1.0
     for syn in kw.get("synonyms", []):
-        if syn.lower() in text:
+        if normalize_seps(syn) in norm_text:
             return "synonym:" + syn, 0.9
     return "absent", 0.0
 
 
 def score_resume(name: str, html_path: str, scored_kws: list) -> dict:
-    text = strip_html(open(html_path, encoding="utf-8").read())
+    text = normalize_seps(strip_html(open(html_path, encoding="utf-8").read()))
     tot_w = got_w = 0.0
     cat_tot: dict = {}
     cat_got: dict = {}

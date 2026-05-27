@@ -1,0 +1,19 @@
+{
+  "name": "germankuberresume",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Germán Küber's Resume",
+  "scripts": {
+    "pdf": "node scripts/pdf.js",
+    "readme": "node scripts/readme.js",
+    "sync": "node scripts/sync.js",
+    "build": "node scripts/pdf.js && node scripts/readme.js && node scripts/sync.js",
+    "dev": "open resume.html"
+  },
+  "keywords": [],
+  "author": "Germán Küber",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^24.0.0"
+  }
+}

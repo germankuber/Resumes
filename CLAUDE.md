@@ -67,16 +67,37 @@ body), `line-height` (~1.22), page margins (`@page margin: 1cm 1.3cm`), and `mar
 on `<h2>`. Fine trims, not a redesign.
 
 ## Page-break guardrail (required)
-Each experience role must be wrapped in `<div class="role">` and the CSS must include
-`.role { break-inside: avoid; }`. Without this, the paginator can split a role across
-pages — leaving the role title/meta orphaned at the bottom of one page with its
-bullets starting on the next. The wrapper keeps title + meta + bullets together: if a
-role does not fit, the whole role moves to the next page. This is the standard for all
-resume HTML files in this repo.
+The CSS in every resume must enforce three rules to prevent orphaned headings and
+split sections:
 
-## Resume formatting (decided)
-- Single column, no tables, no charts, no multi-column → ATS-friendly (Greenhouse and
-  others). Tables/columns break parsing.
+1. **Experience roles** — each role wrapped in `<div class="role">` and the CSS
+   includes `.role { break-inside: avoid; }`. Without this the paginator can split a
+   role across pages — title/meta orphaned at the bottom of one page, bullets
+   starting on the next. The wrapper keeps title + meta + bullets together; if a
+   role does not fit, the whole role moves to the next page.
+2. **Section headings** — `h2 { break-after: avoid; }`. Without this an `<h2>`
+   (Education, Key Achievements, Open Source, Spoken Languages, etc.) can stay at
+   the bottom of one page while its content starts on the next — or worse, a few
+   items appear on one page and the rest on the next. `break-after: avoid` pulls the
+   heading down with its first item.
+3. **Short compact lines** — `.edu-line, .ach-line, .expertise-line { break-inside: avoid; }`.
+   These are the single-line items in Education, Key Achievements, Open Source and
+   Core Expertise. Keeping them atomic prevents a line from splitting mid-wrap if it
+   lands on a page boundary.
+
+All three are mandatory and live in the `<style>` block of every resume HTML in this
+repo. If you add a new section with its own short-line class, give it
+`break-inside: avoid` too.
+
+## Resume formatting (ATS folders only)
+
+These rules apply to the 9 ATS folders. The `Human/` resume intentionally breaks
+several of them (it has a photo, web fonts, Font Awesome icons, and decorated
+section blocks) because its audience is humans, not parsers — see
+`Human/CLAUDE.md`.
+
+- Single column, no tables, no charts, no multi-column → ATS-friendly (Greenhouse
+  and others). Tables/columns break parsing.
 - 2 pages preferred, but not a hard limit — a resume may go longer if the content
   justifies it. Do not cut real content just to hit 2 pages.
 - Sans-serif font (Helvetica/Arial), headers in blue `#2a4d7a` with a bottom border.
@@ -109,16 +130,64 @@ Worked and validated for the Blockchain resume → useful reference for the othe
   on the client.
 
 ## Repo layout
-One folder per resume, each containing the HTML and its generated PDF.
-The technology of each resume is identified by its folder name:
-- `Blockchain/`, `AI/`, `Backend/`, `CTO/`, `dotnet Architect/`, `Full stack/`,
-  `Python/`, `Rust/`
 
-## File naming convention (required)
-Inside every folder, the HTML and the PDF must both be named `Germán Küber` so the
-filename stays consistent everywhere:
-- `Germán Küber.html`
-- `Germán Küber.pdf`
+Two kinds of resume coexist in this repo. They share data and audience-of-record,
+but they have different stacks, styling, and rendering pipelines.
 
-The folder name is what distinguishes one resume from another — the file names are
-always identical across folders.
+### ATS resumes (the original 9)
+
+One folder per resume, each containing the HTML and its generated PDFs. The
+technology of each resume is identified by its folder name:
+
+- `AI/`, `Backend/`, `Blockchain/`, `CTO/`, `dotnet Architect/`,
+  `Engineering Manager/`, `Full stack/`, `Python/`, `Rust/`
+
+Stack: **Python + WeasyPrint**. No photo. Single column. ATS-safe.
+
+### Human resume (`Human/`)
+
+One folder, one HTML, one PDF — same person, but written for human readers
+(LinkedIn, the "Download PDF" button on germankuber.com, a hiring manager who's
+already interested).
+
+Stack: **Node + Puppeteer**. Has a photo. Has a Performance Arts section.
+Uses web fonts and Font Awesome. Read `Human/CLAUDE.md` before touching it.
+
+### How `/update-resume` ties them together
+
+When a change is applied to one or more ATS folders, the skill asks at the end
+whether to propagate the same change to `Human/` (adapting tone — narrative
+instead of keyword-dense). Factual changes (metrics, dates, titles) should
+generally propagate; tech-specific micro-detail typically should not. The
+skill defaults to asking; you decide per-change.
+
+### How `/publish-resume` ties Human/ to the website
+
+`Resumes/Human/Germán Küber.pdf` is the source of truth for the resume served
+behind the "Download PDF" button on germankuber.com. The `/publish-resume`
+skill copies it to `../PersonalSite/personal-site/public/Germán Küber.pdf`,
+commits and pushes — Vercel auto-deploys. Never copy that file by hand.
+
+## File naming convention (required — ATS folders only)
+
+This convention applies to the 9 ATS folders. It does NOT apply to `Human/`,
+which uses Puppeteer and emits a single `Germán Küber.pdf`.
+
+Inside every ATS folder there is **one HTML** and **two PDFs**, all generated from
+the same source:
+
+- `Germán Küber.html` — the single source of truth for this resume.
+- `Germán Küber.pdf` — canonical short name, kept stable for backward compatibility
+  with other skills and tooling.
+- `Germán Küber <Folder>.pdf` — recruiter-friendly copy where `<Folder>` is the
+  literal folder name (no transformation, no shortening). Same content as the
+  canonical PDF — only the filename differs. Examples:
+  - `Blockchain/` → `Germán Küber Blockchain.pdf`
+  - `AI/` → `Germán Küber AI.pdf`
+  - `dotnet Architect/` → `Germán Küber dotnet Architect.pdf`
+  - `Engineering Manager/` → `Germán Küber Engineering Manager.pdf`
+
+Both PDFs must always be regenerated together (they share the HTML — they only
+diverge in filename). The folder name is what distinguishes one resume from
+another at the directory level; the long-name PDF surfaces that distinction in the
+file itself, which is what a recruiter sees when downloaded.

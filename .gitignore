@@ -2,3 +2,14 @@
 _p*.png
 _page_*.png
 .claude/settings.local.json
+__pycache__/
+*.pyc
+
+# Loose PDFs in repo root — canonical PDFs live inside per-tech folders
+/Germán Küber.pdf
+
+# Node-only dependencies for the Human/ (branded) resume (Puppeteer)
+Human/node_modules/
+
+# Render artifacts from visual validation of the Human resume
+Human/_p*.png

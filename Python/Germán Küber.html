@@ -46,6 +46,9 @@
   }
   p { margin-bottom: 3px; text-align: justify; }
   .role { break-inside: avoid; }
+  .section { break-inside: avoid; }
+  h2 { break-after: avoid; }
+  .edu-line, .ach-line, .expertise-line { break-inside: avoid; }
   .role-title { font-weight: 700; font-size: 9pt; color: #111; }
   .role-meta { font-size: 8pt; color: #555; font-style: italic; margin-bottom: 1.5px; }
   ul { margin: 1.5px 0 4px 0; padding-left: 14px; }
@@ -63,12 +66,13 @@
 <div class="name">GERMÁN KÜBER</div>
 <div class="title">Senior Backend Engineer — Production Python — Real-Time AI &amp; Voice Pipelines</div>
 <div class="contact">
-  Las Palmas, Spain (EU Citizen) — Remote — EU / Americas (UTC-5 to UTC+2) — +34 666 844 731<br>
-  german.kuber@gmail.com — linkedin.com/in/germankuber — github.com/GermanKuber — germankuber.com
+  Las Palmas, Spain · EU Citizen — authorized to work across the EU/EEA, no visa sponsorship required<br>
+  Open to relocation within the EU (self-funded) · Remote-first · german.kuber@gmail.com<br>
+  +34 666 844 731 · linkedin.com/in/germankuber · github.com/GermanKuber · germankuber.com
 </div>
 
 <h2>Professional Summary</h2>
-<p>Senior backend engineer with 15+ years building production systems and a deep focus over the last several years on production Python (FastAPI, Django, Flask) for real-time AI products. Shipped a real-time audio AI pipeline at KliverAI on OpenAI Realtime API with sub-200ms streaming latency and a WebSocket-based transcription pipeline capturing live meeting audio — directly applicable to ambient AI / scribe products. Operated production Python and Rust services on Docker and Kubernetes / AWS at high scale (Borderless Capital: $50M+ daily transactional flow). Comfortable across adjacent stacks including <b>TypeScript / Node.js</b> and .NET. Customer-facing impact orientation; comfortable with ambiguity and fast iteration; very much a fit for ship-it-now environments.</p>
+<p>Senior backend engineer with 15+ years building production systems and a deep focus over the last several years on production Python (FastAPI, Django, Flask) for real-time AI products. Shipped a real-time audio AI pipeline at KliverAI on OpenAI Realtime API with sub-200ms streaming latency and a WebSocket-based transcription pipeline capturing live meeting audio — directly applicable to ambient AI / scribe products. Operated production Python and Rust services on Docker and Kubernetes / AWS at high scale (Borderless Capital: $50M+ daily transactional flow). Comfortable across adjacent stacks including <b>TypeScript / Node.js</b> and .NET. Customer-facing impact orientation; comfortable with ambiguity and fast iteration; very much a fit for ship-it-now environments. EU citizen (Spanish nationality) with full authorization to work across the EU/EEA — no visa or sponsorship required — open to self-funded relocation anywhere in the EU.</p>
 
 <h2>Core Expertise</h2>
 <p class="expertise-line"><b>Production Python:</b> FastAPI, Flask, Django, asyncio, async / await, Cython, PyO3 bindings, Pydantic, SQLAlchemy, REST and WebSocket APIs, background workers, structured logging, testing (pytest)</p>
@@ -76,6 +80,8 @@
 <p class="expertise-line"><b>Cloud &amp; Infrastructure:</b> AWS, Docker, Kubernetes (manifests, deployments, services), CI / CD pipelines, Linux, Infrastructure as Code (Terraform), observability stacks</p>
 <p class="expertise-line"><b>Data &amp; Storage:</b> PostgreSQL (OLTP, jsonb, semantic cache backing store), caching and pub/sub (Redis-style), high-throughput data pipelines</p>
 <p class="expertise-line"><b>Backend Engineering:</b> Event-driven microservices, async coordination, fault tolerance, robust APIs and abstractions, Domain-Driven Design, customer-facing systems at scale</p>
+<p class="expertise-line"><b>Programming Paradigms &amp; Design:</b> Object-Oriented Programming (OOP), Functional Programming, Design Patterns, Architecture Patterns, SOLID principles, data structures, algorithm design, clean code</p>
+<p class="expertise-line"><b>Engineering Practices:</b> Test-Driven Development (TDD), pair programming, code review, mentoring, ADRs, design reviews, CI / CD, DevOps practices, Infrastructure as Code (Terraform), async remote collaboration</p>
 <p class="expertise-line"><b>Observability &amp; Reliability:</b> Prometheus, OpenTelemetry, distributed tracing, structured logging, 50+ production metrics, 24 / 7 on-call rotation, post-mortems, incident response</p>
 <p class="expertise-line"><b>Adjacent Stacks:</b> TypeScript / Node.js, Rust (tokio, async), .NET / C#, Go (reverse-engineering Geth internals)</p>
 
@@ -83,12 +89,14 @@
 
 <div class="role">
 <div class="role-title">Lead AI Architect &amp; Co-Founder</div>
-<div class="role-meta">KliverAI (Own Venture, closed Apr 2026) — Apr 2025 – Apr 2026 (full-time) — Remote, Spain</div>
+<div class="role-meta">KliverAI (Own Venture, closed Feb 2026) — Mar 2025 – Feb 2026 (full-time) — Remote, Spain</div>
 <ul>
   <li>Designed and shipped a real-time audio AI pipeline on OpenAI Realtime API with SignalR streaming, achieving sub-200ms end-to-end latency across concurrent user sessions — the same class of problem as an ambient AI scribe: capturing live conversation, processing it through LLMs, and returning structured output in real time.</li>
+  <li>Rewrote the real-time layer from app-embedded SignalR to Azure SignalR Service with Redis-backed state, scaling concurrent users by 500% while holding sub-200ms latency.</li>
+  <li>Benchmarked TTS / STT services (ElevenLabs, Deepgram, AssemblyAI, OpenAI Whisper, Play.ht) on latency, cost, and quality — getting latency to 90ms and word accuracy to nearly 95%.</li>
   <li>Built a real-time transcription capture pipeline: a Chrome Extension streams live Google Meet audio over WebSocket into a Python backend, which then feeds an automated AI evaluation pipeline.</li>
   <li>Built backend services in Python (FastAPI, asyncio) for AI integrations and data pipelines, alongside Node.js / TypeScript services for the API and streaming layer; deployed everything on Docker and Kubernetes on AWS.</li>
-  <li>Integrated three LLM providers (OpenAI, Anthropic, Gemini) with dynamic model routing for cost and latency optimization.</li>
+  <li>Integrated three LLM providers (OpenAI, Anthropic, Gemini) with dynamic model routing, picking the best model per task to cut inference spend.</li>
   <li>Built an adaptive multi-agent platform on LangGraph with multi-step branching logic and RAG-powered personalization.</li>
   <li>Implemented MCP (Model Context Protocol) servers and clients to standardize tool integration across services.</li>
   <li>Established the observability stack with OpenTelemetry, distributed tracing, structured logging, and LLM-specific tracing (Langfuse, LangSmith) plus prompt evaluation (Braintrust, PromptLayer, Promptfoo).</li>
@@ -98,46 +106,49 @@
 
 <div class="role">
 <div class="role-title">Fractional CTO (Part-time, hands-on)</div>
-<div class="role-meta">Rocking Product — Apr 2025 – Nov 2025 (part-time, parallel to KliverAI) — Remote / Buenos Aires</div>
+<div class="role-meta">Rocking Product — Apr 2025 – Dec 2025 (part-time, parallel to KliverAI) — Remote</div>
 <ul>
+  <li>Came in as Fractional CTO to an 8-engineer team and restructured it in the first quarter without stepping away from the code; ran technical interviews and hiring decisions.</li>
+  <li>Built an image embeddings service (Azure AI Vision and CLIP) to improve product matching across brand comparisons, raising accuracy and lifting the client's revenue by 40%.</li>
+  <li>Cut production bugs by 70% through team training and automated processes (testing, CI / CD, code review).</li>
   <li>Shipped customer-facing AI features in production using Python (FastAPI, LangChain) and Node.js / TypeScript, establishing the team's first LLM evaluation and monitoring practices.</li>
   <li>Optimized LLM API usage and cloud infrastructure (AWS, Docker, Kubernetes) through model selection, prompt compression, and semantic caching — cutting combined LLM API and cloud spend by 45%.</li>
-  <li>Inherited an 8-person engineering team across backend, frontend, and DevOps; stabilized release cadence and reduced sprint carryover within the first quarter.</li>
-  <li>Established code review standards, CI / CD pipelines, and engineering rituals while remaining hands-on in the codebase.</li>
-  <li>Partnered directly with founders and clients to translate business priorities into technical roadmaps — typical early-stage, ambiguous, ship-it-now environment.</li>
+  <li>Designed a reusable base architecture on LangChain and LangGraph with Langfuse / LangSmith monitoring; introduced Spec-Driven Development (SDD); proposed and led a full-stack migration from a fragmented JavaScript codebase to .NET.</li>
 </ul>
 </div>
 
 <div class="role">
 <div class="role-title">Lead Backend Engineer (Distributed Systems, Python &amp; Rust)</div>
-<div class="role-meta">Borderless Capital / CTF Capital — Aug 2021 – Apr 2025 — Remote</div>
+<div class="role-meta">Borderless Capital / CTF Capital — Sep 2021 – Mar 2025 — Remote</div>
 <ul>
-  <li>Operated production backend services processing $50M+ in daily transactional flow and contributing $100K+ in attributable annual P&amp;L with execution under 10ms p99 latency — real users, real money, real consequences if anything broke.</li>
+  <li>Operated production backend services processing 10K+ opportunities per day from $50M+ in daily transactional flow and contributing $100K+ in attributable annual P&amp;L with execution under 10ms p99 — real users, real money, real consequences if anything broke.</li>
+  <li>Migrated the system from Python / Cython to Rust and took it to 20x more transactions per second.</li>
   <li>Built Python services (endpoints, business logic, external integrations) running on Docker and Kubernetes in production, alongside the Rust core; owned K8s manifests and deployment configuration for the services I shipped.</li>
   <li>Built Python / Cython and PyO3 FFI bindings exposing Rust performance-critical code to higher-level Python orchestration layers, eliminating GC pauses across language boundaries.</li>
   <li>Used Postgres as the system of record for pipeline state, opportunities, and execution outcomes, and Redis-style caching both for low-latency caching and as a pub / sub backbone between services.</li>
   <li>Engineered low-latency observability with Prometheus and custom telemetry, tracking 50+ real-time metrics across the production pipeline.</li>
-  <li>Owned 24 / 7 production reliability and incident response, including on-call rotation, post-mortems, and observability ownership.</li>
-  <li>Acted as technical lead: architecture, code review, mentoring, and hiring for backend engineers across Python and Rust.</li>
+  <li>Ran technical due diligence on 5+ projects that ended up getting funded — architecture, risk, and feasibility — acting as the CTO's technical reference on the low-level side.</li>
+  <li>Owned 24 / 7 production reliability and incident response; acted as technical lead across the blockchain team, which grew from 4 to 10 engineers — code review, mentoring, and hiring.</li>
 </ul>
 </div>
 
 <div class="role">
 <div class="role-title">Senior Software Architect (Backend, Event-Driven)</div>
-<div class="role-meta">Paramo Technology — Aug 2020 – Aug 2021 — Remote / Argentina</div>
+<div class="role-meta">Paramo Technology — Oct 2020 – Sep 2021 — Remote</div>
 <ul>
-  <li>Held company-wide architecture authority for a large-scale online casino platform — accountable for cross-team technical decisions across 9+ engineering teams (200+ professionals, each with its own coordinator), working directly with the CTO and defining organization-wide engineering standards.</li>
-  <li>Owned end-to-end backend architecture with event-driven microservices, real-time state management, and strict consistency requirements.</li>
-  <li>Led technical interviewing and hiring across the engineering organization; delivered internal training on architecture and operational practices.</li>
+  <li>Owned the end-to-end architecture of a high-traffic online casino (iGaming) platform handling real-time money operations and regulatory reporting, working directly with the CTO.</li>
+  <li>Spotted the issues slowing teams down and designed action plans that raised productivity by 40%, measured by features shipped and fewer errors.</li>
+  <li>Designed event-driven microservices in .NET, implemented distributed tracing (OpenTelemetry, Application Insights, Datadog), brought in Kubernetes to scale, and built automated deploy pipelines.</li>
+  <li>Led part of the hiring and designed the technical entry exam; delivered internal training on architecture, design patterns, and operational practices.</li>
 </ul>
 </div>
 
 <div class="role">
-<div class="role-title">Software Architect (Full-Stack)</div>
-<div class="role-meta">CloudX (Software Consultancy) — Aug 2017 – Aug 2020 — Buenos Aires</div>
+<div class="role-title">Software Architect</div>
+<div class="role-meta">CloudX (Software Consultancy) — Sep 2017 – Oct 2020 — Remote / Buenos Aires (first employee)</div>
 <ul>
-  <li>Led architecture decisions across multiple enterprise product lines, designing microservices backends with Domain-Driven Design.</li>
-  <li>Delivered technical training and conference talks on backend architecture and software design.</li>
+  <li>Was the company's first employee; led architecture decisions across several enterprise product lines, designing microservices backends with Domain-Driven Design.</li>
+  <li>Built a distributed system over geospatial data with PostGIS for a UK client; delivered technical training and conference talks on backend architecture.</li>
 </ul>
 </div>
 
@@ -145,37 +156,43 @@
 <div class="role-title">Software Architect</div>
 <div class="role-meta">Majestic Hotel Group — Jan 2014 – Aug 2017 — Argentina</div>
 <ul>
-  <li>Designed and shipped full-stack features for internal hotel management platforms; refactored backend toward an event-oriented architecture.</li>
+  <li>Designed and shipped full-stack features for internal hotel management platforms, first as Team Lead and later as architect; led migration from AngularJS to Angular 2 and redesigned the data model toward an event-oriented architecture.</li>
 </ul>
 </div>
 
 <div class="role">
 <div class="role-title">.NET Web Developer</div>
-<div class="role-meta">Plus54 — Aug 2009 – Mar 2014 — Buenos Aires</div>
+<div class="role-meta">Plus54 — 2011 – 2014 — Buenos Aires (earlier: Acsys 2009–2011, IBM 2008–2009)</div>
 <ul>
   <li>Early career: built .NET web applications, internal tooling, and mobile components end to end.</li>
 </ul>
 </div>
 
+<div class="section">
 <h2>Key Achievements</h2>
 <p class="ach-line"><b>Real-time audio AI pipeline at KliverAI</b> — OpenAI Realtime API + SignalR + WebSocket transcription capture, sub-200ms streaming latency across concurrent sessions.</p>
 <p class="ach-line"><b>Production backend at Borderless</b> — Python and Rust services on Docker / Kubernetes / AWS, processing $50M+ in daily transactional flow and contributing $100K+ in attributable annual P&amp;L at sub-10ms p99.</p>
 <p class="ach-line"><b>Microsoft MVP, Developer Technologies</b> — 8 consecutive years (2017–present).</p>
 <p class="ach-line"><b>80+ International Technical Talks</b> — conferences and meetups across LATAM and Europe.</p>
 <p class="ach-line"><b>Net-Baires Founder</b> — Argentina's largest .NET developer community, 100K+ members across 10+ years.</p>
+</div>
 
+<div class="section">
 <h2>Education &amp; Certifications</h2>
 <p class="edu-line">Microsoft Certified: Azure Solutions Architect Expert (AZ-305) — Microsoft</p>
 <p class="edu-line">Microsoft Certified: Azure Associate (AZ-104 / AZ-204 level) — Microsoft</p>
 <p class="edu-line">Microsoft MVP, Developer Technologies — Feb 2017 – Present (8 consecutive years)</p>
-<p class="edu-line">Systems Engineer — Universidad Abierta Interamericana (UAI), Buenos Aires, Argentina (2017–2021)</p>
 <p class="edu-line">Polkadot Builder Program — Polkadot Blockchain Academy, Lisbon, Portugal (2026)</p>
+<p class="edu-line">Systems Engineer — Universidad Abierta Interamericana (UAI), Buenos Aires, Argentina (2017–2021)</p>
+</div>
 
+<div class="section">
 <h2>Open Source, Writing &amp; Community</h2>
 <p class="ach-line"><b>YouTube channel (youtube.com/@germankuber)</b> — technical deep-dives on AI, Python, Rust, and software architecture.</p>
 <p class="ach-line"><b>Net-Baires (.NET Community)</b> — Founder (2015–present). 100K+ members.</p>
 <p class="ach-line"><b>Crypto Para Mortales</b> — Founder (2023–present). Spanish-language blockchain and crypto education conference.</p>
 <p class="ach-line"><b>Patrones Para Mortales</b> — Founder (2020–present). Educational content on software design.</p>
+</div>
 
 <h2>Spoken Languages</h2>
 <p>Spanish: Native — English: Full Professional Proficiency — daily use in international remote teams</p>

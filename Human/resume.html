@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Germán Küber - CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Geist Mono';
+            src: url('https://cdn.vercel.com/geist/font/mono/GeistMonoVF.woff2') format('woff2');
+            font-weight: 100 900;
+            font-style: normal;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a9b9b;
+            --primary-light: #5fbfbf;
+            --text-dark: #2d3748;
+            --text-gray: #718096;
+            --text-light: #a0aec0;
+            --bg-light: #f7fafc;
+            --border-color: #e2e8f0;
+            --white: #ffffff;
+            --font-mono: 'Geist Mono', monospace;
+        }
+
+        .metric {
+            font-family: var(--font-mono);
+            font-weight: 500;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.4;
+            font-size: 11px;
+        }
+
+        .cv-container {
+            width: 100%;
+            max-width: 100%;
+            background: var(--white);
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 25px 30px;
+            background: var(--white);
+            position: relative;
+        }
+
+        /* Hexagon decoration - appears on every page using position: fixed */
+        .cv-container {
+            position: relative;
+        }
+
+        .hex-bg-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1190 842'%3E%3Cstyle%3E.st0%7Bopacity:0.12;fill:%234a9b9b;%7D%3C/style%3E%3Cg%3E%3Cpath class='st0' d='M939.2,300.2L917.9,337h-42.5l-21.8,37.8l21.8,37.8h43.7l21.3-36.8h42.5l21.8-37.8l-21.8-37.8H939.2z M917.9,410.7h-41.4l-20.7-35.8l20.7-35.8h41.4l10.3,17.9l10.3,17.9L917.9,410.7z M981.7,373.9h-41.4L930,356l-10.3-17.9l20.7-35.8h41.4l20.7,35.8L981.7,373.9z'/%3E%3Cpath class='st0' d='M398.2,154.9h42.5l21.8-37.8l-21.8-37.8H397l-21.3,36.8h-23.3l-30.3-52.5h-61.6l-30.8,53.3l30.2,52.4l-11.8,20.4h-23.8l-29.6-51.3H135l-12-20.6H79.4l-21.8,37.8l21.8,37.8h24l29.8,51.7H194l11.1,19.2l-20.7,35.8h-42.5l-21.9,38l21.8,37.8h43.7l21.3-36.8h42.5l21.8-37.8l-21.3-36.8l20.7-35.8H313l21.3-36.8h42.5L398.2,154.9z M398.2,81.2h41.4l20.7,35.8l-20.7,35.8h-41.4L387.8,135l-10.3-17.9L398.2,81.2z M312,154.9l7.7,13.4h-56.8l7.7-13.4H312z M313.7,153.9l20.7-35.8H350l-28.5,49.3L313.7,153.9z M232.1,116.9l29.6-51.3H321l29.1,50.5h-16.9L312,152.9h-42.5l-8.3,14.4L232.1,116.9z M142.6,155.7l-20.7,35.8h-17l29.2-50.6L142.6,155.7z M59.8,155.7l20.7-35.8h41.4l11,19.1l-30.3,52.6H80.5L59.8,155.7z M134.3,243.2l-28.7-49.7H123l21.8-37.8l-8.8-15.2h57.5l28.4,49.3h-16.4l-21.8,37.8l9,15.6L134.3,243.2L134.3,243.2z M223.3,191.8l-28.9,50.1l-8.3-14.3l20.7-35.8L223.3,191.8L223.3,191.8z M184.4,373.9H143l-20.7-35.8l20.7-35.8h41.4l10.3,17.9l10.3,17.9L184.4,373.9z M248.2,337.1h-41.4l-10.3-17.9l-10.3-17.9l20.7-35.8h41.4l20.7,35.8L248.2,337.1z M248.2,263.4h-41.4l-11.3-19.5l30.1-52.1l-0.1-0.1h22.6l10.3,17.9l10.3,17.9L248.2,263.4z M312,226.6h-41.4l-10.3-17.9L250,190.8l11.8-20.4h59.1l1.5,2.5l10.3,17.9L312,226.6z M334.4,189.7L324,171.8l-1.4-2.4l29.6-51.3h23.5L386,136l10.3,17.9l-20.7,35.8H334.4z'/%3E%3Cpath class='st0' d='M528.8,278.8l11.8-20.4h42.5l12.3-21.3h58.8l12.3,21.3H709l21.3,36.8H774l21.3-36.8h42.5l20.6-35.8l8,13.8h60.3l12.4,21.4h43.7l21.3-36.8h41.4l20.7,35.8l-21.3,36.8l21.8,37.8h43.7l21.8-37.8l-21.3-36.8l21.3-36.8l-21.8-37.8h-42.5l-21.3-36.8H1003l-21.3,36.8h-23.3l-30.3-52.5h-61.6l-8.3,14.4L838.5,110l21.3-36.8L838,35.4h-43.7l-21.8,37.8l21.3,36.8l-21.3,36.8l21.3,36.8l-20.7,35.8h-41.4l-21.3-36.8h-24.5l-30.2-52.3H594l-30.2,52.3h-24.3l-21.3,36.8h-42.5l-21.3,36.8h-42.5l-21.9,38l21.8,37.8h24.5l30.3,52.5h61.6l30.8-53.3L528.8,278.8z M594.7,234.4l-28.6-49.6H582l20.7,35.8L594.7,234.4z M647.1,220.6l20.7-35.8h15.8L655,234.2L647.1,220.6z M772.9,293.2h-41.4l-20.7-35.8l10.3-17.9l10.3-17.9h41.4l10.3,17.9l10.3,17.9L772.9,293.2z M919.6,220.1l20.7-35.8h15.6l-28.5,49.3L919.6,220.1z M981.7,255.9h-41.4l-11.7-20.3l29.6-51.3h23.5l10.3,17.9l10.3,17.9L981.7,255.9z M1109.3,329.6h-41.4l-20.7-35.8l20.7-35.8h41.4l20.7,35.8L1109.3,329.6z M1130,220.1l-20.7,35.8h-41.4l-20.7-35.8l10.3-17.9l10.3-17.9h41.4L1130,220.1z M1004.1,147.4h41.4l20.7,35.8l-10.3,17.9l-10.3,17.9h-41.4l-10.3-17.9l-10.3-17.9L1004.1,147.4z M867.7,131.7H927l29.1,50.5h-16.9L917.4,220l8.3,14.4h-58l-8-13.8v-0.1l-21.3-36.8l21.3-36.8l-0.4-0.7L867.7,131.7z M795.4,37.4h41.4l20.7,35.8L836.8,109h-41.4l-20.7-35.8L795.4,37.4z M795.4,111.1h41.4l20.3,35.1L836,182.7h-40.6l-20.7-35.8L795.4,111.1z M795.4,184.7h41.3l20.7,35.9l-20.6,35.8h-41.4L785,238.5l-10.3-17.9L795.4,184.7z M729.8,220.6l-10.3,17.9l-10.3,17.9h-41.4l-11.7-20.2l29.7-51.5h23.3L729.8,220.6z M595.2,132.4h59.3l29.1,50.3h-16.9l-21.8,37.8l8.4,14.5h-56.5l8.4-14.5l-21.8-37.8h-17.1L595.2,132.4z M540.6,184.7h23.1l29.8,51.6l-11.6,20h-41.4l-10.3-17.9l-10.3-17.9L540.6,184.7z M476.8,221.6h41.4l10.3,17.9l10.3,17.9L527,277.8h-59l-1.5-2.5l-10.3-17.9L476.8,221.6z M476.8,293.2l-7.7-13.4h56.8l-7.7,13.4H476.8z M475.1,294.2L454.4,330h-15.6l28.5-49.3L475.1,294.2z M392.3,294.2l20.7-35.8h41.4l10.3,17.9l1.4,2.4L436.5,330H413L392.3,294.2z M527.1,382.5h-59.3L438.7,332h16.9l21.3-36.8h42.5l8.3-14.4l29.1,50.3L527.1,382.5z'/%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hex-bg-bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1190 842'%3E%3Cstyle%3E.st0%7Bopacity:0.1;fill:%234a9b9b;%7D%3C/style%3E%3Cg%3E%3Cpath class='st0' d='M1110.55,667.36h-24l-29.8-51.7h-60.8l-11.1-19.2l20.7-35.8h42.5l21.8-37.8l-21.8-37.8h-43.7l-21.3,36.8h-42.5l-21.8,37.8l21.3,36.8l-20.7,35.8h-42.5l-21.3,36.8h-42.5l-21.3,36.8h-42.5l-21.8,37.8l21.8,37.8h43.7l21.3-36.8h23.3l30.3,52.5h61.6l30.8-53.3l-30.3-52.3l11.8-20.4h23.8l29.6,51.3h59.8l11.9,20.6h43.7l21.8-37.8L1110.55,667.36z M1047.35,705.26l20.7-35.8h17l-29.2,50.6L1047.35,705.26z M966.65,669.06l28.9-50.1l8.3,14.3l-20.7,35.8H966.65L966.65,669.06z M1005.55,486.96h41.4l20.7,35.8l-20.7,35.9h-41.4l-10.3-17.9l-10.3-17.9L1005.55,486.96z M941.75,523.86h41.4l10.3,17.9l10.3,17.9l-20.7,35.8h-41.4l-20.5-35.8L941.75,523.86z M814.15,671.16h41.4l10.3,17.9l1.4,2.4l-29.6,51.3h-23.5l-10.3-17.9l-10.3-17.9L814.15,671.16z M877.95,705.96l-7.7-13.4h56.8l-7.7,13.4H877.95z M876.25,706.96l-20.7,35.8h-15.6l28.5-49.3L876.25,706.96z M791.75,779.66h-41.4l-20.7-35.8l20.7-35.8h41.4l10.3,17.9l10.3,17.9L791.75,779.66z M957.85,743.96l-29.6,51.3h-59.3l-29.1-50.5h16.9l21.3-36.8h42.5l8.3-14.4L957.85,743.96z M928.25,690.56h-59.1l-1.5-2.5l-10.3-17.9l20.7-35.8h41.4l10.3,17.9l10.3,17.9L928.25,690.56z M941.75,669.16l-10.3-17.9l-10.3-17.9l20.7-35.8h41.4l11.3,19.5l-30.1,52.1l0.1,0.1h-22.8L941.75,669.16L941.75,669.16z M996.35,720.46l-28.4-49.3h16.4l21.8-37.8l-9-15.6h58.5l28.7,49.7h-17.4l-21.8,37.8l8.8,15.2L996.35,720.46L996.35,720.46z M1109.45,741.06h-41.4l-11-19.1l30.3-52.6h22.1l20.7,35.8L1109.45,741.06z'/%3E%3Cpath class='st0' d='M740.45,641.36l21.3-36.8h42.5l21.8-37.8l-21.8-37.8h-24.5l-30.3-52.5h-61.6l-30.8,53.2l30.2,52.3l-11.8,20.4h-23.8l-29.6-51.3h-61.6l-30.8,53.3l30.8,53.4h60.8l11.7,20.2h43.7l21.3-36.8h42.5L740.45,641.36L740.45,641.36z M823.75,566.66l-20.7,35.8h-41.4l-10.3-17.9l-1.4-2.4l29.6-51.3h23.5L823.75,566.66z M739.25,567.66l7.7,13.4h-56.8l7.7-13.4H739.25z M741.05,566.66l20.7-35.8h15.6l-28.5,49.3L741.05,566.66z M659.35,529.66l29.6-51.3h59.3l29.1,50.5h-16.9l-21.2,36.8h-42.5l-8.3,14.4L659.35,529.66z M689.05,583.06h59.1l1.5,2.5l10.3,17.9l-20.7,35.8h-41.4l-10.3-17.9l-10.3-17.9L689.05,583.06z M561.65,655.96l-29.6-51.4l29.6-51.3h59.3l28.4,49.3h-16.4l-21.8,37.8l9,15.6L561.65,655.96L561.65,655.96z M650.65,604.56l-29,50.1l-8.3-14.3l20.7-35.8H650.65L650.65,604.56z M675.45,676.16h-41.4l-11.2-19.5l30.1-52.1l-0.1-0.1h22.6l10.3,17.9l10.3,17.9L675.45,676.16z'/%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .profile-photo {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 38px;
+            font-weight: 500;
+            overflow: hidden;
+            border: 3px solid var(--primary-color);
+            box-sizing: border-box;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .profile-photo img {
+            /* width: 87%; */
+            height: 140%;
+            object-fit: cover;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .header-content h1 {
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+        }
+
+        .header-content .subtitle {
+            font-size: 13px;
+            color: var(--primary-color);
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .header-content .summary {
+            font-size: 11px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* Contact Info */
+        .contact-section {
+            background: var(--primary-color);
+            padding: 12px 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 40px;
+            border-radius: 8px;
+            margin: 0 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            font-size: 11px;
+            color: var(--white);
+        }
+
+        .contact-item i {
+            width: 20px;
+            color: var(--white);
+            margin-right: 8px;
+            font-size: 12px;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 15px 30px;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section-title i {
+            width: 24px;
+            height: 24px;
+            background: var(--bg-light);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 12px;
+        }
+
+        .section-title h2 {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Experience Items */
+        .experience-item {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 12px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .experience-item::after {
+            content: '';
+            position: absolute;
+            left: 3px;
+            top: 16px;
+            width: 2px;
+            height: calc(100% - 8px);
+            background: var(--border-color);
+        }
+
+        .experience-item:last-child::after {
+            display: none;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2px;
+        }
+
+        .experience-title {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .experience-company {
+            font-size: 11px;
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+
+        .experience-date {
+            font-size: 10px;
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        .experience-location {
+            font-size: 10px;
+            color: var(--text-light);
+            text-align: right;
+        }
+
+        .experience-label {
+            font-size: 9px;
+            color: var(--primary-color);
+            margin: 2px 0;
+        }
+
+        .experience-list {
+            list-style: none;
+            margin-top: 4px;
+        }
+
+        .experience-list li {
+            position: relative;
+            padding-left: 12px;
+            font-size: 10px;
+            color: var(--text-gray);
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .experience-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .skill-tag {
+            padding: 4px 12px;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            font-size: 10px;
+            color: var(--text-dark);
+        }
+
+        .soft-skill-tag {
+            padding: 4px 12px;
+            background: var(--primary-color);
+            border-radius: 15px;
+            font-size: 10px;
+            color: var(--white);
+        }
+
+        .soft-skill-tag.light {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Education */
+        .education-item {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .education-degree {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .education-school {
+            font-size: 11px;
+            color: var(--text-dark);
+        }
+
+        .education-date {
+            font-size: 10px;
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        .education-location {
+            font-size: 10px;
+            color: var(--text-light);
+        }
+
+        /* Awards */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .award-item {
+            font-size: 11px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .award-title {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .award-org {
+            font-size: 10px;
+            color: var(--text-gray);
+            font-style: italic;
+        }
+
+        .award-desc {
+            font-size: 10px;
+            color: var(--text-gray);
+            margin-top: 2px;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .award-desc::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        /* Volunteer */
+        .volunteer-item {
+            position: relative;
+            padding-left: 18px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .volunteer-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .volunteer-title {
+            color: var(--primary-color) !important;
+        }
+
+        /* Certificates */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+
+        .certificate-item {
+            font-size: 11px;
+            color: var(--text-dark);
+        }
+
+        /* Organizations */
+        .organizations-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .org-item {
+            font-size: 11px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .org-name {
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+
+        .org-role {
+            font-size: 10px;
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        /* Languages */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .language-item {
+            font-size: 11px;
+        }
+
+        .language-name {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .language-level {
+            font-size: 10px;
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .cv-container {
+                box-shadow: none;
+            }
+            .experience-item,
+            .education-item,
+            .volunteer-item,
+            .award-item,
+            .org-item {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Page-break guardrail (validated pattern from sibling Resumes repo) */
+        /* 1) Section h2 stays with its first content line — never orphaned at page bottom. */
+        h2 {
+            break-after: avoid;
+            page-break-after: avoid;
+        }
+        /* 2) The whole .section-title block (icon + h2) stays with the first content item. */
+        .section-title {
+            break-after: avoid;
+            page-break-after: avoid;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+        /* 3) Short / compact sections move atomically — no orphan headings, no split lists.
+              For dense sections (Work Experience, Public Speaking), individual items already
+              have break-inside: avoid (above), so this only locks the small ones. */
+        .education-grid,
+        .awards-grid,
+        .organizations-grid,
+        .languages-grid,
+        .skills-container {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+        /* 4) li elements inside experience/public-speaking should not split across pages. */
+        .experience-list li {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Hexagon background decorations (commented for ATS compatibility)
+        <div class="hex-bg-top"></div>
+        <div class="hex-bg-bottom"></div>
+        -->
+
+        <!-- Header -->
+        <header class="header">
+            <div class="profile-photo"><img src="germankuber_2.jpg" alt="Germán Küber"></div>
+            <div class="header-content">
+                <h1>Germán Küber</h1>
+                <p class="subtitle">Staff Engineer — Systems, AI & Blockchain | Microsoft MVP</p>
+                <p class="summary">Microsoft MVP for 8 consecutive years. Founder of Net-Baires, Argentina's largest dev community (100K+ members). 15+ years building systems that move money, ship products, and scale—from low-latency MEV trading in Rust ($50M+ daily on-chain flow, $100K+ annual P&L, sub-10ms execution) to real-time AI platforms (multi-provider LLM orchestration, sub-200ms voice TTFT, RAG, MCP) to enterprise architectures. Player-coach who builds teams (up to 8 engineers), drives architectural decisions, and stays deep in production code across Rust, Python, .NET, and Node.js. 80+ international talks at .NET Conf, DevFest, NetCoreConf, vOpen and more across LATAM & Europe. EU citizen (Spanish nationality), remote-first, open to EU/Americas.</p>
+            </div>
+        </header>
+
+        <!-- Contact Info -->
+        <section class="contact-section">
+            <div class="contact-item">
+                <i class="far fa-envelope"></i>
+                <a href="mailto:German.kuber@gmail.com">German.kuber@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+34 666 844731</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Las Palmas, Spain</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <a href="https://linkedin.com/in/germankuber">linkedin.com/in/germankuber</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-twitter"></i>
+                <span>@germankuber</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-globe"></i>
+                <a href="https://germankuber.com">germankuber.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/GermanKuber">github.com/GermanKuber</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-youtube"></i>
+                <a href="https://youtube.com/@germankuber">youtube.com/@germankuber</a>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Key Achievements -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-trophy"></i>
+                    <h2>Key Achievements</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; font-size: 11px;">
+                    <div>● <strong>Microsoft MVP</strong> — <span class="metric">8</span> consecutive years</div>
+                    <div>● <strong>Net-Baires Founder</strong> — <span class="metric">100K+</span> developer community</div>
+                    <div>● <strong><span class="metric">80+</span> Technical Talks</strong> — .NET Conf, DevFest, vOpen</div>
+                    <div>● <strong><span class="metric">$100K+</span> MEV Profit</strong> — Rust pipelines at Borderless</div>
+                    <div>● <strong>Kliver Co-Founder</strong> — AI training platform, <span class="metric">500+</span> users</div>
+                    <div>● <strong><span class="metric">$50M+</span> Daily Volume</strong> — On-chain monitoring systems</div>
+                </div>
+            </section>
+
+            <!-- Work Experience -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-briefcase"></i>
+                    <h2>Work Experience</h2>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Co-Founder & Lead AI Architect</div>
+                            <div class="experience-company">KliverAI (Own Venture, closed Feb 2026)</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">03/2025 - 02/2026</div>
+                            <div class="experience-location">Remote, Spain</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Founded and built Kliver—an AI platform that converts expert knowledge into scalable training simulations. Owned technical strategy and end-to-end delivery as senior-most engineer on a polyglot stack (Node.js/TypeScript, Python, .NET, Rust, Kubernetes, AWS) supporting 500+ users in dynamic roleplay scenarios.</li>
+                        <li>Rewrote the real-time layer from app-embedded SignalR to Azure SignalR Service with Redis-backed state, <strong>scaling concurrent users by 500%</strong> while holding <strong>sub-200ms latency</strong> on audio pipelines (OpenAI Realtime API).</li>
+                        <li>Benchmarked TTS/STT services (ElevenLabs, Deepgram, AssemblyAI, OpenAI Whisper, Play.ht) on latency, cost, and quality—getting latency to <strong>90ms</strong> and word accuracy to <strong>nearly 95%</strong>.</li>
+                        <li>Integrated three LLM providers (OpenAI, Anthropic Claude, Google Gemini) with dynamic model routing across direct APIs and managed cloud services (AWS Bedrock, Azure OpenAI, Vertex AI), picking the best model per task to cut inference spend.</li>
+                        <li>Built an adaptive simulation engine with multi-agent architecture on LangGraph—state machines, conditional routing, ReAct-style reasoning, multi-step branching, and RAG-powered personalization with 90%+ context relevance.</li>
+                        <li>Shipped production RAG pipelines across Pinecone, Chroma, pgvector, and Redis with semantic search, hybrid retrieval, and cross-encoder reranking; implemented <strong>MCP (Model Context Protocol)</strong> servers and clients to standardize tool access.</li>
+                        <li>Designed a decentralized marketplace for human evaluation criteria using <strong>Zero-Knowledge proofs (Noir, Barretenberg, Garaga on StarkNet)</strong>—privacy-preserving, verifiable expert judgment at scale.</li>
+                        <li>Instrumented LLM evaluation and observability with LangSmith, RAGAS, DeepEval, Langfuse, and OpenTelemetry GenAI conventions; ran red-teaming and structured eval pipelines to reduce hallucination on critical paths.</li>
+                        <li>Built a Chrome Extension for real-time Google Meet capture, streaming transcripts via WebSocket into an automated AI evaluation pipeline.</li>
+                        <li>Hired and led a distributed team of up to 3 engineers; ran technical interviews, hiring decisions, and architectural reviews while remaining hands-on in code.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Fractional CTO (Part-time, parallel to KliverAI)</div>
+                            <div class="experience-company">Rocking Product</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">04/2025 - 12/2025</div>
+                            <div class="experience-location">Remote</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Came in as Fractional CTO to an 8-engineer team and restructured it in the first quarter without stepping away from the code—stabilizing release cadence and reducing sprint carryover; ran technical interviews and final hiring decisions.</li>
+                        <li>Built an <strong>image embeddings service (Azure AI Vision + CLIP)</strong> to improve product matching across brand comparisons, raising accuracy and <strong>lifting the client's revenue by 40%</strong>.</li>
+                        <li><strong>Cut production bugs by 70%</strong> through team training and automated processes (testing, CI/CD, code review).</li>
+                        <li>Optimized LLM usage and cloud infrastructure through model selection, prompt compression, and semantic caching—<strong>cutting combined API and cloud spend by 45%</strong>.</li>
+                        <li>Designed a reusable base architecture on LangChain and LangGraph with <strong>Langfuse / LangSmith</strong> monitoring and prompt versioning; migrated the real-time LLM service from OpenAI to <strong>Azure AI Foundry</strong> for compliance and data retention, cutting latency and improving scalability.</li>
+                        <li>Introduced <strong>Spec-Driven Development (SDD)</strong> and AI-driven development workflows with autonomous agents automating code review, testing, deploys, and monitoring.</li>
+                        <li>Proposed and led a full-stack migration from a fragmented JavaScript codebase to <strong>.NET (ASP.NET Core, Entity Framework Core, Clean Architecture)</strong>, modernizing the platform for long-term scalability.</li>
+                        <li>Shipped AI-powered features in Node.js/TypeScript and Python (FastAPI, LangChain); established the team's first LLM evaluation and monitoring practices including faithfulness and correctness scoring.</li>
+                        <li>Ran <strong>weekly public-speaking workshops</strong> to sharpen team communication, raising the quality of client meetings.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Lead Software Engineer (Blockchain / MEV)</div>
+                            <div class="experience-company">Borderless Capital / CTF Capital</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">09/2021 - 03/2025</div>
+                            <div class="experience-location">Remote</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Designed and operated production MEV searcher pipelines in <strong>Rust (tokio, async)</strong> and Python/Cython across EVM (Ethereum, Arbitrum, Optimism) and Solana, processing <strong>10K+ opportunities/day from $50M+ in daily on-chain flow</strong> with <strong>$100K+ attributable annual P&amp;L</strong> and execution under <strong>10ms p99</strong>.</li>
+                        <li><strong>Migrated the system from Python/Cython to Rust and took it to 20x more transactions per second</strong>—tuning tokio runtime parameters, async boundaries, and lock-free coordination patterns for sub-10ms targets.</li>
+                        <li>Built custom transaction delivery infrastructure with parallel broadcasting across RPC endpoints and direct validator/TPU routes, achieving <strong>sub-slot inclusion on Solana (~400ms)</strong> and improving inclusion probability by 35% under heavy mempool competition.</li>
+                        <li>Integrated the <strong>Flashbots stack</strong> (MEV-Boost, Suave, MEV-Share, PBS, relays) for Ethereum MEV execution and bundle submission, and the <strong>Jito ecosystem on Solana</strong> (bundles, BAM/Block Assembly Marketplace, BuilderNet, Agave, Jito-Solana fork) for validator routing.</li>
+                        <li>Built Node.js/TypeScript services that interact with DeFi protocols on-chain—AMMs (Uniswap V2/V3, Curve, Raydium, PumpSwap) and lending markets (Aave)—using ethers.js, viem, web3.js, and @solana/web3.js.</li>
+                        <li>Designed strategy logic including liquidation detection, multi-hop arbitrage across 5+ DEXs, and cross-chain flow modeling.</li>
+                        <li><strong>Reverse-engineered Geth and Reth</strong> to improve transaction simulation and gas estimation; <strong>contributed to the REVM community</strong>.</li>
+                        <li>Ran <strong>technical due diligence on 5+ projects that ended up getting funded</strong>—architecture, risk, and feasibility—acting as the <strong>CTO's technical reference</strong> on the low-level side.</li>
+                        <li>Implemented low-latency observability with Prometheus and custom Rust telemetry, tracking <strong>50+ real-time metrics</strong> for slot timing, validator rotation, and execution outcomes.</li>
+                        <li>Conducted research and PoC on Zero-Knowledge technologies and L2 ecosystems (StarkNet, Cairo, account abstraction/ERC-4337), evaluating applicability for next-generation MEV tooling.</li>
+                        <li>Owned 24/7 production reliability and incident response (on-call rotation, post-mortems); <strong>helped build the blockchain team, which grew from 4 to 10 engineers</strong>—code review, mentoring, and technical interviewing for Rust and distributed-systems hires.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Senior Software Architect</div>
+                            <div class="experience-company">Paramo Technology</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">10/2020 - 09/2021</div>
+                            <div class="experience-location">Remote</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Owned the end-to-end architecture of a high-traffic online casino (iGaming) platform handling real-time money operations and regulatory reporting, working directly with the CTO.</li>
+                        <li><strong>Spotted the issues slowing teams down and designed action plans that raised productivity by 40%</strong>, measured by features shipped and fewer errors.</li>
+                        <li>Designed and rolled out event-driven microservices in .NET (C#, ASP.NET Core) handling real-time game state, wallet operations, and regulatory reporting with strict consistency requirements; migrated relational databases to MongoDB where it made sense.</li>
+                        <li>Implemented <strong>distributed tracing across all services (OpenTelemetry, Application Insights, Datadog)</strong> to catch bugs early and resolve production issues faster.</li>
+                        <li><strong>Brought in Kubernetes to scale</strong>; built automated deploy pipelines; helped migrate services to newer .NET versions.</li>
+                        <li>Applied Domain-Driven Design (aggregates, value objects, domain events), design patterns, and CQRS for read/write separation across complex gambling and wallet domains.</li>
+                        <li>Led part of the hiring and <strong>designed the technical entry exam</strong>; created and delivered internal training programs on architecture patterns, testing discipline, and operational best practices.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Software Architect (Full-Stack)</div>
+                            <div class="experience-company">CloudX (Software Consultancy) — first employee</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">09/2017 - 10/2020</div>
+                            <div class="experience-location">Remote / Buenos Aires</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Was the <strong>company's first employee</strong>; led architecture decisions across several enterprise product lines, often working on-site with clients, and helped build the team as it grew.</li>
+                        <li>Built microservices backends in Node.js/TypeScript and .NET (C#, ASP.NET) across multiple enterprise product lines using Domain-Driven Design and Clean Architecture / Hexagonal patterns.</li>
+                        <li>Designed Angular and React frontends with reusable component libraries and TypeScript shared across enterprise products.</li>
+                        <li>Built a <strong>distributed system over geospatial data with PostGIS for a UK client</strong>.</li>
+                        <li>Delivered technical training and conference talks to partners and internal engineering teams; collaborated directly with clients on requirements gathering and technical adoption.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Software Architect (Angular / .NET)</div>
+                            <div class="experience-company">Majestic Hotel Group</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">01/2014 - 08/2017</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Designed and built full-stack features in Angular and .NET for internal hotel management platforms, <strong>first as Team Lead and later as architect</strong>.</li>
+                        <li>Led the migration <strong>from AngularJS to Angular 2</strong>, improving maintainability, performance, and code consistency across the platform.</li>
+                        <li>Redesigned the data model toward an event-oriented architecture, reducing coupling across integrations and simplifying long-term maintenance.</li>
+                        <li>Defined and documented backend and frontend development processes to streamline deployments and team collaboration.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">.NET Web Developer</div>
+                            <div class="experience-company">Plus54</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">2011 - 2014</div>
+                            <div class="experience-location">Buenos Aires</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Built .NET web applications and internal tools, delivering features across backend and frontend.</li>
+                        <li>Designed and built early mobile application components, collaborating with senior developers on architecture and UX.</li>
+                        <li>Integrated external services and APIs, implementing unit tests and ensuring reliable data exchange between systems.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Software Developer</div>
+                            <div class="experience-company">Acsys</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">2009 - 2011</div>
+                            <div class="experience-location">Buenos Aires</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Developed and maintained .NET web applications and internal client solutions end-to-end across backend and frontend.</li>
+                        <li>Participated in requirements gathering and delivery for multiple business-line projects.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Junior Developer</div>
+                            <div class="experience-company">IBM</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">2008 - 2009</div>
+                            <div class="experience-location">Buenos Aires</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Achievements/Tasks</div>
+                    <ul class="experience-list">
+                        <li>Started professional career at IBM contributing to enterprise .NET projects.</li>
+                        <li>Worked alongside senior engineers on backend features, integration work, and quality processes.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="section" style="page-break-before: always; break-before: page;">
+                <div class="section-title">
+                    <i class="fas fa-cogs"></i>
+                    <h2>Skills</h2>
+                </div>
+                <div style="font-size: 10px; margin-bottom: 6px;">
+                    <strong style="color: var(--primary-color);">Languages:</strong> Rust (tokio, async), Go, C# / .NET (8/9, ASP.NET Core, EF Core), TypeScript, JavaScript, Python (FastAPI, async), Cython, C++, Solidity, Cairo
+                </div>
+                <div style="font-size: 10px; margin-bottom: 6px;">
+                    <strong style="color: var(--primary-color);">AI / LLM Systems:</strong> Multi-provider LLM orchestration (OpenAI, Anthropic Claude, Google Gemini, AWS Bedrock, Azure OpenAI, Vertex AI), dynamic model routing, MCP (Model Context Protocol) servers &amp; clients, LangChain, LangGraph, RAG, multi-agent (supervisor/ReAct), function calling, structured outputs (JSON schema), prompt engineering, inference cost optimization
+                </div>
+                <div style="font-size: 10px; margin-bottom: 6px;">
+                    <strong style="color: var(--primary-color);">Real-Time AI &amp; Voice:</strong> OpenAI Realtime API, Deepgram (STT), ElevenLabs (TTS), AssemblyAI, Whisper, SignalR, Azure SignalR Service, WebSocket streaming, sub-200ms TTFT
+                </div>
+                <div style="font-size: 10px; margin-bottom: 6px;">
+                    <strong style="color: var(--primary-color);">Vector DBs &amp; RAG:</strong> Pinecone, Chroma, pgvector, Redis (RediSearch), semantic search, hybrid retrieval, cross-encoder reranking, chunking strategies
+                </div>
+                <div style="font-size: 10px; margin-bottom: 6px;">
+                    <strong style="color: var(--primary-color);">LLM Eval &amp; Observability:</strong> LangSmith, RAGAS, DeepEval, Langfuse, OpenTelemetry GenAI conventions, red-teaming, faithfulness / correctness scoring
+                </div>
+                <div style="font-size: 10px; margin-bottom: 6px;">
+                    <strong style="color: var(--primary-color);">Blockchain &amp; Web3:</strong> EVM (Ethereum, Arbitrum, Optimism, Base), Solana, StarkNet, Polkadot/Substrate (FRAME, XCM), MEV infrastructure, Flashbots stack (MEV-Boost, Suave, MEV-Share, PBS, relays), Jito (bundles, BAM, BuilderNet, Agave), Zero-Knowledge proofs (Noir, Barretenberg, Garaga, Cairo), account abstraction (ERC-4337)
+                </div>
+                <div style="font-size: 10px; margin-bottom: 6px;">
+                    <strong style="color: var(--primary-color);">Web3 Tooling &amp; Clients:</strong> ethers.js, viem, web3.js, @solana/web3.js, Foundry/Forge, Anchor, Hardhat, Geth (reverse-engineered), Reth, REVM (contributor)
+                </div>
+                <div style="font-size: 10px; margin-bottom: 6px;">
+                    <strong style="color: var(--primary-color);">Distributed Systems:</strong> tokio / async runtimes, low-latency networking (sub-10ms p99), P2P, consensus protocols (GRANDPA / BABE, familiar with Raft), event-driven microservices, fault tolerance, gRPC, Protocol Buffers
+                </div>
+                <div style="font-size: 10px; margin-bottom: 6px;">
+                    <strong style="color: var(--primary-color);">Cloud &amp; Infrastructure:</strong> AWS (Lambda, Bedrock, ECS, S3, SNS/SQS, EventBridge, CloudFront), Azure (AKS, Service Bus, Cosmos DB, OpenAI Service, AI Search, AI Foundry, SignalR Service, Entra ID), GCP (Vertex AI), Docker, Kubernetes, Terraform, Bicep, ARM, CI/CD (GitHub Actions, Azure DevOps)
+                </div>
+                <div style="font-size: 10px; margin-bottom: 6px;">
+                    <strong style="color: var(--primary-color);">Databases &amp; Storage:</strong> PostgreSQL (pgvector), MySQL / Aurora, SQL Server / Azure SQL, MongoDB, Cosmos DB, Redis (cache, pub/sub, streams), DynamoDB, ClickHouse
+                </div>
+                <div style="font-size: 10px; margin-bottom: 6px;">
+                    <strong style="color: var(--primary-color);">Observability &amp; Tooling:</strong> Prometheus, OpenTelemetry, Application Insights, Datadog, Grafana, custom Rust telemetry (50+ production metrics), distributed tracing, structured logging
+                </div>
+                <div style="font-size: 10px; margin-bottom: 6px;">
+                    <strong style="color: var(--primary-color);">Security &amp; Identity:</strong> OAuth 2.0 / OIDC, Entra ID (Azure AD), IdentityServer / Duende, JWT, mTLS, OWASP Top 10, Zero Trust principles
+                </div>
+                <div style="font-size: 10px; margin-bottom: 6px;">
+                    <strong style="color: var(--primary-color);">Frontend:</strong> React 18, Next.js 14+ (App Router, React Server Components), React Native (Expo, EAS), Angular, TypeScript, Tailwind, Zustand, Tanstack Query
+                </div>
+                <div style="font-size: 10px; margin-bottom: 6px;">
+                    <strong style="color: var(--primary-color);">Architecture &amp; Patterns:</strong> Microservices, Domain-Driven Design (tactical + strategic), CQRS, Event Sourcing, Saga (orchestration / choreography), Clean Architecture / Hexagonal, Vertical Slice, polyglot persistence
+                </div>
+                <div style="font-size: 10px;">
+                    <strong style="color: var(--primary-color);">Engineering Practices &amp; Leadership:</strong> TDD, pair programming, code review, ADRs, design reviews, technical interviewing &amp; hiring, mentoring, on-call &amp; incident response, Spec-Driven Development (SDD), AI-driven development workflows
+                </div>
+            </section>
+
+            <!-- Soft Skills -->
+            <section class="section" style="break-inside: avoid; page-break-inside: avoid;">
+                <div class="section-title">
+                    <i class="fas fa-lightbulb"></i>
+                    <h2>Soft Skills</h2>
+                </div>
+                <div class="skills-container">
+                    <span class="soft-skill-tag">Avid learner</span>
+                    <span class="soft-skill-tag">Collaborative Teamwork</span>
+                    <span class="soft-skill-tag">Rapid Learning & Research</span>
+                    <span class="soft-skill-tag">Adaptability</span>
+                    <span class="soft-skill-tag">Clear Technical Communication</span>
+                    <span class="soft-skill-tag light">End-to-end big picture</span>
+                    <span class="soft-skill-tag light">Mentorship and Coaching</span>
+                    <span class="soft-skill-tag light">Deep Focus / High-Concentration Work</span>
+                    <span class="soft-skill-tag light">Results-focused</span>
+                    <span class="soft-skill-tag light">Analytical Problem-Solving</span>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h2>Education</h2>
+                </div>
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <div class="education-degree">Polkadot Builder Program</div>
+                            <div class="education-school">Polkadot Blockchain Academy</div>
+                        </div>
+                        <div>
+                            <div class="education-date">04/2026</div>
+                            <div class="education-location">Lisbon, Portugal</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <div class="education-degree">Systems Engineer</div>
+                            <div class="education-school">UAI - Universidad Abierta Interamericana</div>
+                        </div>
+                        <div>
+                            <div class="education-date">01/2017 - 12/2021</div>
+                            <div class="education-location">Buenos Aires, Argentina</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Awards -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-trophy"></i>
+                    <h2>Honor Awards</h2>
+                </div>
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <div class="award-title">Microsoft MVP Developer Technologies (02/2017 - Present)</div>
+                        <div class="award-org">Microsoft</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-title">Microsoft Student Partners (01/2016 - Present)</div>
+                        <div class="award-org">Microsoft</div>
+                        <div class="award-desc">Is a recognition about my effort in the university and the community.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Volunteer Experience -->
+            <section class="section" style="page-break-before: always; break-before: page;">
+                <div class="section-title">
+                    <i class="fas fa-hands-helping"></i>
+                    <h2>Volunteer Experience</h2>
+                </div>
+                <div class="volunteer-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title volunteer-title">Programá tu futuro</div>
+                            <div class="experience-company">Buenos Aires Government - Volunteer Program</div>
+                        </div>
+                        <div>
+                            <div class="experience-date">02/2015 - 10/2015</div>
+                            <div class="experience-location">Buenos Aires</div>
+                        </div>
+                    </div>
+                    <div class="experience-label">Tasks/Achievements</div>
+                    <ul class="experience-list">
+                        <li>Volunteered as programming instructor for underprivileged youth, teaching fundamentals of software development and computational thinking.</li>
+                        <li>Designed hands-on coding workshops introducing kids to programming concepts, helping them build their first applications.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Public Speaking -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-microphone-alt"></i>
+                    <h2>Public Speaking</h2>
+                </div>
+                <div class="experience-list" style="padding-left: 0;">
+                    <li style="list-style: none; padding-left: 12px; position: relative;"><span style="position: absolute; left: 0; top: 5px; width: 4px; height: 4px; background: var(--primary-color); border-radius: 50%;"></span><strong>80+ international technical talks</strong> at .NET Conf, DevFest, NetCoreConf, vOpen, Global Azure Bootcamp, and meetups across LATAM &amp; Europe</li>
+                    <li style="list-style: none; padding-left: 12px; position: relative;"><span style="position: absolute; left: 0; top: 5px; width: 4px; height: 4px; background: var(--primary-color); border-radius: 50%;"></span>Topics: Rust, Blockchain &amp; MEV, Zero-Knowledge, .NET, Software Architecture, Design Patterns, AI / LLM systems, Distributed Systems</li>
+                    <li style="list-style: none; padding-left: 12px; position: relative;"><span style="position: absolute; left: 0; top: 5px; width: 4px; height: 4px; background: var(--primary-color); border-radius: 50%;"></span><strong>Open-source contribution:</strong> contributed to the <strong>REVM</strong> community by reverse-engineering Geth and Reth internals during MEV infrastructure work at Borderless</li>
+                    <li style="list-style: none; padding-left: 12px; position: relative;"><span style="position: absolute; left: 0; top: 5px; width: 4px; height: 4px; background: var(--primary-color); border-radius: 50%;"></span>Active <strong>YouTube channel</strong> (youtube.com/@germankuber) with technical deep-dives on Rust, blockchain, AI, and software architecture</li>
+                </div>
+            </section>
+
+            <!-- Organizations -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-users"></i>
+                    <h2>Organizations</h2>
+                </div>
+                <div class="organizations-grid">
+                    <div class="org-item">
+                        <div class="org-name">Net-Baires (.NET Community) (01/2015 - Present)</div>
+                        <div class="org-role">Founder — 100K+ members, 10+ years building Argentina's largest .NET developer community</div>
+                    </div>
+                    <div class="org-item">
+                        <div class="org-name">Crypto Para Mortales (Conference) (01/2023 - Present)</div>
+                        <div class="org-role">Founder — Blockchain & crypto education conference</div>
+                    </div>
+                    <div class="org-item">
+                        <div class="org-name">Patrones Para Mortales (03/2020 - Present)</div>
+                        <div class="org-role">Founder — Design patterns educational content</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Languages -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-globe"></i>
+                    <h2>Languages</h2>
+                </div>
+                <div class="languages-grid">
+                    <div class="language-item">
+                        <div class="language-name">Spanish</div>
+                        <div class="language-level">Native or Bilingual Proficiency</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">English</div>
+                        <div class="language-level">Full Professional Proficiency</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interests -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fas fa-theater-masks"></i>
+                    <h2>Performance Arts</h2>
+                </div>
+                <div class="experience-list" style="padding-left: 0;">
+                    <li style="list-style: none; padding-left: 12px; position: relative;"><span style="position: absolute; left: 0; top: 5px; width: 4px; height: 4px; background: var(--primary-color); border-radius: 50%;"></span><strong>Stage Magic</strong> — Member of Círculo Mágico de España, performing live shows with storytelling and misdirection</li>
+                    <li style="list-style: none; padding-left: 12px; position: relative;"><span style="position: absolute; left: 0; top: 5px; width: 4px; height: 4px; background: var(--primary-color); border-radius: 50%;"></span><strong>Stand-up Comedy</strong> — Open mics and comedy nights, developing improvisation under pressure</li>
+                    <li style="list-style: none; padding-left: 12px; position: relative;"><span style="position: absolute; left: 0; top: 5px; width: 4px; height: 4px; background: var(--primary-color); border-radius: 50%;"></span><strong>Theater & Improv</strong> — 10+ years performing live, applied to team facilitation and high-stakes communication</li>
+                    <li style="list-style: none; padding-left: 12px; position: relative;"><span style="position: absolute; left: 0; top: 5px; width: 4px; height: 4px; background: var(--primary-color); border-radius: 50%;"></span><strong>Hypnosis & Mentalism</strong> — Studying suggestion, non-verbal communication, and audience psychology</li>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

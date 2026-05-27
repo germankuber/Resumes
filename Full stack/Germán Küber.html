@@ -46,6 +46,9 @@
   }
   p { margin-bottom: 3px; text-align: justify; }
   .role { break-inside: avoid; }
+  .section { break-inside: avoid; }
+  h2 { break-after: avoid; }
+  .edu-line, .ach-line, .expertise-line { break-inside: avoid; }
   .role-title { font-weight: 700; font-size: 9pt; color: #111; }
   .role-meta { font-size: 8pt; color: #555; font-style: italic; margin-bottom: 1.5px; }
   ul { margin: 1.5px 0 4px 0; padding-left: 14px; }
@@ -63,12 +66,13 @@
 <div class="name">GERMÁN KÜBER</div>
 <div class="title">Senior Full-Stack Engineer — React, Next.js, React Native, Node.js &amp; TypeScript</div>
 <div class="contact">
-  Las Palmas, Spain (EU Citizen) — Remote — EU / Americas (UTC-5 to UTC+2) — +34 666 844 731<br>
-  german.kuber@gmail.com — linkedin.com/in/germankuber — github.com/GermanKuber — germankuber.com
+  Las Palmas, Spain · EU Citizen — authorized to work across the EU/EEA, no visa sponsorship required<br>
+  Open to relocation within the EU (self-funded) · Remote-first · german.kuber@gmail.com<br>
+  +34 666 844 731 · linkedin.com/in/germankuber · github.com/GermanKuber · germankuber.com
 </div>
 
 <h2>Professional Summary</h2>
-<p>Senior full-stack engineer with 15+ years shipping production web and mobile applications end-to-end. Modern frontend stack: React 18 with concurrent rendering and Suspense, Next.js 14+ App Router with React Server Components and streaming hydration, TypeScript and JavaScript (ES6+), Tailwind CSS, Zustand and Tanstack Query for state and data. Solid Angular history including AngularJS-to-Angular migrations and enterprise apps, plus exposure to Vue.js and Svelte. Test-Driven Development (TDD) discipline with Jest, React Testing Library, Cypress, and continuous integration pipelines. Mobile experience with React Native in production, Expo, EAS, the new architecture (Fabric, TurboModules, Hermes), and native module integration. Backend across <b>Node.js (TypeScript, Express, NestJS)</b>, Python (FastAPI), and C# / .NET, with event-driven messaging (Apache Kafka, RabbitMQ, AWS SNS / SQS) and serverless on AWS Lambda. Strong sense of component design, reusable UI systems, accessibility (WCAG, Section 508), Web Vitals and performance optimization, and rendering pipeline tradeoffs. Owns features end-to-end and ships with attention to detail, clear thinking, and rigorous code quality.</p>
+<p>Senior full-stack engineer with 15+ years shipping production web and mobile applications end-to-end. Modern frontend stack: React 18 with concurrent rendering and Suspense, Next.js 14+ App Router with React Server Components and streaming hydration, TypeScript and JavaScript (ES6+), Tailwind CSS, Zustand and Tanstack Query for state and data. Solid Angular history including AngularJS-to-Angular migrations and enterprise apps, plus exposure to Vue.js and Svelte. Test-Driven Development (TDD) discipline with Jest, React Testing Library, Cypress, and continuous integration pipelines. Mobile experience with React Native in production, Expo, EAS, the new architecture (Fabric, TurboModules, Hermes), and native module integration. Backend across <b>Node.js (TypeScript, Express, NestJS)</b>, Python (FastAPI), and C# / .NET, with event-driven messaging (Apache Kafka, RabbitMQ, AWS SNS / SQS) and serverless on AWS Lambda. Strong sense of component design, reusable UI systems, accessibility (WCAG, Section 508), Web Vitals and performance optimization, and rendering pipeline tradeoffs. Owns features end-to-end and ships with attention to detail, clear thinking, and rigorous code quality. EU citizen (Spanish nationality) with full authorization to work across the EU/EEA — no visa or sponsorship required — open to self-funded relocation anywhere in the EU.</p>
 
 <h2>Core Expertise</h2>
 <p class="expertise-line"><b>Frontend (React Ecosystem):</b> JavaScript (ES6+), TypeScript (advanced types, generics, type safety across data models), React 18 (hooks, concurrent rendering, Suspense, transitions), Next.js 14+ (App Router, React Server Components, streaming, hydration, ISR / SSR / SSG), component-driven architecture, reusable component libraries, design systems, accessibility (WCAG, Section 508, ARIA), responsive UI</p>
@@ -83,19 +87,21 @@
 <p class="expertise-line"><b>Cloud &amp; Serverless:</b> AWS (Lambda, S3, SNS / SQS, EventBridge, Bedrock, CloudFront), Azure (App Service, Functions, Static Web Apps, API Management), Vercel deployments and edge functions, Docker, Kubernetes, CI / CD pipelines (GitHub Actions, Azure DevOps)</p>
 <p class="expertise-line"><b>Databases &amp; SQL:</b> SQL (PostgreSQL, MySQL / Aurora, MS SQL Server / Azure SQL), MongoDB, Redis (cache, pub-sub, streams), Cosmos DB, DynamoDB, query optimization, schema design, indexing strategies, migrations</p>
 <p class="expertise-line"><b>AI-Integrated Frontends:</b> LLM orchestration (OpenAI, Anthropic, Gemini), streaming responses, MCP (Model Context Protocol) server and client integration, RAG pipelines surfaced through UI, agentic platforms, AI-enhanced UX patterns</p>
-<p class="expertise-line"><b>Engineering Practices:</b> Code review, mentoring, pair programming, technical interviewing, ADRs, design reviews, async remote collaboration, clear technical writing</p>
+<p class="expertise-line"><b>Programming Paradigms &amp; Design:</b> Object-Oriented Programming (OOP), Functional Programming, design patterns, architecture patterns, data structures, algorithm design, SOLID principles, clean code</p>
+<p class="expertise-line"><b>Engineering Practices:</b> Test-Driven Development (TDD), pair programming, code review, mentoring, technical interviewing, ADRs, design reviews, CI / CD, DevOps practices, Infrastructure as Code (Terraform), async remote collaboration, clear technical writing</p>
 
 <h2>Professional Experience</h2>
 
 <div class="role">
 <div class="role-title">Senior Full-Stack Engineer &amp; Co-Founder</div>
-<div class="role-meta">KliverAI (Own Venture, closed Apr 2026) — Apr 2025 – Apr 2026 (full-time) — Remote, Spain</div>
+<div class="role-meta">KliverAI (Own Venture, closed Feb 2026) — Mar 2025 – Feb 2026 (full-time) — Remote, Spain</div>
 <ul>
   <li>Built and shipped production frontends in React 18 + Next.js 14+ (App Router, React Server Components, streaming hydration) with TypeScript, Tailwind CSS, Zustand for client state, and Tanstack Query for server state.</li>
-  <li>Designed and built a React Native mobile application (Expo, EAS) integrated with the same backend services; implemented native module integration and real-time streaming UI for voice AI experiences.</li>
+  <li>Designed and built a React Native mobile application (Expo, EAS) integrated with the same backend services; implemented native module integration and real-time streaming UI for voice AI experiences across iOS and Android.</li>
+  <li>Rewrote the real-time layer from app-embedded SignalR to Azure SignalR Service with Redis-backed state, scaling concurrent users by 500% while holding sub-200ms TTFT on voice pipelines.</li>
   <li>Implemented reusable component libraries and a design system across web and mobile clients, with Storybook documentation, accessibility (WCAG) compliance, and dark mode theming.</li>
-  <li>Built backend services in Node.js (TypeScript) and Python (FastAPI) integrating multiple LLM providers (OpenAI, Anthropic, Google Gemini) and developed event-driven serverless workflows on AWS Lambda + S3 + SNS / SQS + EventBridge.</li>
-  <li>Developed real-time UI patterns with WebSocket and SignalR streaming for sub-200ms TTFT (Time To First Token) voice AI experiences across concurrent user sessions.</li>
+  <li>Built backend services in Node.js (TypeScript) and Python (FastAPI) integrating three LLM providers (OpenAI, Anthropic, Google Gemini) with dynamic routing, and developed event-driven serverless workflows on AWS Lambda + S3 + SNS / SQS + EventBridge.</li>
+  <li>Benchmarked TTS / STT services (ElevenLabs, Deepgram, AssemblyAI, OpenAI Whisper, Play.ht) on latency, cost, and quality — getting latency to 90ms and word accuracy to nearly 95%.</li>
   <li>Integrated AI-coding tools (Cursor, Claude Code) and built MCP (Model Context Protocol) servers and clients to standardize tool access across LLM-powered workflows.</li>
   <li>Optimized Web Vitals (LCP, INP, CLS) through code splitting, dynamic imports, image optimization, and rendering pipeline tradeoffs; applied Test-Driven Development with Jest and React Testing Library, and instrumented frontend observability with custom telemetry.</li>
   <li>Collaborated with a small distributed team of up to 3 engineers, ran code reviews, made architectural decisions, and maintained hands-on ownership across the full stack.</li>
@@ -103,47 +109,51 @@
 </div>
 
 <div class="role">
-<div class="role-title">Senior Full-Stack Engineer (Part-time)</div>
-<div class="role-meta">Rocking Product — Apr 2025 – Nov 2025 (part-time, parallel to KliverAI) — Remote / Buenos Aires</div>
+<div class="role-title">Fractional CTO</div>
+<div class="role-meta">Rocking Product — Apr 2025 – Dec 2025 (part-time, parallel to KliverAI) — Remote</div>
 <ul>
-  <li>Helped redesign the platform architecture, leading a full-stack migration from a fragmented JavaScript codebase to a modernized React 18 + Next.js frontend with .NET (ASP.NET Core, Entity Framework Core) backend.</li>
+  <li>Came in as Fractional CTO to an 8-engineer team and restructured it in the first quarter without stepping away from the code; ran technical interviews and hiring decisions.</li>
+  <li>Built an image embeddings service (Azure AI Vision and CLIP) to improve product matching across brand comparisons, raising accuracy and lifting the client's revenue by 40%.</li>
+  <li>Cut production bugs by 70% through team training and automated processes (testing, CI / CD, code review).</li>
+  <li>Proposed and led a full-stack migration from a fragmented JavaScript codebase to a modernized React 18 + Next.js frontend with .NET (ASP.NET Core, Entity Framework Core) backend.</li>
   <li>Built TypeScript-first React components, refactored state management, and improved rendering performance across the platform.</li>
   <li>Built and shipped a React Native mobile application to production (Expo, EAS) integrated with the same backend services, extending the product to mobile users.</li>
-  <li>Built backend features in Node.js / TypeScript, Python (FastAPI, LangChain) and .NET, integrating AI-powered functionality into existing user flows with clean API design and TDD discipline.</li>
+  <li>Built backend features in Node.js / TypeScript, Python (FastAPI, LangChain) and .NET; introduced Spec-Driven Development (SDD) and AI-driven development workflows.</li>
   <li>Optimized cloud infrastructure and LLM usage through semantic caching, prompt compression, and dynamic model selection, cutting combined cloud and API spend by 45%.</li>
-  <li>Established code review standards, design review process, and CI / CD pipelines; contributed to engineering rituals and structured feedback practices while supporting an 8-person engineering team.</li>
 </ul>
 </div>
 
 <div class="role">
 <div class="role-title">Lead Software Engineer (Distributed Systems)</div>
-<div class="role-meta">Borderless Capital / CTF Capital — Aug 2021 – Apr 2025 — Remote</div>
+<div class="role-meta">Borderless Capital / CTF Capital — Sep 2021 – Mar 2025 — Remote</div>
 <ul>
-  <li>Lead engineer for low-latency distributed systems in Rust (tokio, async), Python / Cython, and .NET (C#), processing $50M+ in daily transactional flow and contributing $100K+ in attributable annual P&amp;L with execution under 10ms p99.</li>
+  <li>Lead engineer for low-latency distributed systems in Rust (tokio, async), Python / Cython, and .NET (C#), processing 10K+ opportunities per day from $50M+ in daily transactional flow and contributing $100K+ in attributable annual P&amp;L with execution under 10ms p99.</li>
   <li>Designed and built internal dashboards and operational tooling with TypeScript, React, and real-time data visualization for trading observability and incident response.</li>
+  <li>Migrated the system from Python / Cython to Rust and took it to 20x more transactions per second.</li>
   <li>Built backend services and operational APIs in Node.js / TypeScript, .NET (C#) and Python; owned end-to-end production reliability including on-call rotation, post-mortems, and observability ownership (Prometheus, OpenTelemetry, custom telemetry).</li>
-  <li>Contributed to code review, technical interviewing, and architectural discussions across distributed systems and frontend hires.</li>
+  <li>Contributed to code review, technical interviewing, and architectural discussions across the team, which grew from 4 to 10 engineers.</li>
 </ul>
 </div>
 
 <div class="role">
-<div class="role-title">Senior Software Engineer</div>
-<div class="role-meta">Paramo Technology — Aug 2020 – Aug 2021 — Remote / Argentina</div>
+<div class="role-title">Senior Software Architect</div>
+<div class="role-meta">Paramo Technology — Oct 2020 – Sep 2021 — Remote</div>
 <ul>
-  <li>Held company-wide architecture authority for a large-scale online casino platform — accountable for cross-team technical decisions across 9+ engineering teams (200+ professionals, each with its own coordinator), working directly with the CTO and defining organization-wide engineering standards.</li>
-  <li>Designed and built event-driven microservices in .NET (C#, ASP.NET Core) for the platform handling real-time game state and wallet operations with strict consistency requirements.</li>
+  <li>Owned the end-to-end architecture of a high-traffic online casino (iGaming) platform handling real-time money operations and regulatory reporting, working directly with the CTO.</li>
+  <li>Spotted the issues slowing teams down and designed action plans that raised productivity by 40%, measured by features shipped and fewer errors.</li>
+  <li>Designed and built event-driven microservices in .NET (C#, ASP.NET Core) for the platform handling real-time game state and wallet operations with strict consistency requirements; brought in Kubernetes to scale.</li>
   <li>Built React frontends consuming real-time APIs for operational and customer-facing surfaces, with TypeScript and component-driven design.</li>
-  <li>Applied Domain-Driven Design (DDD) — aggregates, value objects, domain events — and CQRS for read / write separation.</li>
+  <li>Implemented distributed tracing (OpenTelemetry, Application Insights, Datadog); led part of the hiring and designed the technical entry exam.</li>
 </ul>
 </div>
 
 <div class="role">
-<div class="role-title">Senior Full-Stack Engineer</div>
-<div class="role-meta">CloudX (Software Consultancy) — Aug 2017 – Aug 2020 — Buenos Aires</div>
+<div class="role-title">Software Architect (Full-Stack)</div>
+<div class="role-meta">CloudX (Software Consultancy) — Sep 2017 – Oct 2020 — Remote / Buenos Aires (first employee)</div>
 <ul>
-  <li>Built full-stack enterprise products end-to-end: Angular (AngularJS through Angular 7+) and React frontends with reusable component libraries and TypeScript, backed by Node.js / TypeScript and .NET (C#, ASP.NET) microservices using Domain-Driven Design and Clean Architecture / Hexagonal patterns.</li>
+  <li>Was the company's first employee; built full-stack enterprise products end-to-end: Angular (AngularJS through Angular 7+) and React frontends with reusable component libraries and TypeScript, backed by Node.js / TypeScript and .NET (C#, ASP.NET) microservices using Domain-Driven Design and Clean Architecture / Hexagonal patterns.</li>
   <li>Led the Angular practice across multiple product lines, including AngularJS-to-Angular migrations, shared component libraries, NgRx state management, and RxJS reactive patterns.</li>
-  <li>Built shared UI component systems used across multiple enterprise product lines, including form libraries, data tables, and theming.</li>
+  <li>Built a distributed system over geospatial data with PostGIS for a UK client.</li>
   <li>Worked directly with clients: led requirements gathering, technical adoption sessions, and delivered training programs and conference talks to partners and internal engineering teams.</li>
 </ul>
 </div>
@@ -152,19 +162,20 @@
 <div class="role-title">Software Engineer (Angular / .NET)</div>
 <div class="role-meta">Majestic Hotel Group — Jan 2014 – Aug 2017 — Argentina</div>
 <ul>
-  <li>Built full-stack features in Angular and .NET for hotel management platforms; led the migration from AngularJS to Angular 4 across the product suite.</li>
-  <li>Refactored backend workflows toward an event-oriented architecture, reducing coupling across integrations.</li>
+  <li>Built full-stack features in Angular and .NET for hotel management platforms, first as Team Lead and later as architect; led the migration from AngularJS to Angular 2 across the product suite.</li>
+  <li>Redesigned the data model toward an event-oriented architecture, reducing coupling across integrations.</li>
 </ul>
 </div>
 
 <div class="role">
 <div class="role-title">.NET Web Developer</div>
-<div class="role-meta">Plus54 — Aug 2009 – Mar 2014 — Buenos Aires</div>
+<div class="role-meta">Plus54 — 2011 – 2014 — Buenos Aires (earlier: Acsys 2009–2011, IBM 2008–2009)</div>
 <ul>
   <li>Early career: built .NET web applications, internal tooling, and mobile components end-to-end; integrated external APIs with unit testing and reliable data exchange patterns.</li>
 </ul>
 </div>
 
+<div class="section">
 <h2>Key Achievements</h2>
 <p class="ach-line"><b>Microsoft MVP, Developer Technologies</b> — 8 consecutive years (2017–present), recognized for technical content and community contributions across the .NET and Microsoft ecosystem.</p>
 <p class="ach-line"><b>Microsoft Certified: Azure Solutions Architect Expert (AZ-305)</b> — Senior-level Azure architecture credential covering identity, governance, monitoring, data, business continuity, and infrastructure design.</p>
@@ -173,19 +184,24 @@
 <p class="ach-line"><b>Co-Founder &amp; Lead Engineer at KliverAI</b> — Built and shipped an AI training platform 0-to-1 with full-stack web and mobile delivery on a modern React + Next.js + Node.js + Python stack.</p>
 <p class="ach-line"><b>Polkadot Builder Program Graduate</b> — Completed Polkadot Blockchain Academy in Lisbon, Portugal (2026).</p>
 <p class="ach-line"><b>Microsoft Student Partner</b> — 5 years (2016–2021).</p>
+</div>
 
+<div class="section">
 <h2>Education &amp; Certifications</h2>
 <p class="edu-line">Microsoft Certified: Azure Solutions Architect Expert (AZ-305) — Microsoft</p>
 <p class="edu-line">Microsoft Certified: Azure Associate (AZ-104 / AZ-204 level) — Microsoft</p>
 <p class="edu-line">Microsoft MVP, Developer Technologies — Feb 2017 – Present (8 consecutive years)</p>
-<p class="edu-line">Systems Engineer — Universidad Abierta Interamericana (UAI), Buenos Aires, Argentina (2017–2021)</p>
 <p class="edu-line">Polkadot Builder Program — Polkadot Blockchain Academy, Lisbon, Portugal (2026)</p>
+<p class="edu-line">Systems Engineer — Universidad Abierta Interamericana (UAI), Buenos Aires, Argentina (2017–2021)</p>
+</div>
 
+<div class="section">
 <h2>Open Source &amp; Community</h2>
 <p class="ach-line"><b>Net-Baires (.NET Community)</b> — Founder (2015–present). Argentina's largest .NET developer community, 100K+ members, 10+ years of monthly meetups and conferences.</p>
 <p class="ach-line"><b>Patrones Para Mortales</b> — Founder (2020–present). Educational content brand on software design patterns and architecture.</p>
 <p class="ach-line"><b>Crypto Para Mortales</b> — Founder (2023–present). Spanish-language blockchain and crypto education conference.</p>
 <p class="ach-line"><b>YouTube channel (youtube.com/@germankuber)</b> — technical deep-dives on full-stack engineering, .NET, AI, architecture, and Rust.</p>
+</div>
 
 <h2>Spoken Languages</h2>
 <p>Spanish: Native — English: Full Professional Proficiency — daily use in international remote teams</p>
