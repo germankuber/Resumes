@@ -4,3 +4,6 @@ _page_*.png
 .claude/settings.local.json
 __pycache__/
 *.pyc
+
+# Loose PDFs in repo root — canonical PDFs live inside per-tech folders
+/Germán Küber.pdf
