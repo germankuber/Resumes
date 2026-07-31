@@ -119,7 +119,7 @@ What it does, step by step:
    reachable on `main` with a clean tree, and the source PDF is newer than the
    destination. Stops and asks if anything looks off.
 2. **Copy** `Resumes/Human/Germán Küber.pdf` →
-   `PersonalSite/personal-site/public/Germán Küber.pdf`.
+   `Personal/PersonalSite/personal-site/public/Germán Küber.pdf`.
 3. **Commit and push** in `personal-site` (single file, conventional commit
    message, push to `main`).
 4. **Verify Vercel** via the Vercel MCP — finds the `personal-site` project,

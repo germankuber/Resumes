@@ -129,7 +129,7 @@ If you add a new section that risks splitting, either wrap it in
 
 Once regenerated, the PDF can be published to the website by running
 `/publish-resume`, which copies `Human/Germán Küber.pdf` →
-`../../PersonalSite/personal-site/public/Germán Küber.pdf`, commits and pushes to
+`../../PersonalSite/personal-site/public/Germán Küber.pdf` (sibling of `Resumes/`), commits and pushes to
 the `personal-site` repo. Vercel auto-deploys.
 
 **Never copy by hand.** Use the skill, otherwise the two sides drift apart.
