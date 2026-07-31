@@ -45,8 +45,10 @@
     margin-bottom: 3px;
   }
   p { margin-bottom: 2.5px; text-align: justify; }
-  .role { break-inside: avoid; }
-  .section { break-inside: avoid; }
+  .role { break-inside: auto; }
+  .role-title { break-after: avoid; }
+  .role-meta { break-after: avoid; }
+  ul { orphans: 2; widows: 2; }
   h2 { break-after: avoid; }
   .edu-line, .ach-line, .expertise-line { break-inside: avoid; }
   .role-title { font-weight: 700; font-size: 9pt; color: #111; }
@@ -89,6 +91,17 @@
 <p class="expertise-line"><b>Engineering Practices &amp; Leadership:</b> Test-Driven Development (TDD), pair programming, code review, technical roadmap, architectural decision records (ADRs), design reviews, mentoring, hiring and technical interviewing, cross-functional collaboration, internal training programs, on-call and incident response, legacy modernization and cloud migration</p>
 
 <h2>Professional Experience</h2>
+
+<div class="role">
+<div class="role-title">Independent AI Consultant — Agent Engineering &amp; Enterprise AI Delivery</div>
+<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Present — Remote, client under NDA</div>
+<ul>
+  <li>Forward-deployed AI consultant embedded with an enterprise engineering organization: run discovery with business and technical stakeholders, architect the solution, and own delivery from pilot through production and continuous iteration.</li>
+  <li>Design and ship production agentic workflows on Microsoft Agent Framework (MAF), LangChain and LangGraph, with eval suites and regression tests gating every change before production.</li>
+  <li>Fine-tuned models with LoRA on internal company documents and deployed them through Azure AI Foundry to improve agent accuracy on domain-specific tasks.</li>
+  <li>Own the RAG platform end-to-end for internal company documentation, and lead context engineering so the organization's knowledge is structured for LLM consumption.</li>
+</ul>
+</div>
 
 <div class="role">
 <div class="role-title">Lead Architect &amp; Co-Founder</div>

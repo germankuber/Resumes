@@ -45,8 +45,10 @@
     margin-bottom: 3.5px;
   }
   p { margin-bottom: 3px; text-align: justify; }
-  .role { break-inside: avoid; }
-  .section { break-inside: avoid; }
+  .role { break-inside: auto; }
+  .role-title { break-after: avoid; }
+  .role-meta { break-after: avoid; }
+  ul { orphans: 2; widows: 2; }
   h2 { break-after: avoid; }
   .edu-line, .ach-line, .expertise-line { break-inside: avoid; }
   .role-title { font-weight: 700; font-size: 9pt; color: #111; }
@@ -91,6 +93,17 @@
 <p class="expertise-line"><b>Engineering Practices:</b> Test-Driven Development (TDD), pair programming, code review, mentoring, technical interviewing, ADRs, design reviews, CI / CD, DevOps practices, Infrastructure as Code (Terraform), async remote collaboration, clear technical writing</p>
 
 <h2>Professional Experience</h2>
+
+<div class="role">
+<div class="role-title">Independent AI Consultant — Agent Engineering &amp; Enterprise AI Delivery</div>
+<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Present — Remote, client under NDA</div>
+<ul>
+  <li>Forward-deployed AI consultant embedded with an enterprise engineering organization: run discovery with business and technical stakeholders, architect the solution, and own delivery from pilot through production and continuous iteration.</li>
+  <li>Design and ship production agentic workflows on LangChain, LangGraph and Microsoft Agent Framework, testing each graph, running eval suites against it, and monitoring it live in production.</li>
+  <li>Own the RAG platform end-to-end for internal company documentation — retrieval optimization, chunking and context engineering, plus regression test suites gating every change.</li>
+  <li>Cut inference cost and latency through semantic caching, agent-level semantic memory, and dynamic model routing across providers.</li>
+</ul>
+</div>
 
 <div class="role">
 <div class="role-title">Senior Full-Stack Engineer &amp; Co-Founder</div>

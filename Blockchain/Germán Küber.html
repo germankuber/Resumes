@@ -45,8 +45,10 @@
     margin-bottom: 3.5px;
   }
   p { margin-bottom: 3px; text-align: justify; }
-  .role { break-inside: avoid; }
-  .section { break-inside: avoid; }
+  .role { break-inside: auto; }
+  .role-title { break-after: avoid; }
+  .role-meta { break-after: avoid; }
+  ul { orphans: 2; widows: 2; }
   h2 { break-after: avoid; }
   .edu-line, .ach-line, .expertise-line { break-inside: avoid; }
   .role-title { font-weight: 700; font-size: 9pt; color: #111; }
@@ -87,6 +89,17 @@
 <p class="expertise-line"><b>Engineering Leadership:</b> Technical leadership for blockchain and distributed systems teams, hiring and technical interviewing for Rust / blockchain hires, code review and mentoring, technical roadmap, architectural decision records (ADRs), on-call and incident response, open-source contribution practices</p>
 
 <h2>Professional Experience</h2>
+
+<div class="role">
+<div class="role-title">Independent AI Consultant — Agent Engineering &amp; Enterprise AI Delivery</div>
+<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Present — Remote, client under NDA</div>
+<ul>
+  <li>Forward-deployed AI consultant embedded with an enterprise engineering organization: run discovery with business and technical stakeholders, architect the solution, and own delivery from pilot through production and continuous iteration.</li>
+  <li>Design and ship production agentic workflows on LangChain, LangGraph and Microsoft Agent Framework, including multi-agent architectures on Google's A2A (Agent2Agent) protocol with a central capability registry.</li>
+  <li>Built knowledge graphs (Cognee, Graphiti) over internal repositories, including specialized code graphs that map microservice architecture so agents can query real system structure when making decisions.</li>
+  <li>Own the RAG platform end-to-end, with regression test suites gating every pipeline change reaching production.</li>
+</ul>
+</div>
 
 <div class="role">
 <div class="role-title">Lead Software Engineer (Blockchain / MEV)</div>

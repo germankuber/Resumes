@@ -5,13 +5,13 @@
 <style>
   @page {
     size: A4;
-    margin: 1cm 1.3cm;
+    margin: 0.8cm 1.2cm;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 8.6pt;
-    line-height: 1.22;
+    font-size: 8.4pt;
+    line-height: 1.19;
     color: #1a1a1a;
   }
   .name {
@@ -45,8 +45,10 @@
     margin-bottom: 3.5px;
   }
   p { margin-bottom: 3px; text-align: justify; }
-  .role { break-inside: avoid; }
-  .section { break-inside: avoid; }
+  .role { break-inside: auto; }
+  .role-title { break-after: avoid; }
+  .role-meta { break-after: avoid; }
+  ul { orphans: 2; widows: 2; }
   h2 { break-after: avoid; }
   .edu-line, .ach-line, .expertise-line { break-inside: avoid; }
   .role-title { font-weight: 700; font-size: 9pt; color: #111; }
@@ -80,18 +82,29 @@
 <p class="expertise-line"><b>Cloud &amp; Infrastructure:</b> AWS, Docker, Kubernetes (manifests, deployments, services), CI / CD pipelines, Linux, Infrastructure as Code (Terraform), observability stacks</p>
 <p class="expertise-line"><b>Data &amp; Storage:</b> PostgreSQL (OLTP, jsonb, semantic cache backing store), caching and pub/sub (Redis-style), high-throughput data pipelines</p>
 <p class="expertise-line"><b>Backend Engineering:</b> Event-driven microservices, async coordination, fault tolerance, robust APIs and abstractions, Domain-Driven Design, customer-facing systems at scale</p>
-<p class="expertise-line"><b>Programming Paradigms &amp; Design:</b> Object-Oriented Programming (OOP), Functional Programming, Design Patterns, Architecture Patterns, SOLID principles, data structures, algorithm design, clean code</p>
-<p class="expertise-line"><b>Engineering Practices:</b> Test-Driven Development (TDD), pair programming, code review, mentoring, ADRs, design reviews, CI / CD, DevOps practices, Infrastructure as Code (Terraform), async remote collaboration</p>
+<p class="expertise-line"><b>Agent Engineering:</b> Production AI agents, agentic workflows, LangChain, LangGraph, Microsoft Agent Framework, A2A protocol, eval frameworks (LangSmith, Langfuse, RAGAS, DeepEval), context engineering, knowledge graphs (Cognee, Graphiti), LoRA fine-tuning, semantic caching, human-in-the-loop</p>
+<p class="expertise-line"><b>Paradigms, Design &amp; Practices:</b> OOP, Functional Programming, Design Patterns, Architecture Patterns, SOLID, data structures, algorithm design, clean code, Test-Driven Development (TDD), pair programming, code review, mentoring, ADRs, CI / CD, Infrastructure as Code (Terraform)</p>
 <p class="expertise-line"><b>Observability &amp; Reliability:</b> Prometheus, OpenTelemetry, distributed tracing, structured logging, 50+ production metrics, 24 / 7 on-call rotation, post-mortems, incident response</p>
 <p class="expertise-line"><b>Adjacent Stacks:</b> TypeScript / Node.js, Rust (tokio, async), .NET / C#, Go (reverse-engineering Geth internals)</p>
 
 <h2>Professional Experience</h2>
 
 <div class="role">
+<div class="role-title">Independent AI Consultant — Agent Engineering &amp; Enterprise AI Delivery</div>
+<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Present — Remote, client under NDA</div>
+<ul>
+  <li>Forward-deployed AI consultant embedded with an enterprise engineering organization: run discovery with business and technical stakeholders, architect the solution, and own delivery from pilot through production and continuous iteration.</li>
+  <li>Design and ship production agentic workflows in Python on LangChain, LangGraph and Microsoft Agent Framework, testing each graph, running eval suites against it, and monitoring it live in production.</li>
+  <li>Own the RAG platform end-to-end for internal company documentation — retrieval optimization, chunking, context engineering, and regression test suites gating every pipeline change.</li>
+  <li>Fine-tuned models with LoRA on internal company documents deployed through Azure AI Foundry; cut cost and latency through semantic caching, semantic memory, and dynamic model routing.</li>
+</ul>
+</div>
+
+<div class="role">
 <div class="role-title">Lead AI Architect &amp; Co-Founder</div>
 <div class="role-meta">KliverAI (Own Venture, closed Feb 2026) — Mar 2025 – Feb 2026 (full-time) — Remote, Spain</div>
 <ul>
-  <li>Designed and shipped a real-time audio AI pipeline on OpenAI Realtime API with SignalR streaming, achieving sub-200ms end-to-end latency across concurrent user sessions — the same class of problem as an ambient AI scribe: capturing live conversation, processing it through LLMs, and returning structured output in real time.</li>
+  <li>Designed and shipped a real-time audio AI pipeline on OpenAI Realtime API with SignalR streaming, achieving sub-200ms end-to-end latency across concurrent user sessions — capturing live conversation, processing it through LLMs, and returning structured output in real time.</li>
   <li>Rewrote the real-time layer from app-embedded SignalR to Azure SignalR Service with Redis-backed state, scaling concurrent users by 500% while holding sub-200ms latency.</li>
   <li>Benchmarked TTS / STT services (ElevenLabs, Deepgram, AssemblyAI, OpenAI Whisper, Play.ht) on latency, cost, and quality — getting latency to 90ms and word accuracy to nearly 95%.</li>
   <li>Built a real-time transcription capture pipeline: a Chrome Extension streams live Google Meet audio over WebSocket into a Python backend, which then feeds an automated AI evaluation pipeline.</li>
@@ -121,7 +134,7 @@
 <div class="role-title">Lead Backend Engineer (Distributed Systems, Python &amp; Rust)</div>
 <div class="role-meta">Borderless Capital / CTF Capital — Sep 2021 – Mar 2025 — Remote</div>
 <ul>
-  <li>Operated production backend services processing 10K+ opportunities per day from $50M+ in daily transactional flow and contributing $100K+ in attributable annual P&amp;L with execution under 10ms p99 — real users, real money, real consequences if anything broke.</li>
+  <li>Operated production backend services processing 10K+ opportunities per day from $50M+ in daily transactional flow and contributing $100K+ in attributable annual P&amp;L with execution under 10ms p99.</li>
   <li>Migrated the system from Python / Cython to Rust and took it to 20x more transactions per second.</li>
   <li>Built Python services (endpoints, business logic, external integrations) running on Docker and Kubernetes in production, alongside the Rust core; owned K8s manifests and deployment configuration for the services I shipped.</li>
   <li>Built Python / Cython and PyO3 FFI bindings exposing Rust performance-critical code to higher-level Python orchestration layers, eliminating GC pauses across language boundaries.</li>
@@ -153,18 +166,10 @@
 </div>
 
 <div class="role">
-<div class="role-title">Software Architect</div>
-<div class="role-meta">Majestic Hotel Group — Jan 2014 – Aug 2017 — Argentina</div>
+<div class="role-title">Software Architect / Team Lead — Earlier Roles</div>
+<div class="role-meta">Majestic Hotel Group (2014–2017) · Plus54 (2011–2014) · Acsys (2009–2011) · IBM (2008–2009) — Argentina</div>
 <ul>
-  <li>Designed and shipped full-stack features for internal hotel management platforms, first as Team Lead and later as architect; led migration from AngularJS to Angular 2 and redesigned the data model toward an event-oriented architecture.</li>
-</ul>
-</div>
-
-<div class="role">
-<div class="role-title">.NET Web Developer</div>
-<div class="role-meta">Plus54 — 2011 – 2014 — Buenos Aires (earlier: Acsys 2009–2011, IBM 2008–2009)</div>
-<ul>
-  <li>Early career: built .NET web applications, internal tooling, and mobile components end to end.</li>
+  <li>Full-stack features for internal hotel management platforms, first as Team Lead then architect; led migration from AngularJS to Angular 2 and redesigned the data model toward event-oriented architecture. Earlier: .NET web applications, internal tooling and mobile components end to end.</li>
 </ul>
 </div>
 
@@ -172,15 +177,13 @@
 <h2>Key Achievements</h2>
 <p class="ach-line"><b>Real-time audio AI pipeline at KliverAI</b> — OpenAI Realtime API + SignalR + WebSocket transcription capture, sub-200ms streaming latency across concurrent sessions.</p>
 <p class="ach-line"><b>Production backend at Borderless</b> — Python and Rust services on Docker / Kubernetes / AWS, processing $50M+ in daily transactional flow and contributing $100K+ in attributable annual P&amp;L at sub-10ms p99.</p>
-<p class="ach-line"><b>Microsoft MVP, Developer Technologies</b> — 8 consecutive years (2017–present).</p>
-<p class="ach-line"><b>80+ International Technical Talks</b> — conferences and meetups across LATAM and Europe.</p>
-<p class="ach-line"><b>Net-Baires Founder</b> — Argentina's largest .NET developer community, 100K+ members across 10+ years.</p>
+<p class="ach-line"><b>Production AI agents (Independent Consulting)</b> — Agentic workflows in Python on LangChain, LangGraph and Microsoft Agent Framework, eval-gated and monitored live in production for an enterprise client.</p>
+<p class="ach-line"><b>Microsoft MVP, Developer Technologies</b> — 8 consecutive years (2017–present). <b>80+ International Technical Talks</b> — conferences and meetups across LATAM and Europe. <b>Net-Baires Founder</b> — Argentina's largest .NET developer community, 100K+ members across 10+ years.</p>
 </div>
 
 <div class="section">
 <h2>Education &amp; Certifications</h2>
-<p class="edu-line">Microsoft Certified: Azure Solutions Architect Expert (AZ-305) — Microsoft</p>
-<p class="edu-line">Microsoft Certified: Azure Associate (AZ-104 / AZ-204 level) — Microsoft</p>
+<p class="edu-line">Microsoft Certified: Azure Solutions Architect Expert (AZ-305) · Azure Associate (AZ-104 / AZ-204 level) — Microsoft</p>
 <p class="edu-line">Microsoft MVP, Developer Technologies — Feb 2017 – Present (8 consecutive years)</p>
 <p class="edu-line">Polkadot Builder Program — Polkadot Blockchain Academy, Lisbon, Portugal (2026)</p>
 <p class="edu-line">Systems Engineer — Universidad Abierta Interamericana (UAI), Buenos Aires, Argentina (2017–2021)</p>
@@ -189,9 +192,7 @@
 <div class="section">
 <h2>Open Source, Writing &amp; Community</h2>
 <p class="ach-line"><b>YouTube channel (youtube.com/@germankuber)</b> — technical deep-dives on AI, Python, Rust, and software architecture.</p>
-<p class="ach-line"><b>Net-Baires (.NET Community)</b> — Founder (2015–present). 100K+ members.</p>
-<p class="ach-line"><b>Crypto Para Mortales</b> — Founder (2023–present). Spanish-language blockchain and crypto education conference.</p>
-<p class="ach-line"><b>Patrones Para Mortales</b> — Founder (2020–present). Educational content on software design.</p>
+<p class="ach-line"><b>Net-Baires (.NET Community)</b> — Founder (2015–present), 100K+ members. <b>Crypto Para Mortales</b> — Founder (2023–present), Spanish-language blockchain education conference. <b>Patrones Para Mortales</b> — Founder (2020–present), educational content on software design.</p>
 </div>
 
 <h2>Spoken Languages</h2>

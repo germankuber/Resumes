@@ -45,8 +45,10 @@
     margin-bottom: 3.5px;
   }
   p { margin-bottom: 3px; text-align: justify; }
-  .role { break-inside: avoid; }
-  .section { break-inside: avoid; }
+  .role { break-inside: auto; }
+  .role-title { break-after: avoid; }
+  .role-meta { break-after: avoid; }
+  ul { orphans: 2; widows: 2; }
   h2 { break-after: avoid; }
   .edu-line, .ach-line, .expertise-line { break-inside: avoid; }
   .role-title { font-weight: 700; font-size: 9pt; color: #111; }
@@ -86,6 +88,17 @@
 <p class="expertise-line"><b>Hands-On Engineering:</b> Remains active in production code (C# / .NET, Node.js / TypeScript, Python, Rust); 4+ years production Rust at Borderless (low-latency MEV infrastructure, $50M+ daily on-chain flow, sub-10ms execution); production AI / LLM systems at KliverAI; .NET architecture across regulated and enterprise verticals</p>
 
 <h2>Professional Experience</h2>
+
+<div class="role">
+<div class="role-title">Independent AI Consultant — Agent Engineering &amp; Enterprise AI Delivery</div>
+<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Present — Remote, client under NDA</div>
+<ul>
+  <li>Forward-deployed AI consultant embedded with an enterprise engineering organization: run discovery with business and technical stakeholders, architect the solution, and own delivery from pilot through production and continuous iteration.</li>
+  <li>Advise engineering leadership on AI strategy: which problems are worth solving with agents, how to structure company knowledge so it is consumable by LLMs, and which data matters for long-term decision-making.</li>
+  <li>Introduced a Spec-Driven Development (SDD) framework across the delivery process — versioning, testing and distributing reusable agent skills, and measuring the improvement they produce.</li>
+  <li>Designed an end-to-end agentic pipeline from company discovery through to production deployment, with targeted human-in-the-loop checkpoints placed to guarantee quality; cut inference cost and latency through semantic caching and dynamic model routing.</li>
+</ul>
+</div>
 
 <div class="role">
 <div class="role-title">Co-Founder &amp; Lead Architect</div>
