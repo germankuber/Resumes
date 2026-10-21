@@ -5,17 +5,17 @@
 <style>
   @page {
     size: A4;
-    margin: 0.8cm 1.2cm;
+    margin: 0.65cm 1.05cm;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 8.4pt;
-    line-height: 1.19;
+    font-size: 8.2pt;
+    line-height: 1.15;
     color: #1a1a1a;
   }
   .name {
-    font-size: 19pt;
+    font-size: 17pt;
     font-weight: 700;
     letter-spacing: 0.5px;
     color: #111;
@@ -27,10 +27,10 @@
     margin-top: 2px;
   }
   .contact {
-    font-size: 8.4pt;
+    font-size: 8.2pt;
     color: #444;
     margin-top: 4px;
-    line-height: 1.45;
+    line-height: 1.25;
   }
   .contact a { color: #444; text-decoration: none; }
   h2 {
@@ -41,8 +41,8 @@
     color: #2a4d7a;
     border-bottom: 1.3px solid #2a4d7a;
     padding-bottom: 1.5px;
-    margin-top: 6.5px;
-    margin-bottom: 3.5px;
+    margin-top: 4.5px;
+    margin-bottom: 2.5px;
   }
   p { margin-bottom: 3px; text-align: justify; }
   .role { break-inside: auto; }
@@ -53,14 +53,14 @@
   .edu-line, .ach-line, .expertise-line { break-inside: avoid; }
   .role-title { font-weight: 700; font-size: 9pt; color: #111; }
   .role-meta { font-size: 8pt; color: #555; font-style: italic; margin-bottom: 1.5px; }
-  ul { margin: 1.5px 0 4px 0; padding-left: 14px; }
-  li { margin-bottom: 1.3px; text-align: justify; }
-  .expertise-line { margin-bottom: 1.8px; }
+  ul { margin: 1px 0 3px 0; padding-left: 14px; }
+  li { margin-bottom: 1.1px; text-align: justify; }
+  .expertise-line { margin-bottom: 1.4px; }
   .expertise-line b { color: #111; }
-  .ach-line { margin-bottom: 1.3px; }
+  .ach-line { margin-bottom: 1px; }
   .ach-line b { color: #111; }
   .compact { margin-bottom: 4px; }
-  .edu-line { margin-bottom: 1.5px; }
+  .edu-line { margin-bottom: 1.2px; }
 </style>
 </head>
 <body>
@@ -80,9 +80,9 @@
 <p class="expertise-line"><b>Production Python:</b> FastAPI, Flask, Django, asyncio, async / await, Cython, PyO3 bindings, Pydantic, SQLAlchemy, REST and WebSocket APIs, background workers, structured logging, testing (pytest)</p>
 <p class="expertise-line"><b>Real-Time AI &amp; Voice Pipelines:</b> OpenAI Realtime API, WebSocket streaming, SignalR, sub-200ms audio pipelines, real-time transcription capture, real-time evaluation pipelines, LLM orchestration (OpenAI, Anthropic, Gemini), multi-provider routing, prompt engineering, RAG, multi-agent (LangGraph), MCP server / client</p>
 <p class="expertise-line"><b>Cloud &amp; Infrastructure:</b> AWS, Docker, Kubernetes (manifests, deployments, services), CI / CD pipelines, Linux, Infrastructure as Code (Terraform), observability stacks</p>
-<p class="expertise-line"><b>Data &amp; Storage:</b> PostgreSQL (OLTP, jsonb, semantic cache backing store), caching and pub/sub (Redis-style), high-throughput data pipelines</p>
+<p class="expertise-line"><b>Data &amp; Storage:</b> PostgreSQL (OLTP, jsonb, pgvector, semantic cache backing store), Neo4j (Cypher), caching and pub/sub (Redis-style), high-throughput data pipelines</p>
 <p class="expertise-line"><b>Backend Engineering:</b> Event-driven microservices, async coordination, fault tolerance, robust APIs and abstractions, Domain-Driven Design, customer-facing systems at scale</p>
-<p class="expertise-line"><b>Agent Engineering:</b> Production AI agents, agentic workflows, LangChain, LangGraph, Microsoft Agent Framework, A2A protocol, eval frameworks (LangSmith, Langfuse, RAGAS, DeepEval), context engineering, knowledge graphs (Cognee, Graphiti), LoRA fine-tuning, semantic caching, human-in-the-loop</p>
+<p class="expertise-line"><b>Agent Engineering:</b> Production AI agents, agentic workflows, LangChain, LangGraph, Microsoft Agent Framework, A2A protocol, eval frameworks (LangSmith, Langfuse, RAGAS, DeepEval), context engineering, knowledge graphs (Neo4j, Cognee, Graphiti), ontology design, code graphs, MCP servers, LLM-as-judge evals, LoRA fine-tuning, semantic caching, human-in-the-loop</p>
 <p class="expertise-line"><b>Paradigms, Design &amp; Practices:</b> OOP, Functional Programming, Design Patterns, Architecture Patterns, SOLID, data structures, algorithm design, clean code, Test-Driven Development (TDD), pair programming, code review, mentoring, ADRs, CI / CD, Infrastructure as Code (Terraform)</p>
 <p class="expertise-line"><b>Observability &amp; Reliability:</b> Prometheus, OpenTelemetry, distributed tracing, structured logging, 50+ production metrics, 24 / 7 on-call rotation, post-mortems, incident response</p>
 <p class="expertise-line"><b>Adjacent Stacks:</b> TypeScript / Node.js, Rust (tokio, async), .NET / C#, Go (reverse-engineering Geth internals)</p>
@@ -90,8 +90,22 @@
 <h2>Professional Experience</h2>
 
 <div class="role">
+<div class="role-title">AI Architect</div>
+<div class="role-meta">Nera — Feb 2026 – Present (full-time) — Remote</div>
+<ul>
+  <li>Own Nera's AI architecture in Python: the knowledge and code-intelligence layer that lets the whole company query the business in natural language, and the agentic tooling product and engineering use to go from problem to spec.</li>
+  <li>Built an AI product-engineering platform where multi-agent LangGraph flows take a problem through PAD, PRD, epic and tech spec, grounded in the code graph and business knowledge.</li>
+  <li>Designed and built a company-wide ontology (28 classes, 26 invariants) with ingestion pipelines from Notion, Jira and GitHub into a Neo4j knowledge graph plus a pgvector semantic index, giving every area end-to-end traceability from problem to PR and natural-language Q&amp;A over MCP.</li>
+  <li>Built a code graph of the entire microservice fleet (66 repos, 77k nodes, 210k relationships across Java, TypeScript and Go), enriched with runtime calls from OpenTelemetry and served through a 32-tool MCP server that engineers use to design features and product uses to write PRDs.</li>
+  <li>Automated user-research capture with a pipeline that transcribes interviews and extracts verifiable quotes and insights into Notion with human approval, replacing a manual tracker.</li>
+  <li>Made evals a release gate: record-and-replay harnesses, a 100-question benchmark for the knowledge graph, fidelity audits for the code graph and LLM-as-judge for generated PRDs.</li>
+  <li>Drove Spec-Driven Development (SDD) across engineering with a shared framework (specs, TDD, review gates) that standardized how features are built and raised quality team-wide.</li>
+</ul>
+</div>
+
+<div class="role">
 <div class="role-title">Independent AI Consultant — Agent Engineering &amp; Enterprise AI Delivery</div>
-<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Present — Remote, client under NDA</div>
+<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Jul 2026 — Remote, client under NDA</div>
 <ul>
   <li>Forward-deployed AI consultant embedded with an enterprise engineering organization: work directly with the customer to run discovery with business and technical stakeholders, architect the solution, and own delivery from pilot through production and continuous iteration.</li>
   <li>Design and ship production agentic workflows in Python on LangChain, LangGraph and Microsoft Agent Framework, testing each graph, running eval frameworks and eval suites against it, and monitoring it live in production.</li>
@@ -177,6 +191,7 @@
 <h2>Key Achievements</h2>
 <p class="ach-line"><b>Real-time audio AI pipeline at KliverAI</b> — OpenAI Realtime API + SignalR + WebSocket transcription capture, sub-200ms streaming latency across concurrent sessions.</p>
 <p class="ach-line"><b>Production backend at Borderless</b> — Python and Rust services on Docker / Kubernetes / AWS, processing $50M+ in daily transactional flow and contributing $100K+ in attributable annual P&amp;L at sub-10ms p99.</p>
+<p class="ach-line"><b>Company-Wide Knowledge &amp; Code Intelligence at Nera</b> — 28-class ontology over Notion, Jira and GitHub in Neo4j + pgvector, plus a 66-repo / 77k-node code graph served through a 32-tool MCP server, with a 100-question benchmark and LLM-as-judge evals gating every release.</p>
 <p class="ach-line"><b>Production AI agents (Independent Consulting)</b> — Agentic workflows in Python on LangChain, LangGraph and Microsoft Agent Framework, eval-gated and monitored live in production for an enterprise client.</p>
 <p class="ach-line"><b>Microsoft MVP, Developer Technologies</b> — 8 consecutive years (2017–present). <b>80+ International Technical Talks</b> — conferences and meetups across LATAM and Europe. <b>Net-Baires Founder</b> — Argentina's largest .NET developer community, 100K+ members across 10+ years.</p>
 </div>

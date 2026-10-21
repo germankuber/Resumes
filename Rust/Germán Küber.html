@@ -86,15 +86,27 @@
 <p class="expertise-line"><b>Multi-Language Interop:</b> Rust ↔ Python via Cython / PyO3 bindings, Rust ↔ C / C++ FFI, reverse-engineering Go (Geth / Go-Ethereum) internals, TypeScript / Node.js and .NET / C# integration, polyglot service architectures</p>
 <p class="expertise-line"><b>Blockchain &amp; Web3:</b> Polkadot SDK, Substrate, FRAME, XCM, parachains, EVM (Ethereum, Arbitrum, Optimism), Solana, MEV infrastructure, Zero-Knowledge proofs (Noir, Barretenberg, Garaga on StarkNet, Cairo)</p>
 <p class="expertise-line"><b>Cloud &amp; Infrastructure:</b> AWS, Azure, Docker, Kubernetes, FastAPI, CI / CD pipelines, Linux internals (networking, sockets, namespaces), Infrastructure as Code (Terraform, ARM templates)</p>
-<p class="expertise-line"><b>AI / LLM Systems:</b> LLM orchestration (multi-provider), real-time pipelines, MCP (Model Context Protocol) server and client implementation, LangChain, LangGraph</p>
+<p class="expertise-line"><b>AI / LLM Systems:</b> LLM orchestration (multi-provider), real-time pipelines, MCP (Model Context Protocol) server and client implementation, LangChain, LangGraph, knowledge and code graphs (Neo4j, pgvector), eval harnesses (LLM-as-judge)</p>
 <p class="expertise-line"><b>Programming Paradigms &amp; Design:</b> Object-Oriented Programming (OOP), Functional Programming, design patterns, architecture patterns, data structures, algorithm design, SOLID principles, clean code</p>
 <p class="expertise-line"><b>Engineering Practices &amp; Leadership:</b> Test-Driven Development (TDD), pair programming, code review, mentoring, technical interviewing, ADRs, DevOps practices, CI / CD, Infrastructure as Code (Terraform), on-call and incident response</p>
 
 <h2>Professional Experience</h2>
 
 <div class="role">
+<div class="role-title">AI Architect</div>
+<div class="role-meta">Nera — Feb 2026 – Present (full-time) — Remote</div>
+<ul>
+  <li>Own Nera's AI architecture: the knowledge and code-intelligence layer that lets the whole company query the business in natural language, and the agentic tooling product and engineering use to go from problem to spec.</li>
+  <li>Built a code graph of the entire microservice fleet (66 repos, 77k nodes, 210k relationships across Java, TypeScript and Go), enriched with runtime calls from OpenTelemetry and served through a 32-tool MCP server that engineers use to design features and product uses to write PRDs.</li>
+  <li>Designed and built a company-wide ontology (28 classes, 26 invariants) that ingests Notion, Jira and GitHub into a Neo4j knowledge graph plus a pgvector semantic index, giving every area end-to-end traceability from problem to PR and natural-language Q&amp;A over MCP.</li>
+  <li>Made evals a release gate: record-and-replay harnesses, a 100-question benchmark for the knowledge graph, fidelity audits for the code graph and LLM-as-judge for generated PRDs.</li>
+  <li>Drove Spec-Driven Development (SDD) across engineering with a shared framework (specs, TDD, review gates) that standardized how features are built and raised quality team-wide; organized the internal training space and gave talks on Vertical Slice Architecture and HTTP internals.</li>
+</ul>
+</div>
+
+<div class="role">
 <div class="role-title">Independent AI Consultant — Agent Engineering &amp; Enterprise AI Delivery</div>
-<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Present — Remote, client under NDA</div>
+<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Jul 2026 — Remote, client under NDA</div>
 <ul>
   <li>Forward-deployed AI consultant embedded with an enterprise engineering organization: work directly with the customer to run discovery with business and technical stakeholders, architect the solution, and own delivery from pilot through production and continuous iteration.</li>
   <li>Design and ship production agentic workflows on LangChain, LangGraph and Microsoft Agent Framework, with eval frameworks and regression tests gating every change before production.</li>

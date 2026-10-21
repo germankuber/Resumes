@@ -82,10 +82,10 @@
 <p class="expertise-line"><b>Microsoft Stack &amp; .NET:</b> .NET 6 / 7 / 8 / 9, C#, ASP.NET Core (Web API, MVC, Blazor), Entity Framework Core, .NET Aspire (cloud-native orchestration), Dapr (distributed application runtime), MediatR, AutoMapper, FluentValidation, MassTransit, NServiceBus, Polly (resilience), SignalR, gRPC, Dapper</p>
 <p class="expertise-line"><b>Microsoft Azure:</b> Azure Solutions Architect Expert (AZ-305 certified). App Service, Azure Functions, AKS (Azure Kubernetes Service), Azure Container Apps, Azure Service Bus, Event Grid, Event Hubs, Azure SQL Database, Cosmos DB, Azure Storage (Blob, Queue, Table), API Management, Azure Front Door, Entra ID (Azure AD), Key Vault, Application Insights, Azure Monitor, Azure DevOps, Logic Apps, Azure AI Search, Microsoft Fabric</p>
 <p class="expertise-line"><b>Messaging &amp; Distributed Systems:</b> Azure Service Bus, RabbitMQ, Apache Kafka, MassTransit, NServiceBus, AMQP, MQTT, async runtimes (tokio in Rust, async / await in .NET), eventual consistency, distributed transactions, idempotency, outbox pattern, saga orchestration, retry policies with Polly</p>
-<p class="expertise-line"><b>AI / LLM Systems on Azure:</b> Azure OpenAI Service, multi-provider LLM orchestration (OpenAI, Anthropic, Gemini, AWS Bedrock, Vertex AI), MCP (Model Context Protocol) servers and clients, RAG pipelines on Azure AI Search, LangChain, LangGraph, multi-agent architecture, vector databases (Pinecone, Chroma, pgvector, Redis), LangSmith, RAGAS, DeepEval, OpenTelemetry GenAI semantic conventions</p>
+<p class="expertise-line"><b>AI / LLM Systems on Azure:</b> Azure OpenAI Service, multi-provider LLM orchestration (OpenAI, Anthropic, Gemini, AWS Bedrock, Vertex AI), MCP (Model Context Protocol) servers and clients, RAG pipelines on Azure AI Search, LangChain, LangGraph, multi-agent architecture, knowledge graphs and ontologies (Neo4j), code graphs, vector databases (Pinecone, Chroma, pgvector, Redis), LangSmith, RAGAS, DeepEval, LLM-as-judge evals, OpenTelemetry GenAI semantic conventions</p>
 <p class="expertise-line"><b>APIs &amp; Integration:</b> REST APIs, gRPC, GraphQL, API Gateways (YARP, Azure API Management, Kong, Nginx), OpenAPI / Swagger, OData, OAuth 2.0 / OIDC, IdentityServer / Duende, JWT, mTLS</p>
 <p class="expertise-line"><b>DevOps, IaC &amp; Cloud-Native:</b> Docker, Kubernetes (AKS), Helm, CI / CD (Azure DevOps, GitHub Actions), Terraform, Bicep, ARM templates, OpenTelemetry, Prometheus, Grafana, Application Insights, distributed tracing, GitOps, cloud cost optimization</p>
-<p class="expertise-line"><b>Databases &amp; Storage:</b> SQL Server / Azure SQL, PostgreSQL, MongoDB, Cosmos DB, Redis (cache and RediSearch), pgvector, polyglot persistence, query optimization, schema design for high-throughput systems</p>
+<p class="expertise-line"><b>Databases &amp; Storage:</b> SQL Server / Azure SQL, PostgreSQL, MongoDB, Cosmos DB, Redis (cache and RediSearch), pgvector, Neo4j, polyglot persistence, query optimization, schema design for high-throughput systems</p>
 <p class="expertise-line"><b>Security &amp; Identity:</b> OAuth 2.0 / OIDC, Entra ID (Azure AD), Microsoft Graph API, IdentityServer / Duende, Azure Key Vault, mTLS, API security (rate limiting, JWT, scopes), Zero Trust principles, OWASP Top 10</p>
 <p class="expertise-line"><b>Frontend (Full-Stack contexts):</b> Angular, React, TypeScript, Node.js, Blazor, reusable component libraries, UI architecture</p>
 <p class="expertise-line"><b>Engineering Practices &amp; Leadership:</b> Test-Driven Development (TDD), pair programming, code review, technical roadmap, architectural decision records (ADRs), design reviews, mentoring, hiring and technical interviewing, cross-functional collaboration, internal training programs, on-call and incident response, legacy modernization and cloud migration</p>
@@ -93,8 +93,21 @@
 <h2>Professional Experience</h2>
 
 <div class="role">
+<div class="role-title">AI Architect</div>
+<div class="role-meta">Nera — Feb 2026 – Present (full-time) — Remote</div>
+<ul>
+  <li>Own Nera's AI architecture: the knowledge and code-intelligence layer that lets the whole company query the business in natural language, and the agentic tooling product and engineering use to go from problem to spec.</li>
+  <li>Designed and built a company-wide ontology (28 classes, 26 invariants) that ingests Notion, Jira and GitHub into a Neo4j knowledge graph plus a pgvector semantic index, giving every area end-to-end traceability from problem to PR and natural-language Q&amp;A over MCP.</li>
+  <li>Built a code graph of the entire microservice fleet (66 repos, 77k nodes, 210k relationships across Java, TypeScript and Go), enriched with runtime calls from OpenTelemetry and served through a 32-tool MCP server that engineers use to design features and product uses to write PRDs.</li>
+  <li>Built an AI product-engineering platform where multi-agent LangGraph flows take a problem through PAD, PRD, epic and tech spec, grounded in the code graph and business knowledge.</li>
+  <li>Made evals a release gate: record-and-replay harnesses, a 100-question benchmark for the knowledge graph, fidelity audits for the code graph and LLM-as-judge for generated PRDs.</li>
+  <li>Drove Spec-Driven Development (SDD) across engineering with a shared framework (specs, TDD, review gates) that standardized how features are built and raised quality team-wide; organized the internal training space and gave talks on Vertical Slice Architecture, LLM architecture beyond the prompt and HTTP internals.</li>
+</ul>
+</div>
+
+<div class="role">
 <div class="role-title">Independent AI Consultant — Agent Engineering &amp; Enterprise AI Delivery</div>
-<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Present — Remote, client under NDA</div>
+<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Jul 2026 — Remote, client under NDA</div>
 <ul>
   <li>Forward-deployed AI consultant embedded with an enterprise engineering organization: work directly with the customer to run discovery with business and technical stakeholders, architect the solution, and own delivery from pilot through production and continuous iteration.</li>
   <li>Design and ship production agentic workflows on Microsoft Agent Framework (MAF), LangChain and LangGraph, with eval frameworks and regression tests gating every change before production.</li>

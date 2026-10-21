@@ -5,17 +5,17 @@
 <style>
   @page {
     size: A4;
-    margin: 1cm 1.3cm;
+    margin: 0.7cm 1.1cm;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 8.5pt;
-    line-height: 1.21;
+    font-size: 8.25pt;
+    line-height: 1.14;
     color: #1a1a1a;
   }
   .name {
-    font-size: 19pt;
+    font-size: 17pt;
     font-weight: 700;
     letter-spacing: 0.5px;
     color: #111;
@@ -30,7 +30,7 @@
     font-size: 8.4pt;
     color: #444;
     margin-top: 4px;
-    line-height: 1.45;
+    line-height: 1.25;
   }
   .contact a { color: #444; text-decoration: none; }
   h2 {
@@ -41,8 +41,8 @@
     color: #2a4d7a;
     border-bottom: 1.3px solid #2a4d7a;
     padding-bottom: 1.5px;
-    margin-top: 6.5px;
-    margin-bottom: 3.5px;
+    margin-top: 4.5px;
+    margin-bottom: 2.5px;
   }
   p { margin-bottom: 3px; text-align: justify; }
   .role { break-inside: auto; }
@@ -53,14 +53,14 @@
   .edu-line, .ach-line, .expertise-line { break-inside: avoid; }
   .role-title { font-weight: 700; font-size: 9pt; color: #111; }
   .role-meta { font-size: 8pt; color: #555; font-style: italic; margin-bottom: 1.5px; }
-  ul { margin: 1.5px 0 4px 0; padding-left: 14px; }
-  li { margin-bottom: 1.3px; text-align: justify; }
-  .expertise-line { margin-bottom: 1.8px; }
+  ul { margin: 1px 0 3px 0; padding-left: 14px; }
+  li { margin-bottom: 1.1px; text-align: justify; }
+  .expertise-line { margin-bottom: 1.4px; }
   .expertise-line b { color: #111; }
-  .ach-line { margin-bottom: 1.3px; }
+  .ach-line { margin-bottom: 1px; }
   .ach-line b { color: #111; }
   .compact { margin-bottom: 4px; }
-  .edu-line { margin-bottom: 1.5px; }
+  .edu-line { margin-bottom: 1.2px; }
 </style>
 </head>
 <body>
@@ -74,12 +74,12 @@
 </div>
 
 <h2>Professional Summary</h2>
-<p>Engineering Manager and Staff-level hands-on technical leader with 15+ years building production distributed systems and managing engineering teams. Player-coach across blockchain, AI, and enterprise platforms: managed teams of up to 8 engineers including hiring, performance feedback, and delivery, while remaining active in <b>Rust, Python, Node.js / TypeScript and .NET</b> codebases. Track record across high-stakes domains, from low-latency MEV infrastructure processing $50M+ in daily on-chain volume, to real-time LLM platforms with multi-provider orchestration. Microsoft MVP for 8 consecutive years, founder of Argentina's largest .NET community (100K+ members), and Polkadot Blockchain Academy graduate (Lisbon, 2026). EU citizen (Spanish nationality) with full authorization to work across the EU/EEA — no visa or sponsorship required — open to self-funded relocation anywhere in the EU.</p>
+<p>Engineering Manager and Staff-level hands-on technical leader with 15+ years building production distributed systems and managing engineering teams. Currently AI Architect at Nera, owning the company-wide knowledge and code-intelligence layer and driving Spec-Driven Development and evals-as-release-gate across engineering. Player-coach across blockchain, AI, and enterprise platforms: managed teams of up to 8 engineers including hiring, performance feedback, and delivery, while remaining active in <b>Rust, Python, Node.js / TypeScript and .NET</b> codebases. Track record across high-stakes domains, from low-latency MEV infrastructure processing $50M+ in daily on-chain volume, to real-time LLM platforms with multi-provider orchestration. Microsoft MVP for 8 consecutive years, founder of Argentina's largest .NET community (100K+ members), and Polkadot Blockchain Academy graduate (Lisbon, 2026). EU citizen (Spanish nationality) with full authorization to work across the EU/EEA — no visa or sponsorship required — open to self-funded relocation anywhere in the EU.</p>
 
 <h2>Core Expertise</h2>
 <p class="expertise-line"><b>Engineering Leadership:</b> Team management and scaling, hiring and technical interviewing, performance reviews and feedback cycles, mentoring and career development, cross-functional collaboration, technical roadmap, architectural decision records (ADRs), on-call and incident response</p>
 <p class="expertise-line"><b>Programming Languages:</b> Rust, Python, Cython, Node.js / TypeScript, C# / .NET, JavaScript, Go, Solidity, Cairo</p>
-<p class="expertise-line"><b>AI / LLM Systems:</b> LLM orchestration (OpenAI, Anthropic, Gemini), LangChain, LangGraph, RAG pipelines, multi-agent architecture, real-time audio pipelines, multi-provider routing, prompt engineering, inference cost optimization</p>
+<p class="expertise-line"><b>AI / LLM Systems:</b> LLM orchestration (OpenAI, Anthropic, Gemini), LangChain, LangGraph, MCP (Model Context Protocol), knowledge graphs (Neo4j, pgvector), code graphs, RAG pipelines, multi-agent architecture, eval harnesses (LLM-as-judge), Spec-Driven Development (SDD), real-time audio pipelines, multi-provider routing, prompt engineering, inference cost optimization</p>
 <p class="expertise-line"><b>Frontend:</b> React, Angular, TypeScript, reusable component libraries, UI architecture</p>
 <p class="expertise-line"><b>Blockchain:</b> Polkadot SDK, Substrate, FRAME, XCM, parachains, EVM, Solana, MEV infrastructure, Zero-Knowledge proofs (Noir, Barretenberg), StarkNet, account abstraction</p>
 <p class="expertise-line"><b>Distributed Systems:</b> High-throughput pipelines, async runtimes (tokio), concurrency, low-latency networking, fault tolerance, microservices, event-driven architectures, Domain-Driven Design</p>
@@ -88,8 +88,22 @@
 <h2>Professional Experience</h2>
 
 <div class="role">
+<div class="role-title">AI Architect</div>
+<div class="role-meta">Nera — Feb 2026 – Present (full-time) — Remote</div>
+<ul>
+  <li>Own Nera's AI architecture: the knowledge and code-intelligence layer that lets the whole company query the business in natural language, and the agentic tooling product and engineering use to go from problem to spec.</li>
+  <li>Drove Spec-Driven Development (SDD) across engineering with a shared framework (specs, TDD, review gates) that standardized how features are built and raised quality team-wide.</li>
+  <li>Made evals a release gate: record-and-replay harnesses, a 100-question benchmark for the knowledge graph, fidelity audits for the code graph and LLM-as-judge for generated PRDs.</li>
+  <li>Designed and built a company-wide ontology (28 classes, 26 invariants) that ingests Notion, Jira and GitHub into a Neo4j knowledge graph plus a pgvector semantic index, giving every area end-to-end traceability from problem to PR and natural-language Q&amp;A over MCP.</li>
+  <li>Built a code graph of the entire microservice fleet (66 repos, 77k nodes, 210k relationships across Java, TypeScript and Go), enriched with runtime calls from OpenTelemetry and served through a 32-tool MCP server that engineers use to design features and product uses to write PRDs.</li>
+  <li>Built an AI product-engineering platform where multi-agent LangGraph flows take a problem through PAD, PRD, epic and tech spec, grounded in the code graph and business knowledge; shipped AI tooling for product and design (Claude plugin for research and synthesis, Figma plugin auditing screens against the design system).</li>
+  <li>Organized Nera's internal training space and gave talks on engineering cognition, LLM architecture beyond the prompt, Vertical Slice Architecture and HTTP internals.</li>
+</ul>
+</div>
+
+<div class="role">
 <div class="role-title">Independent AI Consultant — Agent Engineering &amp; Enterprise AI Delivery</div>
-<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Present — Remote, client under NDA</div>
+<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Jul 2026 — Remote, client under NDA</div>
 <ul>
   <li>Forward-deployed AI consultant embedded with an enterprise engineering organization: work directly with the customer to run discovery with business and technical stakeholders, architect the solution, and own delivery from pilot through production and continuous iteration.</li>
   <li>Partner directly with engineering leadership to shape how the organization adopts AI agents — from framing the business problem to defining the delivery process and measuring outcomes.</li>

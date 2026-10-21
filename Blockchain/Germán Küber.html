@@ -84,15 +84,27 @@
 <p class="expertise-line"><b>Distributed Systems &amp; Networking:</b> Low-latency networking (sub-10ms execution), async runtimes (tokio), concurrency, multi-threaded systems, fault tolerance, high-throughput pipelines, P2P networking, consensus protocols (hands-on with GRANDPA / BABE, familiar with Tendermint and Raft), gRPC, Protocol Buffers, event-driven architectures</p>
 <p class="expertise-line"><b>Cryptography &amp; Zero-Knowledge:</b> ZK proofs (Noir, Barretenberg, Garaga on StarkNet, Cairo), ZK-SNARKs / STARKs, account abstraction (ERC-4337), digital signatures, hashing, Merkle trees, cryptographic primitives applied to MEV, on-chain monitoring, and verifiable computation</p>
 <p class="expertise-line"><b>Observability &amp; Tooling:</b> Prometheus, OpenTelemetry, tracing crate, custom Rust telemetry (50+ real-time production metrics), structured logging, post-mortems, on-call discipline</p>
-<p class="expertise-line"><b>AI / LLM Systems:</b> LLM orchestration (OpenAI, Anthropic, Gemini), LangChain, LangGraph, MCP (Model Context Protocol), RAG pipelines, multi-agent architecture, real-time audio pipelines, multi-provider routing</p>
+<p class="expertise-line"><b>AI / LLM Systems:</b> LLM orchestration (OpenAI, Anthropic, Gemini), LangChain, LangGraph, MCP (Model Context Protocol), knowledge and code graphs (Neo4j, pgvector), RAG pipelines, multi-agent architecture, eval harnesses (LLM-as-judge), real-time audio pipelines, multi-provider routing</p>
 <p class="expertise-line"><b>Cloud &amp; Infrastructure:</b> AWS, Azure, Docker, Kubernetes, FastAPI, SignalR, CI / CD pipelines, observability stacks, Linux internals</p>
 <p class="expertise-line"><b>Engineering Leadership:</b> Technical leadership for blockchain and distributed systems teams, hiring and technical interviewing for Rust / blockchain hires, code review and mentoring, technical roadmap, architectural decision records (ADRs), on-call and incident response, open-source contribution practices</p>
 
 <h2>Professional Experience</h2>
 
 <div class="role">
+<div class="role-title">AI Architect</div>
+<div class="role-meta">Nera — Feb 2026 – Present (full-time) — Remote</div>
+<ul>
+  <li>Own Nera's AI architecture: the knowledge and code-intelligence layer that lets the whole company query the business in natural language, and the agentic tooling product and engineering use to go from problem to spec.</li>
+  <li>Built a code graph of the entire microservice fleet (66 repos, 77k nodes, 210k relationships across Java, TypeScript and Go), enriched with runtime calls from OpenTelemetry and served through a 32-tool MCP server that engineers use to design features and product uses to write PRDs.</li>
+  <li>Designed and built a company-wide ontology (28 classes, 26 invariants) that ingests Notion, Jira and GitHub into a Neo4j knowledge graph plus a pgvector semantic index, giving every area end-to-end traceability from problem to PR and natural-language Q&amp;A over MCP.</li>
+  <li>Made evals a release gate: record-and-replay harnesses, a 100-question benchmark for the knowledge graph, fidelity audits for the code graph and LLM-as-judge for generated PRDs.</li>
+  <li>Drove Spec-Driven Development (SDD) across engineering with a shared framework (specs, TDD, review gates) that standardized how features are built and raised quality team-wide.</li>
+</ul>
+</div>
+
+<div class="role">
 <div class="role-title">Independent AI Consultant — Agent Engineering &amp; Enterprise AI Delivery</div>
-<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Present — Remote, client under NDA</div>
+<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Jul 2026 — Remote, client under NDA</div>
 <ul>
   <li>Forward-deployed AI consultant embedded with an enterprise engineering organization: work directly with the customer to run discovery with business and technical stakeholders, architect the solution, and own delivery from pilot through production and continuous iteration.</li>
   <li>Design and ship production agentic workflows on LangChain, LangGraph and Microsoft Agent Framework, including multi-agent architectures on Google's A2A (Agent2Agent) protocol with a central capability registry.</li>

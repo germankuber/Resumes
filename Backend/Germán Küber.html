@@ -81,10 +81,10 @@
 <p class="expertise-line"><b>AWS &amp; Cloud Infrastructure:</b> AWS Lambda, S3, SNS, SQS, EventBridge, ECS, RDS, Bedrock; Azure (App Service, Functions, AKS, Service Bus, Cosmos DB, API Management, Entra ID, Key Vault); GCP (Vertex AI); Docker, Kubernetes, Terraform, ARM templates, CI / CD pipelines</p>
 <p class="expertise-line"><b>APIs &amp; Integration:</b> REST APIs, GraphQL, gRPC, OpenAPI / Swagger, OAuth 2.0 / OIDC, JWT, webhooks, API design at scale</p>
 <p class="expertise-line"><b>Messaging &amp; Distributed Systems:</b> AWS SNS / SQS, Azure Service Bus, RabbitMQ, Apache Kafka, MassTransit, NServiceBus, event-driven architecture, async runtimes, eventual consistency, retry / dead-letter patterns, distributed transactions</p>
-<p class="expertise-line"><b>Databases &amp; Storage:</b> PostgreSQL, MySQL (Aurora), MongoDB, Cosmos DB, SQL Server / Azure SQL, Redis (cache, pub-sub, streams), DynamoDB, query optimization, schema design</p>
+<p class="expertise-line"><b>Databases &amp; Storage:</b> PostgreSQL (pgvector), Neo4j, MySQL (Aurora), MongoDB, Cosmos DB, SQL Server / Azure SQL, Redis (cache, pub-sub, streams), DynamoDB, query optimization, schema design</p>
 <p class="expertise-line"><b>Architecture Patterns:</b> Microservices, event-driven architecture, Domain-Driven Design (DDD), CQRS, Event Sourcing, Saga patterns, Clean Architecture / Hexagonal, Vertical Slice, serverless patterns, polyglot persistence</p>
 <p class="expertise-line"><b>Frontend (when needed):</b> React, Next.js, Angular, TypeScript, reusable component libraries</p>
-<p class="expertise-line"><b>AI / LLM Systems:</b> LLM orchestration (OpenAI, Anthropic, Gemini, AWS Bedrock, Azure OpenAI, Vertex AI), MCP (Model Context Protocol), LangChain, LangGraph, RAG pipelines with vector databases (Pinecone, Chroma, pgvector, Redis), real-time audio pipelines</p>
+<p class="expertise-line"><b>AI / LLM Systems:</b> LLM orchestration (OpenAI, Anthropic, Gemini, AWS Bedrock, Azure OpenAI, Vertex AI), MCP (Model Context Protocol) servers, LangChain, LangGraph, knowledge graphs (Neo4j), code graphs, RAG pipelines with vector databases (Pinecone, Chroma, pgvector, Redis), eval harnesses (LLM-as-judge, record-and-replay), real-time audio pipelines</p>
 <p class="expertise-line"><b>Observability &amp; DevOps:</b> Prometheus, OpenTelemetry, Application Insights, structured logging, distributed tracing, on-call rotation, post-mortems, CI / CD (GitHub Actions, Azure DevOps), GitOps</p>
 <p class="expertise-line"><b>Security &amp; Identity:</b> OAuth 2.0 / OIDC, Entra ID (Azure AD), JWT, API security (rate limiting, scopes), Zero Trust principles, OWASP Top 10</p>
 <p class="expertise-line"><b>Programming Paradigms &amp; Design:</b> Object-Oriented Programming (OOP), Functional Programming, Design Patterns, Architecture Patterns, SOLID principles, data structures, algorithm design, clean code</p>
@@ -93,8 +93,22 @@
 <h2>Professional Experience</h2>
 
 <div class="role">
+<div class="role-title">AI Architect</div>
+<div class="role-meta">Nera — Feb 2026 – Present (full-time) — Remote</div>
+<ul>
+  <li>Own Nera's AI architecture: the knowledge and code-intelligence layer that lets the whole company query the business in natural language, and the agentic tooling product and engineering use to go from problem to spec.</li>
+  <li>Built a code graph of the entire microservice fleet (66 repos, 77k nodes, 210k relationships across Java, TypeScript and Go), enriched with runtime calls from OpenTelemetry and served through a 32-tool MCP server that engineers use to design features and product uses to write PRDs.</li>
+  <li>Designed and built a company-wide ontology (28 classes, 26 invariants) with ingestion pipelines from Notion, Jira and GitHub into a Neo4j knowledge graph plus a pgvector semantic index, giving every area end-to-end traceability from problem to PR and natural-language Q&amp;A over MCP.</li>
+  <li>Built an AI product-engineering platform where multi-agent LangGraph flows take a problem through PAD, PRD, epic and tech spec, grounded in the code graph and business knowledge.</li>
+  <li>Automated user-research capture with a pipeline that transcribes interviews and extracts verifiable quotes and insights into Notion with human approval, replacing a manual tracker.</li>
+  <li>Made evals a release gate: record-and-replay harnesses, a 100-question benchmark for the knowledge graph, fidelity audits for the code graph and LLM-as-judge for generated PRDs.</li>
+  <li>Drove Spec-Driven Development (SDD) across engineering with a shared framework (specs, TDD, review gates) that standardized how features are built and raised quality team-wide.</li>
+</ul>
+</div>
+
+<div class="role">
 <div class="role-title">Independent AI Consultant — Agent Engineering &amp; Enterprise AI Delivery</div>
-<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Present — Remote, client under NDA</div>
+<div class="role-meta">Self-employed (autónomo, Spain) — Mar 2026 – Jul 2026 — Remote, client under NDA</div>
 <ul>
   <li>Forward-deployed AI consultant embedded with an enterprise engineering organization: work directly with the customer to run discovery with business and technical stakeholders, architect the solution, and own delivery from pilot through production and continuous iteration.</li>
   <li>Design and ship production agentic workflows and backend services on LangChain, LangGraph and Microsoft Agent Framework, with eval frameworks and regression tests gating every change before production.</li>
