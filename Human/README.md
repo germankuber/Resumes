@@ -180,12 +180,15 @@ Microsoft MVP for 8 consecutive years. Founder of Net-Baires, Argentina's larges
 
 • **Architecture & Patterns:** Microservices, Domain-Driven Design (tactical + strategic), CQRS, Event Sourcing, Saga (orchestration / choreography), Clean Architecture / Hexagonal, Vertical Slice, polyglot persistence
 
+• **Quantum Computing (learning):** Qiskit, Q#
+
 • **Engineering Practices & Leadership:** TDD, pair programming, code review, ADRs, design reviews, technical interviewing & hiring, mentoring, on-call & incident response, Spec-Driven Development (SDD), AI-driven development workflows
 
 ---
 
 ## 🎓 Education
 
+- **Quantum Computing (ongoing self-study)** — Quantum circuits and algorithms with Qiskit (Python) and Q# (Microsoft Quantum Development Kit)
 - **Polkadot Builder Program** — Polkadot Blockchain Academy _(04/2026)_
 - **Systems Engineer** — UAI - Universidad Abierta Interamericana _(01/2017 - 12/2021)_
 
