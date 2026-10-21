@@ -47,14 +47,14 @@ Microsoft MVP for 8 consecutive years. Founder of Net-Baires, Argentina's larges
 - Drove Spec-Driven Development (SDD) across engineering with a shared framework (specs, TDD, review gates) that standardized how features are built and raised quality team-wide.
 - Organized Nera's internal training space and gave talks on engineering cognition, LLM architecture beyond the prompt, Vertical Slice Architecture and HTTP internals.
 
-### Independent AI Consultant — Agent Engineering & Enterprise AI Delivery
+### Independent AI Consultant (parallel to Nera) — Agent Engineering & Enterprise AI Delivery
 **Self-employed (client under NDA)** | 03/2026 - 07/2026
 
-- Work forward-deployed alongside an enterprise engineering organization—working directly with the customer, running discovery with business and technical stakeholders, architecting the agent solution, and owning delivery from pilot through production and continuous iteration.
-- Design and ship production agentic workflows on LangChain, LangGraph, and Microsoft Agent Framework—testing each graph, running eval frameworks and eval suites against it, and monitoring it live in production to tune behavior from real traces.
+- Worked forward-deployed alongside an enterprise engineering organization—working directly with the customer, running discovery with business and technical stakeholders, architecting the agent solution, and owning delivery from pilot through production and continuous iteration.
+- Designed and shipped production agentic workflows on LangChain, LangGraph, and Microsoft Agent Framework—testing each graph, running eval frameworks and eval suites against it, and monitoring it live in production to tune behavior from real traces.
 - Built multi-agent architectures on Google's A2A (Agent2Agent) protocol, exposing agent capabilities as Agent Cards and designing a central capability registry so functionality is discoverable and reusable across agents.
-- Own the RAG platform end-to-end for internal company documentation—retrieval optimization, chunking and context engineering, plus regression test suites that gate every change before it reaches production.
-- Lead context engineering as a discipline, helping the organization structure and bucket its internal knowledge so it is actually consumable by LLMs, and advising on which data matters for long-term decision-making.
+- Owned the RAG platform end-to-end for internal company documentation—retrieval optimization, chunking and context engineering, plus regression test suites that gate every change before it reaches production.
+- Led context engineering as a discipline, helping the organization structure and bucket its internal knowledge so it is actually consumable by LLMs, and advising on which data matters for long-term decision-making.
 - Fine-tuned models with LoRA on internal company documents and deployed them through Azure AI Foundry; cut inference cost and latency through semantic caching, agent-level semantic memory, and dynamic model routing.
 - Built "company brain" knowledge graphs with Cognee and Graphiti over internal repositories, including specialized code graphs that map microservice architecture so agents can query real system structure when making decisions.
 - Designed an end-to-end agentic pipeline running from company discovery through to production deployment with no human intervention, with targeted human-in-the-loop checkpoints placed to guarantee quality.
